@@ -29,7 +29,9 @@
     "typescript": "4.9.4",
     "zod": "^3.20.2",
     "narnia-trpc": "workspace:*",
+    "narnia-trpc-context": "workspace:*",
     "openai-sdk": "workspace:*",
-    "openai-trpc": "workspace:*"
+    "openai-trpc": "workspace:*",
+    "luna-trpc": "workspace:*"
   }
 }

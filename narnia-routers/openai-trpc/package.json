@@ -13,7 +13,8 @@
   "dependencies": {
     "@trpc/server": "^10.7.0",
     "zod": "^3.20.2",
-    "openai-sdk": "workspace:*"
+    "openai-sdk": "workspace:*",
+    "narnia-trpc-context": "workspace:*"
   },
   "devDependencies": {
     "tsconfig": "workspace:*",

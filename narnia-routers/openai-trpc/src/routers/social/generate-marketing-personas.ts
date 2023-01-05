@@ -11,7 +11,14 @@ const output = z.object({
 });
 
 export const generateMarketingPersonas = t.router({
-  generateMarketingPersonas: t.procedure.input(input).output(output).query(async () => {
+  generateMarketingPersonas: t.procedure.input(input).output(output).query(async ({ ctx }) => {
+
+    const authenticators = await ctx.fetchAuthenticators({
+      authenticators: []
+    });
+
+    console.log(authenticators);
+
     return {
       items: [
         {

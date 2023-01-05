@@ -1,5 +1,5 @@
 {
-  "name": "narnia-trpc",
+  "name": "narnia-trpc-context",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.ts",
@@ -12,8 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@trpc/server": "^10.7.0",
-    "luna-trpc": "workspace:*",
-    "openai-trpc": "workspace:*"
+    "luna-trpc": "workspace:*"
   },
   "devDependencies": {
     "tsconfig": "workspace:*",

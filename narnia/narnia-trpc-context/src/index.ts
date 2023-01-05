@@ -8,7 +8,7 @@ export const createContext = async (opts: CreateNextContextOptions) => {
   const token = opts.req.cookies['access_token'] ? opts.req.cookies['access_token'] : null;
 
   return {
-    fetchAuthenticator: async (authenticators: string[]) => {
+    fetchAuthenticators: async ({ authenticators }: { authenticators: string[] }) => {
       return await luna.auth.fetchAuthenticators({ token, authenticators });
     }
   }
