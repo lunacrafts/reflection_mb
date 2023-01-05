@@ -4,15 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@tauri-apps/api": "^1.2.0"
+    "@tauri-apps/api": "^1.2.0",
+    "@reflection-layouts/reflection": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^18.7.10",

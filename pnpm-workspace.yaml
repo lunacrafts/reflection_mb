@@ -2,5 +2,7 @@ packages:
   - "luna/*"
   - "mirrorboards/*"
   - "narnia/*"
+  - "narnia-routers/*"
   - "packages/*"
   - "reflection/*"
+  - "reflection-layouts/*"

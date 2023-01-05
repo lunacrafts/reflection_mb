@@ -6,7 +6,8 @@
     "dev": "next dev --port 3004",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -18,6 +19,7 @@
     "next": "13.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "narnia-trpc": "workspace:*"
   }
 }
