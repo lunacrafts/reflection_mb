@@ -13,6 +13,7 @@
   "dependencies": {
     "@reflection-layouts/reflection": "workspace:*",
     "@tanstack/react-query": "^4.20.9",
+    "@tanstack/react-router": "0.0.1-beta.46",
     "@tauri-apps/api": "^1.2.0",
     "narnia-react": "workspace:*",
     "react": "^18.2.0",
