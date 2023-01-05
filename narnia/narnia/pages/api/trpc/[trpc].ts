@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import * as trpcNext from "@trpc/server/adapters/next";
 import NextCors from "nextjs-cors";
-import { router } from 'narnia-trpc';
+import { createContext, router } from 'narnia-trpc';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   await NextCors(req, res, {
@@ -13,6 +13,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   });
 
   return trpcNext.createNextApiHandler({
-    router: router
+    router: router,
+    createContext: async () => await createContext({ req, res })
   })(req, res);
 }

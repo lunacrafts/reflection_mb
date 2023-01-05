@@ -1,5 +1,4 @@
-import { inferAsyncReturnType, initTRPC } from "@trpc/server";
-import { router as openai } from 'openai-trpc';
+import { inferAsyncReturnType } from "@trpc/server";
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { router as lunaRouter } from 'luna-trpc';
 
@@ -16,8 +15,3 @@ export const createContext = async (opts: CreateNextContextOptions) => {
 }
 
 export type NarniaContext = inferAsyncReturnType<typeof createContext>
-
-const t = initTRPC.context<NarniaContext>().create();
-
-export const router = t.router({ openai });
-export type NarniaRouter = typeof router;

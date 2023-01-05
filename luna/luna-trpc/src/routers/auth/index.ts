@@ -1,6 +1,6 @@
 import t from "../../trpc";
-import { authenticate } from "./authenticate";
+import { fetchAuthenticators } from "./fetch-authenticators";
 
 export default t.router({
-  social: t.mergeRouters(authenticate)
+  auth: t.mergeRouters(fetchAuthenticators)
 });

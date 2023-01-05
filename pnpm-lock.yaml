@@ -44,6 +44,21 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.9.4
 
+  luna/luna-trpc:
+    specifiers:
+      '@trpc/server': ^10.7.0
+      openai-sdk: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.6.3
+      zod: ^3.20.2
+    dependencies:
+      '@trpc/server': 10.7.0
+      openai-sdk: link:../../narnia-routers/openai-sdk
+      zod: 3.20.2
+    devDependencies:
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.4
+
   mirrorboards/mirrorboards:
     specifiers:
       '@reflection-layouts/reflection': workspace:*
@@ -91,12 +106,14 @@ importers:
   narnia-routers/openai-trpc:
     specifiers:
       '@trpc/server': ^10.7.0
+      narnia-trpc-context: workspace:*
       openai-sdk: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.3
       zod: ^3.20.2
     dependencies:
       '@trpc/server': 10.7.0
+      narnia-trpc-context: link:../../narnia/narnia-trpc
       openai-sdk: link:../openai-sdk
       zod: 3.20.2
     devDependencies:
@@ -138,7 +155,7 @@ importers:
       '@types/react-dom': 18.0.10
       eslint: 8.31.0
       eslint-config-next: 13.0.0_iukboom6ndih5an6iafl45j2fe
-      narnia-trpc: link:../narnia-trpc
+      narnia-trpc: link:../narnia-trpc-context
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
       next-transpile-modules: 10.0.0
       nextjs-cors: 2.1.2_next@13.0.0
@@ -167,7 +184,7 @@ importers:
       '@trpc/client': 10.7.0_@trpc+server@10.7.0
       '@trpc/react-query': 10.7.0_voi52uzzn4btzulk52fuvwecw4
       '@trpc/server': 10.7.0
-      narnia-trpc: link:../narnia-trpc
+      narnia-trpc: link:../narnia-trpc-context
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -179,11 +196,30 @@ importers:
   narnia/narnia-trpc:
     specifiers:
       '@trpc/server': ^10.7.0
+      luna-trpc: workspace:*
+      narnia-trpc-context: workspace:*
       openai-trpc: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.3
     dependencies:
       '@trpc/server': 10.7.0
+      luna-trpc: link:../../luna/luna-trpc
+      narnia-trpc-context: 'link:'
+      openai-trpc: link:../../narnia-routers/openai-trpc
+    devDependencies:
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.4
+
+  narnia/narnia-trpc-context:
+    specifiers:
+      '@trpc/server': ^10.7.0
+      luna-trpc: workspace:*
+      openai-trpc: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.6.3
+    dependencies:
+      '@trpc/server': 10.7.0
+      luna-trpc: link:../../luna/luna-trpc
       openai-trpc: link:../../narnia-routers/openai-trpc
     devDependencies:
       tsconfig: link:../../packages/tsconfig
