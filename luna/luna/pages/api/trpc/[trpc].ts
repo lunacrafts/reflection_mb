@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import * as trpcNext from "@trpc/server/adapters/next";
 import NextCors from "nextjs-cors";
-import { router } from 'narnia-trpc';
+import { router } from 'luna-trpc';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   await NextCors(req, res, {
