@@ -1,15 +1,21 @@
 {
-  "name": "tsconfig",
+  "name": "narnia-trpc-context",
   "version": "0.0.1",
   "description": "",
-  "files": [
-    "src/**"
-  ],
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "keywords": [],
   "author": "lunacrafts",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@trpc/server": "^10.7.0",
+    "luna-trpc": "workspace:*"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "typescript": "^4.6.3"
+  }
 }

@@ -1,0 +1,23 @@
+{
+  "name": "openai-trpc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
+  },
+  "keywords": [],
+  "author": "lunacrafts",
+  "license": "ISC",
+  "dependencies": {
+    "@trpc/server": "^10.7.0",
+    "zod": "^3.20.2",
+    "openai-sdk": "workspace:*",
+    "narnia-trpc-context": "workspace:*"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "typescript": "^4.6.3"
+  }
+}
