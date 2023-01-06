@@ -27,7 +27,9 @@ async function run() {
     });
 
     const user1 = await mirrorboards.collection('users').insertOne({
-      name: 'Elon Musk'
+      name: 'Luna Crafts',
+      email: 'lunacrafts@protonmail.com',
+      password: 'crafts'
     });
 
     const mirrorboard1 = await mirrorboards.collection('mirrorboards').insertOne({
