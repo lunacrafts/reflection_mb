@@ -1,0 +1,23 @@
+import React, { DependencyList } from "react";
+import { useStore } from "zustand";
+import { ActivityBarItem } from "../types";
+import { useReflectionLayoutStore } from "../useReflectionLayoutStore";
+
+export const useActivityBarItem = (item: ActivityBarItem, deps: DependencyList = []) => {
+  const id = React.useId();
+  const context = useReflectionLayoutStore();
+
+  const { register, unregister, setRender } = useStore(context, (state) => state.activityBar.actions);
+
+  React.useEffect(() => {
+    register(id, item);
+
+    return () => unregister(id);
+  }, []);
+
+  React.useEffect(() => {
+    setRender(id, <React.Fragment key={item.namespace}>{item.render()}</React.Fragment>);
+  }, [item, ...deps]);
+
+  return null;
+};
