@@ -17,6 +17,9 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@reflection-layouts/reflection": "workspace:*",
+    "@tanstack/react-location": "^3.7.4",
+    "@tanstack/react-location-devtools": "^3.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

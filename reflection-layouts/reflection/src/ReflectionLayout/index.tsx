@@ -1,3 +1,5 @@
-export const ReflectionLayout = () => {
-  return <div>ReflectionLayout</div>;
+import { PropsWithChildren } from "react";
+
+export const ReflectionLayout: React.FC<PropsWithChildren> = (props) => {
+  return <div>{props.children}</div>;
 };

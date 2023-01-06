@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "mirrorboards-shell": "workspace:*",
-    "@reflection-layouts/reflection": "workspace:*",
     "@tanstack/react-query": "^4.20.9",
     "@tauri-apps/api": "^1.2.0",
     "narnia-react": "workspace:*",
