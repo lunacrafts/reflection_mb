@@ -18,6 +18,26 @@ To install Mirrorboards, you will need to have git and pnpm installed on your sy
 
 `pnpm run dev`
 
+# Installation (Docker)
+
+Follow these steps to set up Mirrorboards services:
+
+1. Navigate to the docker directory:
+
+`cd docker`
+
+2. Build the Docker image:
+
+`docker-compose build`
+
+3. Start the Docker containers:
+
+`docker-compose up`
+
+4. Then you can connect to mongodb with URI
+
+`mongodb://mongodb1:27011,mongodb2:27012,mongodb3:27013/mirrorboards?replicaSet=rs0`
+
 # Components
 
 Mirrorboards consists of several components that work together to provide a comprehensive platform.
