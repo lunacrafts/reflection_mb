@@ -78,6 +78,7 @@ importers:
       '@vitejs/plugin-react': ^3.0.0
       mirrorboards-shell: workspace:*
       narnia-react: workspace:*
+      normalize.css: ^8.0.1
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.6.4
@@ -88,6 +89,7 @@ importers:
       '@tauri-apps/api': 1.2.0
       mirrorboards-shell: link:../mirrorboards-shell
       narnia-react: link:../../narnia/narnia-react
+      normalize.css: 8.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       zod: 3.20.2
@@ -3010,6 +3012,10 @@ packages:
   /node-releases/2.0.8:
     resolution: {integrity: sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==}
     dev: true
+
+  /normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+    dev: false
 
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
