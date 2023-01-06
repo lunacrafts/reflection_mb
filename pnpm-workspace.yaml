@@ -1,5 +1,6 @@
 packages:
   - "luna/*"
+  - "docker-seed/*"
   - "mirrorboards/*"
   - "narnia/*"
   - "narnia-routers/*"
