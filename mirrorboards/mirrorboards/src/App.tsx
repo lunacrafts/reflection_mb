@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MirrorboardsShell } from "mirrorboards-shell";
+import { MirrorboardsShell, MirrorboardsShellMantineProvider } from "mirrorboards-shell";
 import { NarniaProvider } from "narnia-react";
 import React from "react";
 import { env } from "./env";
@@ -19,7 +19,9 @@ function App() {
   return (
     <NarniaProvider url={env.VITE_NARNIA_TRPC} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <MirrorboardsShell />
+        <MirrorboardsShellMantineProvider>
+          <MirrorboardsShell />
+        </MirrorboardsShellMantineProvider>
       </QueryClientProvider>
     </NarniaProvider>
   );
