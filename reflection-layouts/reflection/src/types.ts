@@ -3,5 +3,6 @@ export type ActivityBarItem = {
   render: () => JSX.Element
   meta: {
     placement: 'top' | 'bottom'
+    order?: number
   }
 }

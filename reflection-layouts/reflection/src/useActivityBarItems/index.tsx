@@ -13,6 +13,7 @@ export const useActivityBarItems = (filter?: (item: ActivityBarItem) => boolean)
     .sortBy((item) => item.timestamp)
     .reverse()
     .uniqBy((item) => item.namespace)
+    .sortBy((item) => item.meta.order ?? Infinity)
     .map((item) => item.id)
     .map((id) => renders[id])
     .value();
