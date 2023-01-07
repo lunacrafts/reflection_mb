@@ -10,6 +10,7 @@ export const useActivityBarItems = (filter?: (item: ActivityBarItem) => boolean)
 
   const result = chain(values(items))
     .filter(filter)
+    .filter((item) => !item.meta.hidden)
     .sortBy((item) => item.timestamp)
     .reverse()
     .uniqBy((item) => item.namespace)

@@ -11,6 +11,7 @@ export type ActivityBarSlice = {
       register: (id: string, item: ActivityBarItem) => void;
       unregister: (id: string) => void;
       setRender: (id: string, element: JSX.Element) => void;
+      setMeta: (id: string, meta: ActivityBarItem["meta"]) => void;
     };
   };
 };
@@ -44,6 +45,13 @@ export const createActivityBarSlice: StateCreator<ReflectionLayoutStore, [], [],
           set(
             produce<ReflectionLayoutStore>((state) => {
               state.activityBar.renders[id] = element;
+            })
+          );
+        },
+        setMeta: (id, meta) => {
+          set(
+            produce<ReflectionLayoutStore>((state) => {
+              state.activityBar.items[id].meta = meta;
             })
           );
         },

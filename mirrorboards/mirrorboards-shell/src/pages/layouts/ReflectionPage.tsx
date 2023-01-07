@@ -14,23 +14,25 @@ export const ReflectionPage = () => {
 
 const ReflectionLayoutExtensionsA: React.FC<{ namespace: string; placement: "top" | "bottom" }> = (props) => {
   const [char, setChar] = React.useState("A");
+  const [hidden, setHidden] = React.useState(false);
 
   useActivityBarItem(
     {
       namespace: props.namespace,
-      render: () => <div onClick={() => setChar("B")}>{char}</div>,
+      render: () => <div onClick={() => setHidden(true)}>{char}</div>,
       meta: {
         placement: props.placement,
+        hidden: hidden,
       },
     },
-    [props.namespace, char]
+    [props.namespace, char, hidden]
   );
 
   return null;
 };
 
 const ReflectionLayoutExtensionsB: React.FC<{ namespace: string; placement: "top" | "bottom" }> = (props) => {
-  const [char, setChar] = React.useState("B");
+  const [char, setChar] = React.useState("hidden true");
 
   useActivityBarItem(
     {
@@ -38,6 +40,7 @@ const ReflectionLayoutExtensionsB: React.FC<{ namespace: string; placement: "top
       render: () => <div onClick={() => setChar("D")}>{char}</div>,
       meta: {
         placement: props.placement,
+        hidden: false,
       },
     },
     [props.namespace, char]

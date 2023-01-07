@@ -7,7 +7,7 @@ export const useActivityBarItem = (item: ActivityBarItem, deps: DependencyList =
   const id = React.useId();
   const context = useReflectionLayoutStore();
 
-  const { register, unregister, setRender } = useStore(context, (state) => state.activityBar.actions);
+  const { register, unregister, setRender, setMeta } = useStore(context, (state) => state.activityBar.actions);
 
   React.useEffect(() => {
     register(id, item);
@@ -17,6 +17,7 @@ export const useActivityBarItem = (item: ActivityBarItem, deps: DependencyList =
 
   React.useEffect(() => {
     setRender(id, <React.Fragment key={item.namespace}>{item.render()}</React.Fragment>);
+    setMeta(id, item.meta);
   }, [item, ...deps]);
 
   return null;

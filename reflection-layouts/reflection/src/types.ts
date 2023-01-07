@@ -4,5 +4,6 @@ export type ActivityBarItem = {
   meta: {
     placement: 'top' | 'bottom'
     order?: number
+    hidden?: boolean
   }
 }
