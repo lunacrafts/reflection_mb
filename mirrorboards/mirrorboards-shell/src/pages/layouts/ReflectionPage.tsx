@@ -3,12 +3,14 @@ import React from "react";
 
 export const ReflectionPage = () => {
   return (
-    <ReflectionLayoutProvider>
-      <ReflectionLayout>
-        <ReflectionLayoutExtensionsA namespace={"icon-A"} placement="top" />
-        <ReflectionLayoutExtensionsB namespace={"icon-B"} placement="top" />
-      </ReflectionLayout>
-    </ReflectionLayoutProvider>
+    <div style={{ height: "100%", width: "100%" }}>
+      <ReflectionLayoutProvider>
+        <ReflectionLayout>
+          <ReflectionLayoutExtensionsA namespace={"icon-A"} placement="top" />
+          <ReflectionLayoutExtensionsB namespace={"icon-B"} placement="top" />
+        </ReflectionLayout>
+      </ReflectionLayoutProvider>
+    </div>
   );
 };
 
