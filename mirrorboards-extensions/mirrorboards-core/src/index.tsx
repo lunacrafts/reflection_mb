@@ -36,17 +36,6 @@ const MirrorboardsCore = () => {
 
   useStatusBarItem(
     {
-      namespace: "mirrorboards.core.currentMirrorboard.second",
-      render: () => <StatusBarItem tooltip="Switch Mirrorboard">{mirrorboard.name}2</StatusBarItem>,
-      meta: {
-        placement: "left",
-      },
-    },
-    [mirrorboard]
-  );
-
-  useStatusBarItem(
-    {
       namespace: "mirrorboards.core.notifications",
       render: () => (
         <StatusBarItem tooltip="Notifications">

@@ -12,6 +12,10 @@ const useStyles = createStyles(() => {
       flexDirection: "row",
       justifyContent: "space-between",
     },
+    slot: {
+      display: "flex",
+      flexDirection: "row",
+    },
   };
 });
 
@@ -30,8 +34,8 @@ export const StatusBar: React.FC<PropsWithChildren<StatusBarProps>> = (props) =>
   return (
     <>
       <Box className={cx(classes.root, className)}>
-        <Box>{left}</Box>
-        <Box>{right}</Box>
+        <Box className={cx(classes.slot)}>{left}</Box>
+        <Box className={cx(classes.slot)}>{right}</Box>
       </Box>
     </>
   );
