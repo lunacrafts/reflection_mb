@@ -1,17 +1,17 @@
 import produce from "immer";
 import { StateCreator } from "zustand";
 import { ReflectionLayoutStore } from "../ReflectionLayoutProvider";
-import { ActivityBarItem } from "../../types";
+import { StatusBarItem } from "../../types";
 
 export type StatusBarSlice = {
   statusBar: {
-    items: Record<string, ActivityBarItem & { id: string; timestamp: number }>;
+    items: Record<string, StatusBarItem & { id: string; timestamp: number }>;
     renders: Record<string, JSX.Element>;
     actions: {
-      register: (id: string, item: ActivityBarItem) => void;
+      register: (id: string, item: StatusBarItem) => void;
       unregister: (id: string) => void;
       setRender: (id: string, element: JSX.Element) => void;
-      setMeta: (id: string, meta: ActivityBarItem["meta"]) => void;
+      setMeta: (id: string, meta: StatusBarItem["meta"]) => void;
     };
   };
 };
