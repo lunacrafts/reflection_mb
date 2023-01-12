@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { createStore, StoreApi } from "zustand";
-import { ActivityBarSlice, createActivityBarSlice } from "./store/create-activity-bar-slice";
-import { createStatusBarSlice, StatusBarSlice } from "./store/create-status-bar-slice";
+import { ActivityBarSlice, createActivityBarSlice } from "./store/createActivityBarSlice";
+import { createStatusBarSlice, StatusBarSlice } from "./store/createStatusBarSlice";
 
 export type ReflectionLayoutStore = ActivityBarSlice & StatusBarSlice;
 

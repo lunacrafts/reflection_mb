@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { createStore, StoreApi } from "zustand";
-import { CommandsSlice, createCommandsSlice } from "./store/create-commands-slice";
+import { CommandsSlice, createCommandsSlice } from "./store/createCommandsSlice";
 
 export type CommandsStore = CommandsSlice;
 
