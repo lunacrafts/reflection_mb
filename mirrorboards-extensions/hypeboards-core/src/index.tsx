@@ -1,10 +1,15 @@
 import { ActivityBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
+import { FontAwesomeIcon } from "@reflection/icons";
 
 const HypeboardsCore = () => {
   useActivityBarItem(
     {
       namespace: "hypeboards.core",
-      render: () => <ActivityBarItem>hype</ActivityBarItem>,
+      render: () => (
+        <ActivityBarItem>
+          <FontAwesomeIcon icon={"square-h"} color={"white"} fontSize={20} />
+        </ActivityBarItem>
+      ),
       meta: {
         placement: "top",
       },
