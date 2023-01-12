@@ -27,13 +27,6 @@ const useStyles = createStyles((theme, { spacing }: ReflectionLayoutStyleParams)
       borderRightStyle: "solid",
       borderRightColor: theme.colors.gray[7],
     },
-    primarySidebar: {
-      width: spacing * 9,
-      height: "100%",
-      borderRightWidth: 1,
-      borderRightStyle: "solid",
-      borderRightColor: theme.colors.gray[7],
-    },
     statusBar: {
       height: spacing,
       borderTopWidth: 1,
@@ -68,7 +61,6 @@ export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>
           <Box className={cx(classes.activityBar)}>
             <ActivityBar />
           </Box>
-          <Box className={cx(classes.primarySidebar)}></Box>
         </Box>
         <Box className={cx(classes.statusBar)}>
           <StatusBar />
