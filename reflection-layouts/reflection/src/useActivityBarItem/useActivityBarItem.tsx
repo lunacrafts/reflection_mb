@@ -1,7 +1,7 @@
 import React, { DependencyList } from "react";
 import { useStore } from "zustand";
 import { ActivityBarItem } from "../types";
-import { useReflectionLayoutStore } from "../useReflectionLayoutStore";
+import { useReflectionLayoutStore } from "../useReflectionLayoutStore/useReflectionLayoutStore";
 
 export const useActivityBarItem = (item: ActivityBarItem, deps: DependencyList = []) => {
   const id = React.useId();

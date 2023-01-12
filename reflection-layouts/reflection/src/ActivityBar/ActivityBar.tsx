@@ -1,6 +1,6 @@
 import { Box, createStyles, DefaultProps, Selectors, useComponentDefaultProps } from "@mantine/core";
 import { PropsWithChildren } from "react";
-import { useActivityBarItems } from "../useActivityBarItems";
+import { useActivityBarItems } from "../useActivityBarItems/useActivityBarItems";
 
 export interface ActivityBarStyleParams {}
 

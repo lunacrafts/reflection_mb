@@ -3,9 +3,22 @@ import { PropsWithChildren } from "react";
 
 export interface ActivityBarItemStyleParams {}
 
-const useStyles = createStyles(() => {
+const useStyles = createStyles((theme) => {
   return {
-    root: {},
+    root: {
+      width: "100%",
+      aspectRatio: "1/1",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      transition: "all",
+      transitionDuration: "300ms",
+      cursor: "pointer",
+      opacity: 0.7,
+      ":hover": {
+        opacity: 1,
+      },
+    },
   };
 });
 

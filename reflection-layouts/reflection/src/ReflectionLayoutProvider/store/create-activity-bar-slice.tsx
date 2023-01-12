@@ -1,6 +1,6 @@
 import produce from "immer";
 import { StateCreator } from "zustand";
-import { ReflectionLayoutStore } from "..";
+import { ReflectionLayoutStore } from "../ReflectionLayoutProvider";
 import { ActivityBarItem } from "../../types";
 
 export type ActivityBarSlice = {

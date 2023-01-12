@@ -1,5 +1,5 @@
 import React from "react";
-import { ReflectionLayoutContext } from "../ReflectionLayoutProvider";
+import { ReflectionLayoutContext } from "../ReflectionLayoutProvider/ReflectionLayoutProvider";
 
 export const useReflectionLayoutStore = () => {
   const context = React.useContext(ReflectionLayoutContext);

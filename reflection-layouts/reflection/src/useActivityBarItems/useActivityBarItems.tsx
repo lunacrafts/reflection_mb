@@ -1,7 +1,7 @@
 import { values, chain, sortBy, uniqueId, uniqBy, map } from "lodash";
 import { useStore } from "zustand";
 import { ActivityBarItem } from "../types";
-import { useReflectionLayoutStore } from "../useReflectionLayoutStore";
+import { useReflectionLayoutStore } from "../useReflectionLayoutStore/useReflectionLayoutStore";
 
 export const useActivityBarItems = (filter?: (item: ActivityBarItem) => boolean) => {
   const store = useReflectionLayoutStore();

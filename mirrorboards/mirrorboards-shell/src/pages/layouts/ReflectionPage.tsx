@@ -1,4 +1,9 @@
-import { ReflectionLayout, ReflectionLayoutProvider, useActivityBarItem } from "@reflection-layouts/reflection";
+import {
+  ActivityBarItem,
+  ReflectionLayout,
+  ReflectionLayoutProvider,
+  useActivityBarItem,
+} from "@reflection-layouts/reflection";
 import React from "react";
 
 export const ReflectionPage = () => {
@@ -21,7 +26,7 @@ const ReflectionLayoutExtensionsA: React.FC<{ namespace: string; placement: "top
   useActivityBarItem(
     {
       namespace: props.namespace,
-      render: () => <div onClick={() => setHidden(true)}>{char}</div>,
+      render: () => <ActivityBarItem>foo</ActivityBarItem>,
       meta: {
         placement: props.placement,
         hidden: hidden,
