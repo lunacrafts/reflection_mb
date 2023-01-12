@@ -22,6 +22,7 @@ import {
   faTerminal,
   faPuzzlePiece,
   faSquareH,
+  faBell,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -46,7 +47,8 @@ library.add(
   faExpand,
   faTerminal,
   faPuzzlePiece,
-  faSquareH
+  faSquareH,
+  faBell
 );
 
 export { FontAwesomeIcon };
