@@ -1,5 +1,6 @@
 import { Box, createStyles, DefaultProps, Selectors } from "@mantine/core";
 import { PropsWithChildren } from "react";
+import { Tooltip } from "@mantine/core";
 
 export interface ActivityBarItemStyleParams {}
 
@@ -24,12 +25,18 @@ const useStyles = createStyles((theme) => {
 
 type ActivityBarItemStylesNames = Selectors<typeof useStyles>;
 
-export interface ActivityBarItemProps extends DefaultProps<ActivityBarItemStylesNames, ActivityBarItemStyleParams> {}
+export interface ActivityBarItemProps extends DefaultProps<ActivityBarItemStylesNames, ActivityBarItemStyleParams> {
+  tooltip?: string;
+}
 
 export const ActivityBarItem: React.FC<PropsWithChildren<ActivityBarItemProps>> = (props) => {
   const { classNames, styles, unstyled, className } = props;
 
   const { classes, cx } = useStyles(null, { name: "ActivityBarItem", classNames, styles, unstyled });
 
-  return <Box className={cx(classes.root, className)}>{props.children}</Box>;
+  return (
+    <Tooltip label={props.tooltip} disabled={!props.tooltip} position={"right"}>
+      <Box className={cx(classes.root, className)}>{props.children}</Box>
+    </Tooltip>
+  );
 };

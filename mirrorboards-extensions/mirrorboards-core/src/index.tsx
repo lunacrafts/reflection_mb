@@ -6,7 +6,7 @@ const MirrorboardsCore = () => {
     {
       namespace: "hypeboards.core.settings",
       render: () => (
-        <ActivityBarItem>
+        <ActivityBarItem tooltip={"Settings"}>
           <FontAwesomeIcon icon={"cog"} color={"white"} fontSize={17} />
         </ActivityBarItem>
       ),

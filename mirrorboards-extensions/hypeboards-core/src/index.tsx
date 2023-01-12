@@ -6,7 +6,7 @@ const HypeboardsCore = () => {
     {
       namespace: "hypeboards.core",
       render: () => (
-        <ActivityBarItem>
+        <ActivityBarItem tooltip={"Hypeboards"}>
           <FontAwesomeIcon icon={"square-h"} color={"white"} fontSize={20} />
         </ActivityBarItem>
       ),
