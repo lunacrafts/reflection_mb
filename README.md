@@ -18,6 +18,24 @@ To install Mirrorboards, you will need to have git and pnpm installed on your sy
 
 `pnpm run dev`
 
+# Installation (Docker)
+
+Follow these steps to set up Mirrorboards services:
+
+1. Navigate to the root directory:
+
+`pnpm run docker:build`
+
+`pnpm run docker:up`
+
+2. Then you can connect to mongodb with URI
+
+`mongodb://luna:crafts@localhost:27017`
+
+3. You can load default mirrorboards seed using command:
+
+`pnpm run seed`
+
 # Components
 
 Mirrorboards consists of several components that work together to provide a comprehensive platform.
