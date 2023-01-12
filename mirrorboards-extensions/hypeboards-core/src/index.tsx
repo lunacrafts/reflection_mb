@@ -1,10 +1,10 @@
 import { ActivityBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
 
-export const HypeboardsCore = () => {
+const HypeboardsCore = () => {
   useActivityBarItem(
     {
       namespace: "hypeboards.core",
-      render: () => <ActivityBarItem>test</ActivityBarItem>,
+      render: () => <ActivityBarItem>hype</ActivityBarItem>,
       meta: {
         placement: "top",
       },

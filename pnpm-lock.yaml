@@ -94,6 +94,33 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
+  mirrorboards-extensions/mirrorboards-core:
+    specifiers:
+      '@mantine/core': ^5.10.0
+      '@mantine/hooks': ^5.10.0
+      '@reflection-layouts/reflection': workspace:*
+      '@types/lodash': ^4.14.191
+      '@types/react': ^18.0.26
+      '@types/react-dom': ^18.0.10
+      lodash: ^4.17.21
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+    dependencies:
+      '@mantine/core': 5.10.0_czzj3t2fwkp7ncd7sfrc23w6gu
+      '@mantine/hooks': 5.10.0_react@18.2.0
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
+      '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
+      '@types/lodash': 4.14.191
+      '@types/react': 18.0.26
+      '@types/react-dom': 18.0.10
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.4
+
   mirrorboards/mirrorboards:
     specifiers:
       '@tanstack/react-query': ^4.20.9
@@ -104,6 +131,7 @@ importers:
       '@types/react-dom': ^18.0.6
       '@vitejs/plugin-react': ^3.0.0
       hypeboards-core: workspace:*
+      mirrorboards-core: workspace:*
       mirrorboards-shell: workspace:*
       narnia-react: workspace:*
       react: ^18.2.0
@@ -115,6 +143,7 @@ importers:
       '@tanstack/react-query': 4.20.9_biqbaboplfbrettd7655fr4n2y
       '@tauri-apps/api': 1.2.0
       hypeboards-core: link:../../mirrorboards-extensions/hypeboards-core
+      mirrorboards-core: link:../../mirrorboards-extensions/mirrorboards-core
       mirrorboards-shell: link:../mirrorboards-shell
       narnia-react: link:../../narnia/narnia-react
       react: 18.2.0
