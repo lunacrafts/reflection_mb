@@ -18,8 +18,20 @@ export const createCommandsSlice: StateCreator<CommandsStore, [], [], CommandsSl
     commands: {
       list: {},
       actions: {
-        register: (namespace, command) => {},
-        unregister: (namespace) => {},
+        register: (namespace, command) => {
+          set(
+            produce<CommandsStore>((state) => {
+              state.commands.list[namespace] = command;
+            })
+          );
+        },
+        unregister: (namespace) => {
+          set(
+            produce<CommandsStore>((state) => {
+              delete state.commands.list[namespace];
+            })
+          );
+        },
       },
     },
   };
