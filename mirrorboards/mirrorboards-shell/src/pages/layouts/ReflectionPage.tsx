@@ -1,8 +1,8 @@
 import {
-  ActivityBarItem,
+  // ActivityBarItem,
   ReflectionLayout,
   ReflectionLayoutProvider,
-  useActivityBarItem,
+  // useActivityBarItem,
 } from "@reflection-layouts/reflection";
 import React from "react";
 
@@ -11,47 +11,47 @@ export const ReflectionPage = () => {
     <div style={{ height: "100%", width: "100%" }}>
       <ReflectionLayoutProvider>
         <ReflectionLayout>
-          <ReflectionLayoutExtensionsA namespace={"icon-A"} placement="top" />
-          <ReflectionLayoutExtensionsB namespace={"icon-B"} placement="top" />
+          {/* <ReflectionLayoutExtensionsA namespace={"icon-A"} placement="top" /> */}
+          {/* <ReflectionLayoutExtensionsB namespace={"icon-B"} placement="top" /> */}
         </ReflectionLayout>
       </ReflectionLayoutProvider>
     </div>
   );
 };
 
-const ReflectionLayoutExtensionsA: React.FC<{ namespace: string; placement: "top" | "bottom" }> = (props) => {
-  const [char, setChar] = React.useState("A");
-  const [hidden, setHidden] = React.useState(false);
+// const ReflectionLayoutExtensionsA: React.FC<{ namespace: string; placement: "top" | "bottom" }> = (props) => {
+//   const [char, setChar] = React.useState("A");
+//   const [hidden, setHidden] = React.useState(false);
 
-  useActivityBarItem(
-    {
-      namespace: props.namespace,
-      render: () => <ActivityBarItem>foo</ActivityBarItem>,
-      meta: {
-        placement: props.placement,
-        hidden: hidden,
-      },
-    },
-    [props.namespace, char, hidden]
-  );
+//   useActivityBarItem(
+//     {
+//       namespace: props.namespace,
+//       render: () => <ActivityBarItem>foo</ActivityBarItem>,
+//       meta: {
+//         placement: props.placement,
+//         hidden: hidden,
+//       },
+//     },
+//     [props.namespace, char, hidden]
+//   );
 
-  return null;
-};
+//   return null;
+// };
 
-const ReflectionLayoutExtensionsB: React.FC<{ namespace: string; placement: "top" | "bottom" }> = (props) => {
-  const [char, setChar] = React.useState("B");
+// const ReflectionLayoutExtensionsB: React.FC<{ namespace: string; placement: "top" | "bottom" }> = (props) => {
+//   const [char, setChar] = React.useState("B");
 
-  useActivityBarItem(
-    {
-      namespace: props.namespace,
-      render: () => <div onClick={() => setChar("D")}>{char}</div>,
-      meta: {
-        placement: "bottom",
-        hidden: false,
-      },
-    },
-    [props.namespace, char]
-  );
+//   useActivityBarItem(
+//     {
+//       namespace: props.namespace,
+//       render: () => <div onClick={() => setChar("D")}>{char}</div>,
+//       meta: {
+//         placement: "bottom",
+//         hidden: false,
+//       },
+//     },
+//     [props.namespace, char]
+//   );
 
-  return null;
-};
+//   return null;
+// };
