@@ -1,12 +1,12 @@
 import { values, chain } from "lodash";
 import { useStore } from "zustand";
-import { ActivityBarItem } from "../types";
+import { StatusBarItem } from "../types";
 import { useReflectionLayoutStore } from "../useReflectionLayoutStore/useReflectionLayoutStore";
 
-export const useActivityBarItems = (filter?: (item: ActivityBarItem) => boolean) => {
+export const useStatusBarItems = (filter?: (item: StatusBarItem) => boolean) => {
   const store = useReflectionLayoutStore();
-  const items = useStore(store, (state) => state.activityBar.items);
-  const renders = useStore(store, (state) => state.activityBar.renders);
+  const items = useStore(store, (state) => state.statusBar.items);
+  const renders = useStore(store, (state) => state.statusBar.renders);
 
   const result = chain(values(items))
     .filter(filter)

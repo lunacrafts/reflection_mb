@@ -7,3 +7,13 @@ export type ActivityBarItem = {
     hidden?: boolean
   }
 }
+
+export type StatusBarItem = {
+  namespace: string
+  render: () => JSX.Element
+  meta: {
+    placement: 'left' | 'right'
+    order?: number
+    hidden?: boolean
+  }
+}

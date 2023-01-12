@@ -1,6 +1,7 @@
 import { Box, createStyles, DefaultProps, Selectors, useComponentDefaultProps } from "@mantine/core";
 import { PropsWithChildren } from "react";
 import { ActivityBar } from "../ActivityBar/ActivityBar";
+import { StatusBar } from "../StatusBar/StatusBar";
 
 export interface ReflectionLayoutStyleParams {
   spacing: number;
@@ -33,7 +34,7 @@ const useStyles = createStyles((theme, { spacing }: ReflectionLayoutStyleParams)
       borderRightStyle: "solid",
       borderRightColor: theme.colors.gray[7],
     },
-    footer: {
+    statusBar: {
       height: spacing,
       borderTopWidth: 1,
       borderTopStyle: "solid",
@@ -69,7 +70,9 @@ export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>
           </Box>
           <Box className={cx(classes.primarySidebar)}></Box>
         </Box>
-        <Box className={cx(classes.footer)}></Box>
+        <Box className={cx(classes.statusBar)}>
+          <StatusBar />
+        </Box>
       </Box>
     </>
   );
