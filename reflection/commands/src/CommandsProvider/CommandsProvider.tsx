@@ -14,7 +14,7 @@ const createCommandsStore = () => {
 
 export const CommandsContext = React.createContext<StoreApi<CommandsStore>>(null!);
 
-export const ReflectionLayoutProvider: React.FC<PropsWithChildren> = (props) => {
+export const CommandsProvider: React.FC<PropsWithChildren> = (props) => {
   const store = React.useRef(createCommandsStore()).current;
 
   return <CommandsContext.Provider value={store}>{props.children}</CommandsContext.Provider>;
