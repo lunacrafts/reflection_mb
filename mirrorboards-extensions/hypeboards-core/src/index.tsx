@@ -1,5 +1,6 @@
 import { ActivityBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
 import { FontAwesomeIcon } from "@reflection/icons";
+import OpenDashboardCommand from "./commands/hypeboards.open-dashboard";
 
 const HypeboardsCore = () => {
   useActivityBarItem(
@@ -17,7 +18,11 @@ const HypeboardsCore = () => {
     []
   );
 
-  return null;
+  return (
+    <>
+      <OpenDashboardCommand />
+    </>
+  );
 };
 
 export default HypeboardsCore;
