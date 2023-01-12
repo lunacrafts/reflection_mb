@@ -34,14 +34,14 @@ const ReflectionLayoutExtensionsA: React.FC<{ namespace: string; placement: "top
 };
 
 const ReflectionLayoutExtensionsB: React.FC<{ namespace: string; placement: "top" | "bottom" }> = (props) => {
-  const [char, setChar] = React.useState("hidden true");
+  const [char, setChar] = React.useState("B");
 
   useActivityBarItem(
     {
       namespace: props.namespace,
       render: () => <div onClick={() => setChar("D")}>{char}</div>,
       meta: {
-        placement: props.placement,
+        placement: "bottom",
         hidden: false,
       },
     },

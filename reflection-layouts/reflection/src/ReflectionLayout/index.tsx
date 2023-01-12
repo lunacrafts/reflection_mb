@@ -1,5 +1,6 @@
 import { Box, createStyles, DefaultProps, Selectors, useComponentDefaultProps } from "@mantine/core";
 import { PropsWithChildren } from "react";
+import { ActivityBar } from "../ActivityBar/ActivityBar";
 
 export interface ReflectionLayoutStyleParams {
   spacing: number;
@@ -63,7 +64,9 @@ export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>
 
       <Box className={cx(classes.root, className)}>
         <Box className={cx(classes.container)}>
-          <Box className={cx(classes.activityBar)}></Box>
+          <Box className={cx(classes.activityBar)}>
+            <ActivityBar />
+          </Box>
           <Box className={cx(classes.primarySidebar)}></Box>
         </Box>
         <Box className={cx(classes.footer)}></Box>
@@ -71,23 +74,3 @@ export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>
     </>
   );
 };
-
-// import { PropsWithChildren } from "react";
-// import { useActivityBarItems } from "../useActivityBarItems";
-
-// export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>> = (props) => {
-//   const activityBarTop = useActivityBarItems((item) => item.meta.placement === "top");
-//   const activityBarBottom = useActivityBarItems((item) => item.meta.placement === "bottom");
-
-//   return (
-//     <>
-//       {props.children}
-
-//       <div>activity bar top</div>
-//       <div>{activityBarTop}</div>
-
-//       <div>activity bar bottom</div>
-//       <div>{activityBarBottom}</div>
-//     </>
-//   );
-// };
