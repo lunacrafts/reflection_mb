@@ -1,11 +1,11 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import HypeboardsCore from "hypeboards-core";
-import MirrorboardsCore from "mirrorboards-core";
 import { MirrorboardsShell, MirrorboardsShellMantineProvider } from "mirrorboards-shell";
 import { NarniaProvider } from "narnia-react";
 import React from "react";
-import { ExtensionProvider } from "@reflection/extension";
 import { env } from "./env";
+
+import { extension } from "mirrorboards-core";
+import { ReflectionExtensionProvider } from "@reflection/extension";
 
 function App() {
   const [queryClient] = React.useState(
@@ -24,12 +24,13 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <MirrorboardsShellMantineProvider>
           <MirrorboardsShell>
-            <ExtensionProvider namespace={"mirrorboards.core"}>
+            <ReflectionExtensionProvider extension={extension}>{extension.component}</ReflectionExtensionProvider>
+            {/* <ExtensionProvider namespace={"mirrorboards.core"}>
               <MirrorboardsCore />
             </ExtensionProvider>
             <ExtensionProvider namespace={"hypeboards.core"}>
               <HypeboardsCore />
-            </ExtensionProvider>
+            </ExtensionProvider> */}
           </MirrorboardsShell>
         </MirrorboardsShellMantineProvider>
       </QueryClientProvider>

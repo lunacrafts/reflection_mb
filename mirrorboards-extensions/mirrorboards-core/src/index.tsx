@@ -1,10 +1,11 @@
+import React from "react";
+import { ReflectionExtension } from "@reflection/extension";
+import { FontAwesomeIcon } from "@reflection/icons";
 import { ActivityBarItem, StatusBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
 import { useStatusBarItem } from "@reflection-layouts/reflection";
-import { FontAwesomeIcon } from "@reflection/icons";
-import React from "react";
 
 const MirrorboardsCore = () => {
-  const [mirrorboard] = React.useState({
+  const [mirrorboard, setMirrorboard] = React.useState({
     name: "Hypeboard!",
   });
 
@@ -26,7 +27,11 @@ const MirrorboardsCore = () => {
   useStatusBarItem(
     {
       namespace: "mirrorboards.core.currentMirrorboard",
-      render: () => <StatusBarItem tooltip="Switch Mirrorboard">{mirrorboard.name}</StatusBarItem>,
+      render: () => (
+        <StatusBarItem tooltip="Switch Mirrorboard">
+          <div onClick={() => setMirrorboard({ name: "Switched!" })}>{mirrorboard.name}</div>
+        </StatusBarItem>
+      ),
       meta: {
         placement: "left",
       },
@@ -67,4 +72,7 @@ const MirrorboardsCore = () => {
   return null;
 };
 
-export default MirrorboardsCore;
+export const extension = new ReflectionExtension({
+  scope: "mirrorboards.core",
+  component: <MirrorboardsCore />,
+});
