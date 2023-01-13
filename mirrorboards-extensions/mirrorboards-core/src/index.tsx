@@ -1,75 +1,19 @@
-import React from "react";
 import { ReflectionExtension } from "@reflection/extension";
-import { FontAwesomeIcon } from "@reflection/icons";
-import { ActivityBarItem, StatusBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
-import { useStatusBarItem } from "@reflection-layouts/reflection";
+import { CurrentMirrorboardStatusBar } from "./extensions/currentMirroboard.statusBar";
+import { NotificationsStatusBar } from "./extensions/notifications.statusBar";
+import { ToggleFullscreenStatusBar } from "./extensions/toggleFullscreen.statusBar";
+import { SettingsModule } from "./pages/settings/settings.module";
 
 const MirrorboardsCore = () => {
-  const [mirrorboard, setMirrorboard] = React.useState({
-    name: "Hypeboard!",
-  });
+  return (
+    <>
+      <SettingsModule />
 
-  useActivityBarItem(
-    {
-      namespace: "mirrorboards.core.settings",
-      render: () => (
-        <ActivityBarItem tooltip={"Settings"}>
-          <FontAwesomeIcon icon={"cog"} color={"white"} fontSize={17} />
-        </ActivityBarItem>
-      ),
-      meta: {
-        placement: "bottom",
-      },
-    },
-    []
+      <CurrentMirrorboardStatusBar />
+      <NotificationsStatusBar />
+      <ToggleFullscreenStatusBar />
+    </>
   );
-
-  useStatusBarItem(
-    {
-      namespace: "mirrorboards.core.currentMirrorboard",
-      render: () => (
-        <StatusBarItem tooltip="Switch Mirrorboard">
-          <div onClick={() => setMirrorboard({ name: "Switched!" })}>{mirrorboard.name}</div>
-        </StatusBarItem>
-      ),
-      meta: {
-        placement: "left",
-      },
-    },
-    [mirrorboard]
-  );
-
-  useStatusBarItem(
-    {
-      namespace: "mirrorboards.core.notifications",
-      render: () => (
-        <StatusBarItem tooltip="Notifications">
-          <FontAwesomeIcon icon={"bell"} color={"white"} />
-        </StatusBarItem>
-      ),
-      meta: {
-        placement: "right",
-      },
-    },
-    []
-  );
-
-  useStatusBarItem(
-    {
-      namespace: "mirrorboards.core.toggleFullScreen",
-      render: () => (
-        <StatusBarItem tooltip="Toggle Full Screen">
-          <FontAwesomeIcon icon={"expand"} color={"white"} />
-        </StatusBarItem>
-      ),
-      meta: {
-        placement: "right",
-      },
-    },
-    []
-  );
-
-  return null;
 };
 
 const extension = new ReflectionExtension({
