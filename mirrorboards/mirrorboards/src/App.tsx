@@ -4,6 +4,7 @@ import MirrorboardsCore from "mirrorboards-core";
 import { MirrorboardsShell, MirrorboardsShellMantineProvider } from "mirrorboards-shell";
 import { NarniaProvider } from "narnia-react";
 import React from "react";
+import { ExtensionProvider } from "@reflection/extension";
 import { env } from "./env";
 
 function App() {
@@ -23,8 +24,12 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <MirrorboardsShellMantineProvider>
           <MirrorboardsShell>
-            <MirrorboardsCore />
-            <HypeboardsCore />
+            <ExtensionProvider namespace={"mirrorboards.core"}>
+              <MirrorboardsCore />
+            </ExtensionProvider>
+            <ExtensionProvider namespace={"hypeboards.core"}>
+              <HypeboardsCore />
+            </ExtensionProvider>
           </MirrorboardsShell>
         </MirrorboardsShellMantineProvider>
       </QueryClientProvider>

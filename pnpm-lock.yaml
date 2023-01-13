@@ -129,6 +129,7 @@ importers:
 
   mirrorboards/mirrorboards:
     specifiers:
+      '@reflection/extension': workspace:*
       '@tanstack/react-query': ^4.20.9
       '@tauri-apps/api': ^1.2.0
       '@tauri-apps/cli': ^1.2.2
@@ -146,6 +147,7 @@ importers:
       vite: ^4.0.0
       zod: ^3.20.2
     dependencies:
+      '@reflection/extension': link:../../reflection/extension
       '@tanstack/react-query': 4.20.9_biqbaboplfbrettd7655fr4n2y
       '@tauri-apps/api': 1.2.0
       hypeboards-core: link:../../mirrorboards-extensions/hypeboards-core
@@ -388,6 +390,7 @@ importers:
       '@emotion/react': ^11.10.5
       '@mantine/core': ^5.10.0
       '@mantine/hooks': ^5.10.0
+      '@reflection/extension': workspace:*
       '@types/lodash': ^4.14.191
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.10
@@ -402,6 +405,7 @@ importers:
       '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
       '@mantine/core': 5.10.0_lbfixegkxal6rwioqxubxet6s4
       '@mantine/hooks': 5.10.0_react@18.2.0
+      '@reflection/extension': link:../extension
       immer: 9.0.17
       lodash: 4.17.21
       react: 18.2.0
@@ -409,6 +413,23 @@ importers:
       zustand: 4.2.0_immer@9.0.17+react@18.2.0
     devDependencies:
       '@types/lodash': 4.14.191
+      '@types/react': 18.0.26
+      '@types/react-dom': 18.0.10
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.4
+
+  reflection/extension:
+    specifiers:
+      '@types/react': ^18.0.26
+      '@types/react-dom': ^18.0.10
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
       tsconfig: link:../../packages/tsconfig

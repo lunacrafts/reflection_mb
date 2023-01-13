@@ -1,8 +1,8 @@
 import { registerCommand } from "@reflection/commands";
 
 const OpenDashboardCommand = () => {
-  registerCommand({
-    namespace: "hypeboards.open-dashboard",
+  registerCommand("open-dashboard", {
+    namespace: "title",
   });
 
   return null;
