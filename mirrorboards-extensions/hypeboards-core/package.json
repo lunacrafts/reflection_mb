@@ -16,6 +16,7 @@
     "@types/react-dom": "^18.0.10",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.4",
+    "@reflection/extension": "workspace:*",
     "@reflection/icons": "workspace:*",
     "@reflection/commands": "workspace:*",
     "@reflection-layouts/reflection": "workspace:*"

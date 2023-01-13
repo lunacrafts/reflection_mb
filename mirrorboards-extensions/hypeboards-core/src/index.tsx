@@ -1,5 +1,6 @@
-import { ActivityBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
+import { ReflectionExtension } from "@reflection/extension";
 import { FontAwesomeIcon } from "@reflection/icons";
+import { ActivityBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
 import OpenDashboardCommand from "./commands/hypeboards.open-dashboard";
 
 const HypeboardsCore = () => {
@@ -18,11 +19,12 @@ const HypeboardsCore = () => {
     []
   );
 
-  return (
-    <>
-      <OpenDashboardCommand />
-    </>
-  );
+  return <OpenDashboardCommand />;
 };
 
-export default HypeboardsCore;
+const extension = new ReflectionExtension({
+  scope: "hypeboards.core",
+  component: <HypeboardsCore />,
+});
+
+export default extension;

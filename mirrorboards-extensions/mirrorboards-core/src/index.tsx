@@ -72,7 +72,9 @@ const MirrorboardsCore = () => {
   return null;
 };
 
-export const extension = new ReflectionExtension({
+const extension = new ReflectionExtension({
   scope: "mirrorboards.core",
   component: <MirrorboardsCore />,
 });
+
+export default extension;

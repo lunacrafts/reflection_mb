@@ -1,8 +1,8 @@
 import React from "react";
-import { ExtensionContext } from "../ExtensionProvider/ExtensionProvider";
+import { ReflectionExtensionContext } from "../ReflectionExtensionProvider/ReflectionExtensionProvider";
 
 export const useExtension = () => {
-  const context = React.useContext(ExtensionContext);
+  const context = React.useContext(ReflectionExtensionContext);
 
   if (!context) {
     throw new Error("ExtensionContext not found");

@@ -73,6 +73,7 @@ importers:
       '@mantine/hooks': ^5.10.0
       '@reflection-layouts/reflection': workspace:*
       '@reflection/commands': workspace:*
+      '@reflection/extension': workspace:*
       '@reflection/icons': workspace:*
       '@types/lodash': ^4.14.191
       '@types/react': ^18.0.26
@@ -91,6 +92,7 @@ importers:
     devDependencies:
       '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
       '@reflection/commands': link:../../reflection/commands
+      '@reflection/extension': link:../../reflection/extension
       '@reflection/icons': link:../../reflection/icons
       '@types/lodash': 4.14.191
       '@types/react': 18.0.26

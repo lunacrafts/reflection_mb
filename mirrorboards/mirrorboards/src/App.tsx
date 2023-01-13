@@ -3,9 +3,10 @@ import { MirrorboardsShell, MirrorboardsShellMantineProvider } from "mirrorboard
 import { NarniaProvider } from "narnia-react";
 import React from "react";
 import { env } from "./env";
-
-import { extension } from "mirrorboards-core";
 import { ReflectionExtensionProvider } from "@reflection/extension";
+
+import MirrorboardsCore from "mirrorboards-core";
+import HypeboardsCore from "hypeboards-core";
 
 function App() {
   const [queryClient] = React.useState(
@@ -24,13 +25,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <MirrorboardsShellMantineProvider>
           <MirrorboardsShell>
-            <ReflectionExtensionProvider extension={extension}>{extension.component}</ReflectionExtensionProvider>
-            {/* <ExtensionProvider namespace={"mirrorboards.core"}>
-              <MirrorboardsCore />
-            </ExtensionProvider>
-            <ExtensionProvider namespace={"hypeboards.core"}>
-              <HypeboardsCore />
-            </ExtensionProvider> */}
+            <ReflectionExtensionProvider extension={MirrorboardsCore} />
+            <ReflectionExtensionProvider extension={HypeboardsCore} />
           </MirrorboardsShell>
         </MirrorboardsShellMantineProvider>
       </QueryClientProvider>
