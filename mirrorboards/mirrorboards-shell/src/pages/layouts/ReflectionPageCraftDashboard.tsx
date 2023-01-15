@@ -1,3 +1,5 @@
+import { CraftLayout } from "@reflection-layouts/craft";
+
 export const ReflectionPageCraftDashboard = () => {
-  return <div>foooo</div>;
+  return <CraftLayout />;
 };
