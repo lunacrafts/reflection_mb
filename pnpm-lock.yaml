@@ -186,6 +186,7 @@ importers:
       '@emotion/react': ^11.10.5
       '@mantine/core': ^5.10.0
       '@mantine/hooks': ^5.10.0
+      '@reflection-layouts/craft': workspace:*
       '@reflection-layouts/reflection': workspace:*
       '@tanstack/react-location': ^3.7.4
       '@tanstack/react-location-devtools': ^3.4.4
@@ -199,6 +200,7 @@ importers:
       '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
       '@mantine/core': 5.10.0_lbfixegkxal6rwioqxubxet6s4
       '@mantine/hooks': 5.10.0_react@18.2.0
+      '@reflection-layouts/craft': link:../../reflection-layouts/craft
       '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
       '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
       '@tanstack/react-location-devtools': 3.4.4_cjlhpxbqypkcyqswf5hjvxhobu

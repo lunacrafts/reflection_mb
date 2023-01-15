@@ -21,6 +21,7 @@
     "@mantine/core": "^5.10.0",
     "@mantine/hooks": "^5.10.0",
     "@reflection-layouts/reflection": "workspace:*",
+    "@reflection-layouts/craft": "workspace:*",
     "@tanstack/react-location": "^3.7.4",
     "@tanstack/react-location-devtools": "^3.4.4",
     "react": "^18.2.0",
