@@ -1,23 +1,17 @@
-import { ActivityBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
-import { FontAwesomeIcon } from "@reflection/icons";
+import { ReflectionExtension } from "@reflection/extension";
+import { DashboardPage } from "./pages/dashboard/dashboard.page";
 
 const HypeboardsCore = () => {
-  useActivityBarItem(
-    {
-      namespace: "hypeboards.core",
-      render: () => (
-        <ActivityBarItem tooltip={"Hypeboards"}>
-          <FontAwesomeIcon icon={"square-h"} color={"white"} fontSize={20} />
-        </ActivityBarItem>
-      ),
-      meta: {
-        placement: "top",
-      },
-    },
-    []
+  return (
+    <>
+      <DashboardPage />
+    </>
   );
-
-  return null;
 };
 
-export default HypeboardsCore;
+const extension = new ReflectionExtension({
+  scope: "hypeboards.core",
+  component: <HypeboardsCore />,
+});
+
+export default extension;

@@ -20,6 +20,9 @@ const useStyles = createStyles((theme, { spacing }: ReflectionLayoutStyleParams)
       flexDirection: "row",
       display: "flex",
     },
+    content: {
+      flexGrow: 1,
+    },
     activityBar: {
       width: spacing * 2,
       height: "100%",
@@ -53,19 +56,16 @@ export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>
   const { classes, cx } = useStyles({ spacing }, { name: "ReflectionLayout", classNames, styles, unstyled });
 
   return (
-    <>
-      {props.children}
-
-      <Box className={cx(classes.root, className)}>
-        <Box className={cx(classes.container)}>
-          <Box className={cx(classes.activityBar)}>
-            <ActivityBar />
-          </Box>
+    <Box className={cx(classes.root, className)}>
+      <Box className={cx(classes.container)}>
+        <Box className={cx(classes.activityBar)}>
+          <ActivityBar />
         </Box>
-        <Box className={cx(classes.statusBar)}>
-          <StatusBar />
-        </Box>
+        <Box className={cx(classes.content)}>{props.children}</Box>
       </Box>
-    </>
+      <Box className={cx(classes.statusBar)}>
+        <StatusBar />
+      </Box>
+    </Box>
   );
 };
