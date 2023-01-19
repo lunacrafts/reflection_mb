@@ -1,3 +1,17 @@
+// export type SlotPayload =
+
+
+
+// export type Breakpoints = {
+//   lg?: BreakpointsList;
+//   md?: BreakpointsList;
+//   sm?: BreakpointsList;
+//   xs?: BreakpointsList;
+//   xxs?: BreakpointsList;
+// };
+
+// export type BreakpointsList = [number, number, number, number];
+
 export type SlotDimensions = {
   x: number
   y: number
@@ -5,8 +19,7 @@ export type SlotDimensions = {
   h: number
 }
 
-export type Slot = {
-  namespace: string
+export type SlotBreakpoints = {
   breakpoints: {
     lg: SlotDimensions
     md: SlotDimensions
@@ -15,3 +28,5 @@ export type Slot = {
     xxs: SlotDimensions
   }
 }
+
+export type Slot = SlotBreakpoints;
