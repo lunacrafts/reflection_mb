@@ -1,10 +1,13 @@
 import React, { PropsWithChildren } from "react";
 import { createStore, StoreApi } from "zustand";
+import { createSlotsSlice, SlotsSlice } from "./store/createSlotsSlice";
 
-export type CraftLayoutStore = {};
+export type CraftLayoutStore = SlotsSlice;
 
 const createCraftLayoutStore = () => {
-  return createStore<CraftLayoutStore>()(() => ({}));
+  return createStore<CraftLayoutStore>()((...a) => ({
+    ...createSlotsSlice(...a),
+  }));
 };
 
 export const CraftLayoutContext = React.createContext<StoreApi<CraftLayoutStore>>(null!);

@@ -14,9 +14,7 @@ const useStyles = createStyles(() => {
 
 type CraftLayoutStylesNames = Selectors<typeof useStyles>;
 
-export interface CraftLayoutProps extends DefaultProps<CraftLayoutStylesNames, CraftLayoutStyleParams> {
-  spacing?: number;
-}
+export interface CraftLayoutProps extends DefaultProps<CraftLayoutStylesNames, CraftLayoutStyleParams> {}
 
 const defaultProps: Partial<CraftLayoutProps> = {};
 
