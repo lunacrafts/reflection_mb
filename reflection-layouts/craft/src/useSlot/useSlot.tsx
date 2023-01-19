@@ -1,10 +1,10 @@
 import React from "react";
 import { useStore } from "zustand";
-import { CraftLayoutContext } from "../CraftLayoutProvider/CraftLayoutProvider";
 import { Slot } from "../types";
+import { useCraftLayoutStore } from "../useCraftLayoutStore/useCraftLayoutStore";
 
 export const useSlot = (namespace: string, slot: Slot) => {
-  const store = React.useContext(CraftLayoutContext);
+  const store = useCraftLayoutStore();
   const { register, unregister } = useStore(store, (state) => state.slots.actions);
 
   React.useEffect(() => {
