@@ -2,11 +2,8 @@ import dotenv from 'dotenv';
 import express from 'express';
 import logger from 'morgan';
 import debug from 'debug';
-
-// Routes
 import auth from './auth/auth.routes';
 
-// Service
 dotenv.config();
 
 const log = debug('auth');
