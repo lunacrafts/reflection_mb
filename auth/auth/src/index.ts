@@ -1,10 +1,7 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import logger from 'morgan';
 import debug from 'debug';
-import auth from './auth/auth.routes';
-
-dotenv.config();
+import auth from './routes/auth/auth.routes';
 
 const log = debug('auth');
 const app = express();
