@@ -3,8 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "auth/*",
+    "luna/*",
+    "docker-seed/*",
+    "mirrorboards/*",
+    "mirrorboards-extensions/*",
+    "narnia/*",
+    "narnia-routers/*",
+    "packages/*",
+    "reflection/*",
+    "reflection-layouts/*"
   ],
   "scripts": {
     "build": "turbo run build",
