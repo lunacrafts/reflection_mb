@@ -22,6 +22,10 @@ app.use('/api/trpc', trpcExpress.createExpressMiddleware({ router }));
 app.use('/docs/swagger', swaggerUi.serve);
 app.get('/docs/swagger', swaggerUi.setup(openApiDocument));
 
+app.use('/', (req, res) => {
+  res.redirect('/docs/swagger');
+});
+
 app.listen(4000, () => {
   log('Listening on 4000');
 });
