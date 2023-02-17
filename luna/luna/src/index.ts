@@ -18,8 +18,8 @@ const app = express();
 
 app.use(logger('dev'));
 
-app.use('/api', createOpenApiExpressMiddleware({ router }));
 app.use('/api/trpc', trpcExpress.createExpressMiddleware({ router }));
+app.use('/api', createOpenApiExpressMiddleware({ router }));
 
 app.use('/docs/swagger', swaggerUi.serve);
 app.get('/docs/swagger', swaggerUi.setup(openApiDocument));

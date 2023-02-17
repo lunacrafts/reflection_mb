@@ -326,7 +326,6 @@ importers:
       '@types/react-dom': 18.0.10
       eslint: 8.31.0
       eslint-config-next: 13.0.0_iukboom6ndih5an6iafl45j2fe
-      luna: link:../../luna/luna
       luna-sdk: link:../../luna/luna-sdk
       mirrorboards-sdk: link:../../narnia-routers/mirrorboards-sdk
       mirrorboards-trpc: link:../../narnia-routers/mirrorboards-trpc
@@ -345,6 +344,7 @@ importers:
       zod: 3.20.2
     devDependencies:
       '@types/swagger-ui-react': 4.11.0
+      luna: link:../../luna/luna
 
   narnia/narnia-react:
     specifiers:

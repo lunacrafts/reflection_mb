@@ -4,7 +4,7 @@ import { TRPCError } from "@trpc/server";
 import { t } from '../../../../trpc';
 
 const input = z.object({
-  token: z.string().nullable(),
+  token: z.string(),
   authenticator: z.string()
 });
 
@@ -13,9 +13,24 @@ const output = z.object({
 });
 
 export const fetchAuthenticator = t.router({
-  fetchAuthenticator: t.procedure.input(input).output(output).query(async ({ }) => {
-    throw new TRPCError({
-      code: 'UNAUTHORIZED'
+  fetchAuthenticator: t.procedure.input(input).output(output)
+    .meta({
+      openapi: {
+        method: 'GET',
+        path: '/authenticators/fetch-authenticator',
+      }
     })
-  })
+    .query(async ({ }) => {
+      return {
+        authenticators: {
+          id: 'authenticator_id',
+          provider: 'facebook',
+          token: 'authenticator_issued_facebook_token'
+        }
+      }
+
+      // throw new TRPCError({
+      //   code: 'UNAUTHORIZED'
+      // })
+    })
 });

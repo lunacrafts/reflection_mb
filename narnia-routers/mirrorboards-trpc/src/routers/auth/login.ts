@@ -20,6 +20,16 @@ export const login = t.router({
       }
     })
     .query(async ({ ctx }) => {
+      try {
+        const authenticator = await ctx.fetchAuthenticator({
+          authenticator: '123'
+        });
+
+        console.log(authenticator);
+      } catch (e) {
+        console.log(e);
+      }
+
       return {
         account: {
           id: 'luna_id',
