@@ -8,7 +8,7 @@ export type WithLuna = {
 
 export const withLuna = t.procedure.use(async ({ next, ctx }) => {
   const luna = container.resolve<Luna>(Luna);
-  await luna.initialize();
+  await luna._initialize();
 
   return next({
     ctx: {
