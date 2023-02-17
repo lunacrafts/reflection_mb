@@ -3,4 +3,4 @@ import { router as luna } from './luna/luna.router';
 
 export const router = t.mergeRouters(luna)
 
-export type AppRouter = typeof router;
+export type LunaRouter = typeof router;

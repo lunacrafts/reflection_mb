@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3004",
+    "dev": "next dev --port 3456",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,19 +21,25 @@
     "@types/react-dom": "18.0.10",
     "eslint": "8.31.0",
     "eslint-config-next": "13.0.0",
+    "mirrorboards-sdk": "workspace:*",
+    "mirrorboards-trpc": "workspace:*",
+    "narnia-trpc": "workspace:*",
+    "narnia-trpc-context": "workspace:*",
     "next": "13.0.0",
     "next-transpile-modules": "^10.0.0",
     "nextjs-cors": "^2.1.2",
+    "luna-sdk": "workspace:*",
+    "openai-sdk": "workspace:*",
+    "openai-trpc": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "swagger-ui-react": "4.16.0-alpha.1",
+    "trpc-openapi": "^1.1.2",
     "typescript": "4.9.4",
-    "zod": "^3.20.2",
-    "narnia-trpc": "workspace:*",
-    "narnia-trpc-context": "workspace:*",
-    "openai-sdk": "workspace:*",
-    "openai-trpc": "workspace:*"
+    "zod": "^3.20.2"
   },
   "devDependencies": {
+    "@types/swagger-ui-react": "^4.11.0",
     "luna": "workspace:*"
   }
 }

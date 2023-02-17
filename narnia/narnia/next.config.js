@@ -1,4 +1,14 @@
-const withTM = require("next-transpile-modules")(["narnia-trpc", "luna-trpc", "narnia-trpc-context", "openai-sdk", "openai-trpc"]);
+const withTM = require("next-transpile-modules")(
+  [
+    "luna-sdk",
+    "narnia-trpc",
+    "narnia-trpc-context",
+    "openai-sdk",
+    "openai-trpc",
+    "mirrorboards-sdk",
+    "mirrorboards-trpc"
+  ]
+);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

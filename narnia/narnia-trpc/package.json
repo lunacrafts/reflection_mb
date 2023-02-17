@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@trpc/server": "^10.7.0",
+    "mirrorboards-trpc": "workspace:*",
+    "narnia-trpc-context": "workspace:*",
     "openai-trpc": "workspace:*",
-    "narnia-trpc-context": "workspace:*"
+    "trpc-openapi": "^1.1.2"
   },
   "devDependencies": {
     "luna": "workspace:*",

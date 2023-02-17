@@ -7,7 +7,8 @@
     "dev": "ts-node-dev --respawn src/index.ts",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "keywords": [],
   "author": "",
@@ -18,12 +19,15 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
+    "luna-sdk": "workspace:*",
     "mongodb": "^5.0.1",
+    "mongoose": "^6.9.2",
     "morgan": "^1.10.0",
+    "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.6.0",
     "trpc-openapi": "^1.1.2",
-    "zod": "^3.20.2",
-    "luna-sdk": "workspace:*"
+    "tsyringe": "^4.7.0",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
