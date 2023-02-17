@@ -2,7 +2,7 @@ import { TRPCError } from '@trpc/server';
 import { withLuna } from './withLuna.procedure';
 
 export type WithSession = {
-  account: {
+  account?: {
     email: string
   }
 }
@@ -10,9 +10,17 @@ export type WithSession = {
 export const withSession = withLuna.use(async ({ next, ctx }) => {
   const { luna } = ctx;
 
-  return next({
-    ctx: {
+  if (false) {
+    return next({
+      ctx: {
+        account: {
+          email: 'lunacrafts@protonmail.com'
+        }
+      }
+    });
+  }
 
-    }
+  throw new TRPCError({
+    code: 'UNAUTHORIZED'
   });
 });

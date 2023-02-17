@@ -1,4 +1,7 @@
 import dotenv from 'dotenv';
+dotenv.config();
+
+import 'reflect-metadata';
 import express from 'express';
 import logger from 'morgan';
 import debug from 'debug';
@@ -9,7 +12,6 @@ import { router } from './router';
 import { createOpenApiExpressMiddleware } from 'trpc-openapi';
 import { openApiDocument } from './openapi';
 
-dotenv.config();
 
 const log = debug('auth');
 const app = express();
