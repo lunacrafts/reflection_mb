@@ -1,3 +1,3 @@
-import * as OpenAI from './schemas';
+import * as Mirrorboards from './schemas';
 
-export { OpenAI }
+export { Mirrorboards }

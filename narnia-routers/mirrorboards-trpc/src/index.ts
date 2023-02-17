@@ -1,6 +1,6 @@
-import social from './routers/social';
 import t from './trpc';
+import { router as auth } from './routers/auth/auth.router';
 
-export const router = t.mergeRouters(social);
+export const router = t.router({ auth });
 
-export type OpenAIRouter = typeof router;
+export type MirrorboardsRouter = typeof router;
