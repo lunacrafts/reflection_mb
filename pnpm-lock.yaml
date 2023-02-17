@@ -241,6 +241,7 @@ importers:
       '@trpc/server': ^10.7.0
       mirrorboards-sdk: workspace:*
       narnia-trpc-context: workspace:*
+      trpc-openapi: ^1.1.2
       tsconfig: workspace:*
       typescript: ^4.6.3
       zod: ^3.20.2
@@ -248,6 +249,7 @@ importers:
       '@trpc/server': 10.7.0
       mirrorboards-sdk: link:../mirrorboards-sdk
       narnia-trpc-context: link:../../narnia/narnia-trpc-context
+      trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm
       zod: 3.20.2
     devDependencies:
       tsconfig: link:../../packages/tsconfig
@@ -296,6 +298,7 @@ importers:
       eslint: 8.31.0
       eslint-config-next: 13.0.0
       luna: workspace:*
+      luna-sdk: workspace:*
       mirrorboards-sdk: workspace:*
       mirrorboards-trpc: workspace:*
       narnia-trpc: workspace:*
@@ -323,6 +326,8 @@ importers:
       '@types/react-dom': 18.0.10
       eslint: 8.31.0
       eslint-config-next: 13.0.0_iukboom6ndih5an6iafl45j2fe
+      luna: link:../../luna/luna
+      luna-sdk: link:../../luna/luna-sdk
       mirrorboards-sdk: link:../../narnia-routers/mirrorboards-sdk
       mirrorboards-trpc: link:../../narnia-routers/mirrorboards-trpc
       narnia-trpc: link:../narnia-trpc
@@ -340,7 +345,6 @@ importers:
       zod: 3.20.2
     devDependencies:
       '@types/swagger-ui-react': 4.11.0
-      luna: link:../../luna/luna
 
   narnia/narnia-react:
     specifiers:
@@ -392,11 +396,13 @@ importers:
 
   narnia/narnia-trpc-context:
     specifiers:
+      '@trpc/client': ^10.7.0
       '@trpc/server': ^10.7.0
       luna: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.3
     dependencies:
+      '@trpc/client': 10.7.0_@trpc+server@10.7.0
       '@trpc/server': 10.7.0
     devDependencies:
       luna: link:../../luna/luna

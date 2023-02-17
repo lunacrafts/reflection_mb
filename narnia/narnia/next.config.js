@@ -1,5 +1,6 @@
 const withTM = require("next-transpile-modules")(
   [
+    "luna-sdk",
     "narnia-trpc",
     "narnia-trpc-context",
     "openai-sdk",

@@ -8,4 +8,4 @@ const Home: NextPage = () => {
   return <SwaggerUI url="/api/openapi.json" />;
 };
 
-export default Home; p
+export default Home;

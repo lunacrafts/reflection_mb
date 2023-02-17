@@ -12,9 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@trpc/server": "^10.7.0",
-    "zod": "^3.20.2",
     "mirrorboards-sdk": "workspace:*",
-    "narnia-trpc-context": "workspace:*"
+    "narnia-trpc-context": "workspace:*",
+    "trpc-openapi": "^1.1.2",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "tsconfig": "workspace:*",

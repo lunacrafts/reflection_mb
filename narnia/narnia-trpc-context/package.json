@@ -11,6 +11,7 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
+    "@trpc/client": "^10.7.0",
     "@trpc/server": "^10.7.0"
   },
   "devDependencies": {

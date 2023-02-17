@@ -9,12 +9,22 @@ const output = z.object({
 });
 
 export const login = t.router({
-  login: t.procedure.input(input).output(output).query(async ({ ctx }) => {
-    return {
-      account: {
-        id: 'luna_id',
-        email: 'lunacrafts@protonmail.com'
+  login: t.procedure.input(input).output(output)
+    .meta({
+      openapi: {
+        method: 'GET',
+        path: '/mirrorboards/auth/login',
+        protect: true,
+        description: 'Issue Luna JWT token',
+        tags: ['mirrorboards']
       }
-    }
-  })
+    })
+    .query(async ({ ctx }) => {
+      return {
+        account: {
+          id: 'luna_id',
+          email: 'lunacrafts@protonmail.com'
+        }
+      }
+    })
 });
