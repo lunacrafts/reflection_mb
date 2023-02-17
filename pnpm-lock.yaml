@@ -223,6 +223,34 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
+  narnia-routers/mirrorboards-sdk:
+    specifiers:
+      tsconfig: workspace:*
+      typescript: ^4.6.3
+      zod: ^3.20.2
+    dependencies:
+      zod: 3.20.2
+    devDependencies:
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.5
+
+  narnia-routers/mirrorboards-trpc:
+    specifiers:
+      '@trpc/server': ^10.7.0
+      mirrorboards-sdk: workspace:*
+      narnia-trpc-context: workspace:*
+      tsconfig: workspace:*
+      typescript: ^4.6.3
+      zod: ^3.20.2
+    dependencies:
+      '@trpc/server': 10.7.0
+      mirrorboards-sdk: link:../mirrorboards-sdk
+      narnia-trpc-context: link:../../narnia/narnia-trpc-context
+      zod: 3.20.2
+    devDependencies:
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.5
+
   narnia-routers/openai-sdk:
     specifiers:
       tsconfig: workspace:*
@@ -333,12 +361,14 @@ importers:
     specifiers:
       '@trpc/server': ^10.7.0
       luna: workspace:*
+      mirrorboards-trpc: workspace:*
       narnia-trpc-context: workspace:*
       openai-trpc: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.3
     dependencies:
       '@trpc/server': 10.7.0
+      mirrorboards-trpc: link:../../narnia-routers/mirrorboards-trpc
       narnia-trpc-context: link:../narnia-trpc-context
       openai-trpc: link:../../narnia-routers/openai-trpc
     devDependencies:

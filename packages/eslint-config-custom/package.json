@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
+  },
   "dependencies": {
     "eslint": "^7.23.0",
     "eslint-config-next": "13.0.0",

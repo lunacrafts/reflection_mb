@@ -1,22 +1,23 @@
 {
-  "name": "mongodb-seed",
-  "version": "1.0.0",
+  "name": "mirrorboards-trpc",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "ts-node src/index.ts",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "keywords": [],
   "author": "lunacrafts",
   "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^18.13.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
-  },
   "dependencies": {
-    "mongodb": "^5.0.1"
+    "@trpc/server": "^10.7.0",
+    "zod": "^3.20.2",
+    "mirrorboards-sdk": "workspace:*",
+    "narnia-trpc-context": "workspace:*"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "typescript": "^4.6.3"
   }
 }
