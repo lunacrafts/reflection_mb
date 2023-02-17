@@ -1,5 +1,4 @@
 packages:
-  - "auth/*"
   - "luna/*"
   - "docker-seed/*"
   - "mirrorboards/*"
