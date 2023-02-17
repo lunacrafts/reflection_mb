@@ -31,7 +31,9 @@
     "narnia-trpc": "workspace:*",
     "narnia-trpc-context": "workspace:*",
     "openai-sdk": "workspace:*",
-    "openai-trpc": "workspace:*",
-    "luna-trpc": "workspace:*"
+    "openai-trpc": "workspace:*"
+  },
+  "devDependencies": {
+    "luna": "workspace:*"
   }
 }

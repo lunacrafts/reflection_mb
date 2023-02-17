@@ -11,10 +11,10 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
-    "@trpc/server": "^10.7.0",
-    "luna-trpc": "workspace:*"
+    "@trpc/server": "^10.7.0"
   },
   "devDependencies": {
+    "luna": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.6.3"
   }

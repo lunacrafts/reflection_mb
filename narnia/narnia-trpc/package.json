@@ -12,11 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "@trpc/server": "^10.7.0",
-    "luna-trpc": "workspace:*",
     "openai-trpc": "workspace:*",
     "narnia-trpc-context": "workspace:*"
   },
   "devDependencies": {
+    "luna": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.6.3"
   }

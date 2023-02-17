@@ -1,7 +1,4 @@
-import dotenv from 'dotenv'
 import { z } from 'zod';
-
-dotenv.config();
 
 export const envs = z.object({
   MONGODB_URI: z.string().trim().min(1),
