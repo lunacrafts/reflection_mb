@@ -1,8 +1,7 @@
-import t from "../../trpc";
 import { z } from 'zod';
 import { Luna } from "luna-sdk";
 import { TRPCError } from "@trpc/server";
-import { fetchAuthenticatorsFromExternalAPI } from "./_mock_fetchAuthenticatorsFromExternalApi";
+import { t } from '../../../../trpc';
 
 const input = z.object({
   token: z.string().nullable(),
@@ -15,12 +14,6 @@ const output = z.object({
 
 export const fetchAuthenticators = t.router({
   fetchAuthenticators: t.procedure.input(input).output(output).query(async ({ input }) => {
-    const authenticators = await fetchAuthenticatorsFromExternalAPI(input.token, input.authenticators);
-
-    if (authenticators.length === input.authenticators.length) {
-      return { authenticators }
-    }
-
     throw new TRPCError({
       code: 'UNAUTHORIZED'
     })

@@ -1,6 +1,6 @@
 import { inferAsyncReturnType } from "@trpc/server";
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
-import { router as lunaRouter } from 'luna-trpc';
+import { router as lunaRouter } from 'luna/src/router'
 
 const luna = lunaRouter.createCaller({});
 
@@ -9,10 +9,10 @@ export const createContext = async (opts: CreateNextContextOptions) => {
 
   return {
     fetchAuthenticator: async ({ authenticator }: { authenticator: string }) => {
-      return await luna.auth.fetchAuthenticator({ token, authenticator });
+      return await luna.authenticators.fetchAuthenticator({ token, authenticator });
     },
     fetchAuthenticators: async ({ authenticators }: { authenticators: string[] }) => {
-      return await luna.auth.fetchAuthenticators({ token, authenticators });
+      return await luna.authenticators.fetchAuthenticators({ token, authenticators });
     }
   }
 }

@@ -12,7 +12,20 @@ importers:
       prettier: 2.8.4
       turbo: 1.7.4
 
-  auth/auth:
+  docker-seed/mongodb-seed:
+    specifiers:
+      '@types/node': ^18.13.0
+      mongodb: ^5.0.1
+      ts-node: ^10.9.1
+      typescript: ^4.9.4
+    dependencies:
+      mongodb: 5.0.1
+    devDependencies:
+      '@types/node': 18.13.0
+      ts-node: 10.9.1_j7ujjvgaenksbuonlzvryephbi
+      typescript: 4.9.4
+
+  luna/luna:
     specifiers:
       '@trpc/server': ^10.7.0
       '@types/debug': ^4.1.7
@@ -25,6 +38,7 @@ importers:
       dotenv: ^16.0.3
       express: ^4.18.2
       jsonwebtoken: ^9.0.0
+      luna-sdk: workspace:*
       mongodb: ^5.0.1
       morgan: ^1.10.0
       nodemon: ^2.0.20
@@ -41,6 +55,7 @@ importers:
       dotenv: 16.0.3
       express: 4.18.2
       jsonwebtoken: 9.0.0
+      luna-sdk: link:../luna-sdk
       mongodb: 5.0.1
       morgan: 1.10.0
       swagger-ui-express: 4.6.0_express@4.18.2
@@ -59,72 +74,12 @@ importers:
       ts-node-dev: 2.0.0_4bewfcp2iebiwuold25d6rgcsy
       typescript: 4.9.5
 
-  docker-seed/mongodb-seed:
-    specifiers:
-      mongodb: ^5.0.1
-      ts-node: ^10.9.1
-      typescript: ^4.9.4
-    dependencies:
-      mongodb: 5.0.1
-    devDependencies:
-      ts-node: 10.9.1_typescript@4.9.4
-      typescript: 4.9.4
-
-  luna/luna:
-    specifiers:
-      '@next/font': 13.1.1
-      '@trpc/server': ^10.7.0
-      '@types/node': ^17.0.12
-      '@types/react': 18.0.26
-      '@types/react-dom': 18.0.10
-      eslint: 8.31.0
-      eslint-config-next: 13.0.0
-      luna-trpc: workspace:*
-      next: 13.0.0
-      next-transpile-modules: ^10.0.0
-      nextjs-cors: ^2.1.2
-      react: 18.2.0
-      react-dom: 18.2.0
-      typescript: 4.9.4
-    dependencies:
-      '@next/font': 13.1.1
-      '@trpc/server': 10.7.0
-      '@types/node': 17.0.45
-      '@types/react': 18.0.26
-      '@types/react-dom': 18.0.10
-      eslint: 8.31.0
-      eslint-config-next: 13.0.0_iukboom6ndih5an6iafl45j2fe
-      luna-trpc: link:../luna-trpc
-      next: 13.0.0_biqbaboplfbrettd7655fr4n2y
-      next-transpile-modules: 10.0.0
-      nextjs-cors: 2.1.2_next@13.0.0
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      typescript: 4.9.4
-
   luna/luna-sdk:
     specifiers:
       tsconfig: workspace:*
       typescript: ^4.6.3
       zod: ^3.20.2
     dependencies:
-      zod: 3.20.2
-    devDependencies:
-      tsconfig: link:../../packages/tsconfig
-      typescript: 4.9.4
-
-  luna/luna-trpc:
-    specifiers:
-      '@trpc/server': ^10.7.0
-      luna-sdk: workspace:*
-      openai-sdk: workspace:*
-      tsconfig: workspace:*
-      typescript: ^4.6.3
-      zod: ^3.20.2
-    dependencies:
-      '@trpc/server': 10.7.0
-      luna-sdk: link:../luna-sdk
-      openai-sdk: link:../../narnia-routers/openai-sdk
       zod: 3.20.2
     devDependencies:
       tsconfig: link:../../packages/tsconfig
@@ -303,7 +258,7 @@ importers:
       '@types/react-dom': 18.0.10
       eslint: 8.31.0
       eslint-config-next: 13.0.0
-      luna-trpc: workspace:*
+      luna: workspace:*
       narnia-trpc: workspace:*
       narnia-trpc-context: workspace:*
       next: 13.0.0
@@ -327,7 +282,6 @@ importers:
       '@types/react-dom': 18.0.10
       eslint: 8.31.0
       eslint-config-next: 13.0.0_iukboom6ndih5an6iafl45j2fe
-      luna-trpc: link:../../luna/luna-trpc
       narnia-trpc: link:../narnia-trpc
       narnia-trpc-context: link:../narnia-trpc-context
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
@@ -339,6 +293,8 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.9.4
       zod: 3.20.2
+    devDependencies:
+      luna: link:../../luna/luna
 
   narnia/narnia-react:
     specifiers:
@@ -370,30 +326,30 @@ importers:
   narnia/narnia-trpc:
     specifiers:
       '@trpc/server': ^10.7.0
-      luna-trpc: workspace:*
+      luna: workspace:*
       narnia-trpc-context: workspace:*
       openai-trpc: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.3
     dependencies:
       '@trpc/server': 10.7.0
-      luna-trpc: link:../../luna/luna-trpc
       narnia-trpc-context: link:../narnia-trpc-context
       openai-trpc: link:../../narnia-routers/openai-trpc
     devDependencies:
+      luna: link:../../luna/luna
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
   narnia/narnia-trpc-context:
     specifiers:
       '@trpc/server': ^10.7.0
-      luna-trpc: workspace:*
+      luna: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.3
     dependencies:
       '@trpc/server': 10.7.0
-      luna-trpc: link:../../luna/luna-trpc
     devDependencies:
+      luna: link:../../luna/luna
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
@@ -5085,7 +5041,7 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node/10.9.1_typescript@4.9.4:
+  /ts-node/10.9.1_j7ujjvgaenksbuonlzvryephbi:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -5104,6 +5060,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
+      '@types/node': 18.13.0
       acorn: 8.8.1
       acorn-walk: 8.2.0
       arg: 4.1.3
