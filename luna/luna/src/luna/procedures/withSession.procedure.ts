@@ -1,26 +1,35 @@
 import { TRPCError } from '@trpc/server';
+import { AuthSession } from '../services/auth.service';
+import { serialize } from '../utils/serialize';
 import { withLuna } from './withLuna.procedure';
 
 export type WithSession = {
-  account?: {
-    email: string
-  }
+  user?: AuthSession
 }
 
-export const withSession = withLuna.use(async ({ next, ctx: { luna }, }) => {
-  // if (false) {
-  //   return next({
-  //     ctx: {
-  //       account: {
-  //         email: 'lunacrafts@protonmail.com'
-  //       }
-  //     }
-  //   });
-  // }
+export const withSession = withLuna.use(async ({ next, ctx: { luna, getAuthorizationToken }, }) => {
+  const token = getAuthorizationToken();
 
-  // throw new TRPCError({
-  //   code: 'UNAUTHORIZED'
-  // });
+  if (!token) {
+    throw new TRPCError({
+      code: 'UNAUTHORIZED'
+    });
+  }
 
-  return next();
+  try {
+    const decoded = await luna.services.auth.decodeJWTToken(token);
+    const user = await luna.services.users.findOneByEmail(decoded.email);
+
+    if (user) {
+      return next({
+        ctx: {
+          user: serialize(user)
+        }
+      });
+    }
+  } catch (cause) { }
+
+  throw new TRPCError({
+    code: 'UNAUTHORIZED'
+  });
 });
