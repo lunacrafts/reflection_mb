@@ -1,10 +1,8 @@
 import { TRPCError } from "@trpc/server";
 import { Luna } from "luna-sdk";
-import jwt from 'jsonwebtoken';
 import { z } from "zod";
 import { t } from "../../../../trpc";
 import { withLuna } from "../../../procedures/withLuna.procedure";
-import { envs } from "../../../../envs";
 import { serialize } from "../../../utils/serialize";
 
 const input = z.object({
@@ -44,9 +42,7 @@ export const login = t.router({
       }
 
       const payload = await luna.services.users.extractTokenPayload(user);
-      const token = jwt.sign(payload, envs.JWT_SECRET_KEY, {
-        expiresIn: envs.JWT_EXPIRES_IN,
-      });
+      const token = await luna.services.auth.issueJWTToken(payload);
 
       return {
         token: token,

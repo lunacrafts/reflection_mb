@@ -1,10 +1,10 @@
 import { TRPCError } from '@trpc/server';
-import { AuthSession } from '../services/auth.service';
+import { Luna } from 'luna-sdk';
 import { serialize } from '../utils/serialize';
 import { withLuna } from './withLuna.procedure';
 
 export type WithSession = {
-  user?: AuthSession
+  user?: Luna.User
 }
 
 export const withSession = withLuna.use(async ({ next, ctx: { luna, getAuthorizationToken }, }) => {
