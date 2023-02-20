@@ -22,7 +22,8 @@
     "docker:build": "export COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose build",
     "docker:up": "export COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose up -d",
     "docker:down": "export COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose down",
-    "seed": "cd docker-seed/mongodb-seed && pnpm run seed"
+    "seed": "cd docker-seed/mongodb-seed && pnpm run seed",
+    "graph": "npx turbo build --graph ./graph.png"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

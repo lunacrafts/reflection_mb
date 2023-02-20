@@ -59,3 +59,24 @@ The reflection component contains several sub-components that provide specialize
 - `core`: Contains basic UI components and hooks.
 - `hooks`: Contains specialized hooks for handling commands and the palette.
 - `layouts`: Contains specialized layouts for creating dashboards.
+
+
+# Dependency graph
+
+![Dependency graph](./graph.png)
+
+### tRPC service authentication flow
+
+```mermaid
+  graph TD;
+    Narnia[Narnia tRPC]
+    Luna[Luna tRPC] --> LunaSDK[Luna SDK]
+    Mirrorboards[Mirrorboards tRPC]
+    OpenAI[OpenAI tRPC]
+
+    Narnia --> Mirrorboards
+    Narnia --> OpenAI
+
+    Mirrorboards --> |request authenticator| Luna --> |return authenticator| Mirrorboards
+
+```
