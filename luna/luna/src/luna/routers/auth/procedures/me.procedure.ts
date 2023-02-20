@@ -6,7 +6,7 @@ import { withSession } from "../../../procedures/withSession.procedure";
 const input = z.void();
 
 const output = z.object({
-  account: Luna.Account
+  user: Luna.User
 });
 
 export const me = t.router({
@@ -15,16 +15,10 @@ export const me = t.router({
       openapi: {
         method: 'GET',
         path: '/auth/me',
-        protect: true,
         description: 'Fetch current account',
         tags: ['auth']
       }
-    }).query(() => {
-      return {
-        account: {
-          id: 'luna_id',
-          email: 'lunacrafts@protonmail.com'
-        }
-      }
+    }).query(({ ctx: { user } }) => {
+      return { user }
     })
 })
