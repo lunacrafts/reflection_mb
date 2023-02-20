@@ -1,15 +1,23 @@
-import mongoose from "mongoose";
+import { Db, MongoClient } from "mongodb";
 import { singleton } from "tsyringe";
 
 @singleton()
 export class LunaDatabase {
-  public MONGODB_URI: string;
+  client: MongoClient;
+  db: Db;
 
-  constructor(MONGODB_URI: string) {
-    this.MONGODB_URI = MONGODB_URI;
+  constructor(uri: string, db: string) {
+    this.client = new MongoClient(uri);
+    this.db = this.client.db(db);
   }
 
   async connect() {
-    await mongoose.connect(this.MONGODB_URI);
+    try {
+      await this.client.connect();
+
+      await this.client.db('admin').command({ ping: 1 });
+    } finally {
+      await this.client.close();
+    }
   }
 }

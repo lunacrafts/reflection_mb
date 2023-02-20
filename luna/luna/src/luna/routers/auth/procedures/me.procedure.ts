@@ -6,7 +6,7 @@ import { withSession } from "../../../procedures/withSession.procedure";
 const input = z.void();
 
 const output = z.object({
-  account: Luna.Account
+  // account: Luna.Account
 });
 
 export const me = t.router({
@@ -20,11 +20,6 @@ export const me = t.router({
         tags: ['auth']
       }
     }).query(() => {
-      return {
-        account: {
-          id: 'luna_id',
-          email: 'lunacrafts@protonmail.com'
-        }
-      }
+      return {}
     })
 })
