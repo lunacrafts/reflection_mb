@@ -15,7 +15,7 @@ export const me = t.router({
       openapi: {
         method: 'GET',
         path: '/auth/me',
-        protect: true,
+        // protect: true,
         description: 'Fetch current account',
         tags: ['auth']
       }

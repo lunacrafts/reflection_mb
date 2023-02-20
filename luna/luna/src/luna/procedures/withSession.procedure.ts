@@ -7,20 +7,20 @@ export type WithSession = {
   }
 }
 
-export const withSession = withLuna.use(async ({ next, ctx }) => {
-  const { luna } = ctx;
+export const withSession = withLuna.use(async ({ next, ctx: { luna }, }) => {
+  // if (false) {
+  //   return next({
+  //     ctx: {
+  //       account: {
+  //         email: 'lunacrafts@protonmail.com'
+  //       }
+  //     }
+  //   });
+  // }
 
-  if (false) {
-    return next({
-      ctx: {
-        account: {
-          email: 'lunacrafts@protonmail.com'
-        }
-      }
-    });
-  }
+  // throw new TRPCError({
+  //   code: 'UNAUTHORIZED'
+  // });
 
-  throw new TRPCError({
-    code: 'UNAUTHORIZED'
-  });
+  return next();
 });
