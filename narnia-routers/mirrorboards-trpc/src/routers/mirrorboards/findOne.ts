@@ -24,9 +24,6 @@ export const findOne = t.router({
     .query(async ({ ctx, input }) => {
       const { user } = await ctx.fetchCurrentUser();
 
-      console.log('find one user');
-      console.log(user);
-
       return {
         mirrorboard: {
           id: input.id,

@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
 import { lunaClient } from 'luna-trpc-client';
+import { TRPCError } from '@trpc/server';
 
 const input = z.object({
   email: z.string().email(),
@@ -27,10 +28,14 @@ export const register = t.router({
     .mutation(async ({ ctx, input }) => {
       const { email, password, repeatPassword } = input;
 
-      const { user } = await lunaClient.auth.register.mutate({
-        email, password, repeatPassword,
-      })
+      try {
+        const { user } = await lunaClient.auth.register.mutate({
+          email, password, repeatPassword,
+        })
 
-      return { user }
+        return { user }
+      } catch (error) {
+        throw error;
+      }
     })
 });
