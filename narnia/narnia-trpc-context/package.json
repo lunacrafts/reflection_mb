@@ -12,9 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "@trpc/client": "^10.7.0",
-    "@trpc/server": "^10.7.0"
+    "@trpc/server": "^10.7.0",
+    "cookie": "^0.5.0"
   },
   "devDependencies": {
+    "@types/cookie": "^0.5.1",
     "luna": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.6.3"

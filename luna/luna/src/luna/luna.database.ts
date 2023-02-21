@@ -12,12 +12,6 @@ export class LunaDatabase {
   }
 
   async connect() {
-    try {
-      await this.client.connect();
-
-      await this.client.db('admin').command({ ping: 1 });
-    } finally {
-      await this.client.close();
-    }
+    await this.client.connect();
   }
 }

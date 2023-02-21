@@ -1,6 +1,7 @@
 import t from './trpc';
-import { router as auth } from './routers/auth/auth.router';
 
-export const router = t.router({ auth });
+import { router as mirrorboards } from './routers/mirrorboards/mirrorboards.router';
+
+export const router = t.router({ mirrorboards });
 
 export type MirrorboardsRouter = typeof router;

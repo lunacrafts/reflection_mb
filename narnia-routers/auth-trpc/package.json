@@ -1,5 +1,5 @@
 {
-  "name": "narnia-trpc",
+  "name": "auth-trpc",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.ts",
@@ -12,14 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "@trpc/server": "^10.7.0",
-    "auth-trpc": "workspace:*",
-    "mirrorboards-trpc": "workspace:*",
+    "luna-sdk": "workspace:*",
     "narnia-trpc-context": "workspace:*",
-    "openai-trpc": "workspace:*",
-    "trpc-openapi": "^1.1.2"
+    "trpc-openapi": "^1.1.2",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
-    "luna": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.6.3"
   }

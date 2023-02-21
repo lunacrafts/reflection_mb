@@ -11,7 +11,7 @@ const input = z.object({
 })
 
 const output = z.object({
-  token: z.string(),
+  access_token: z.string(),
   user: Luna.User,
 });
 
@@ -42,10 +42,10 @@ export const login = t.router({
       }
 
       const payload = await luna.services.users.extractTokenPayload(user);
-      const token = await luna.services.auth.issueJWTToken(payload);
+      const access_token = await luna.services.auth.issueJWTToken(payload);
 
       return {
-        token: token,
+        access_token: access_token,
         user: serialize(user),
       }
     })
