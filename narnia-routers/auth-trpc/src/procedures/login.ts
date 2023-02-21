@@ -1,6 +1,8 @@
+import { lunaClient } from 'luna-trpc-client';
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
+import { TRPCError } from "@trpc/server";
 
 const input = z.object({
   email: z.string().email(),
@@ -23,8 +25,19 @@ export const login = t.router({
       }
     })
     .mutation(async ({ ctx, input }) => {
-      const { user } = await ctx.authenticateWithEmailAndPassword(input.email, input.password);
+      const { email, password } = input;
+      const { access_token } = await lunaClient.auth.login.mutate({ email, password });
 
-      return { user };
+      ctx.setAccessToken(access_token);
+
+      if (access_token) {
+        const { user } = await lunaClient.auth.me.query({ access_token });
+
+        return { user };
+      }
+
+      throw new TRPCError({
+        code: 'UNAUTHORIZED'
+      });
     })
 });

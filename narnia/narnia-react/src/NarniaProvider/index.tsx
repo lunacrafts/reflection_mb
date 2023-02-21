@@ -3,7 +3,7 @@ import type { NarniaRouter } from "narnia-trpc";
 import React, { PropsWithChildren } from "react";
 import { QueryClient } from "@tanstack/react-query";
 
-export const trpc = createTRPCReact<NarniaRouter>();
+export const narnia = createTRPCReact<NarniaRouter>();
 
 interface NarniaProviderProps {
   url: string;
@@ -12,7 +12,7 @@ interface NarniaProviderProps {
 
 export const NarniaProvider: React.FC<PropsWithChildren<NarniaProviderProps>> = (props) => {
   const [trpcClient] = React.useState(() => {
-    return trpc.createClient({
+    return narnia.createClient({
       links: [
         httpLink({
           url: props.url,
@@ -25,8 +25,8 @@ export const NarniaProvider: React.FC<PropsWithChildren<NarniaProviderProps>> = 
   });
 
   return (
-    <trpc.Provider client={trpcClient} queryClient={props.queryClient}>
+    <narnia.Provider client={trpcClient} queryClient={props.queryClient}>
       {props.children}
-    </trpc.Provider>
+    </narnia.Provider>
   );
 };

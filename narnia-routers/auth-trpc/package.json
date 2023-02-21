@@ -11,8 +11,11 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
+    "@trpc/client": "^10.7.0",
     "@trpc/server": "^10.7.0",
+    "luna": "workspace:*",
     "luna-sdk": "workspace:*",
+    "luna-trpc-client": "workspace:*",
     "narnia-trpc-context": "workspace:*",
     "trpc-openapi": "^1.1.2",
     "zod": "^3.20.2"

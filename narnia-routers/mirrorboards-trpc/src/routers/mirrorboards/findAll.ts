@@ -5,8 +5,9 @@ import { Mirrorboards } from 'mirrorboards-sdk'
 const input = z.void();
 
 const output = z.object({
-  mirrorboards: z.array(z.any()),
-  user: z.any(),
+  mirrorboards: z.array(z.object({
+    id: z.string()
+  })),
 });
 
 export const findAll = t.router({
@@ -24,8 +25,9 @@ export const findAll = t.router({
       const user = await ctx.fetchCurrentUser();
 
       return {
-        mirrorboards: [],
-        user,
+        mirrorboards: [{
+          id: '123'
+        }],
       }
     })
 });
