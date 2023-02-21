@@ -1,8 +1,9 @@
 import { initTRPC } from "@trpc/server";
+import { OpenApiMeta } from 'trpc-openapi';
+import { NarniaContext } from "narnia-trpc-context";
+
 import { router as mirrorboards } from 'mirrorboards-trpc';
 import { router as openai } from 'openai-trpc';
-import { NarniaContext } from "narnia-trpc-context";
-import { OpenApiMeta } from 'trpc-openapi';
 
 const t = initTRPC.meta<OpenApiMeta>().context<NarniaContext>().create();
 
