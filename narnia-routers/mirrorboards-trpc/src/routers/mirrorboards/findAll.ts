@@ -24,12 +24,8 @@ export const findAll = t.router({
       const user = await ctx.fetchCurrentUser();
 
       return {
-        mirrorboards: [{
-          foo: 'bar'
-        }],
-        user: {
-          ...user,
-        }
+        mirrorboards: [],
+        user,
       }
     })
 });

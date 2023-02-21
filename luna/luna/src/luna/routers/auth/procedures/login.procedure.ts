@@ -37,7 +37,6 @@ export const login = t.router({
       if (!isPasswordMatching) {
         throw new TRPCError({
           code: 'UNAUTHORIZED',
-          message: '123'
         });
       }
 
