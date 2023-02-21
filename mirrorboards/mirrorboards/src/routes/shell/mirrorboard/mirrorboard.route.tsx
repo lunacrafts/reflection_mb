@@ -4,6 +4,6 @@ import { MirrorboardComponent } from "./mirrorboard.component";
 
 export const mirrorboardRoute = new Route({
   getParentRoute: () => shellRoute,
-  path: '/mirrorboard',
+  path: '/mirrorboard/$mirrorboardId',
   component: MirrorboardComponent,
 })

@@ -8,5 +8,3 @@ export const shellRoute = new Route({
   path: '/shell',
   component: ShellComponent
 });
-
-shellRoute.addChildren([mirrorboardRoute]);

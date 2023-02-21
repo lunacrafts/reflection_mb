@@ -1,3 +1,10 @@
+import { useParams } from "@tanstack/react-router"
+import { mirrorboardRoute } from "./mirrorboard.route";
+
 export const MirrorboardComponent = () => {
-  return <div>Mirrorboard</div>
+  const { mirrorboardId } = useParams({
+    from: mirrorboardRoute.id,
+  });
+
+  return <div>Mirrorboard {mirrorboardId}</div>
 }
