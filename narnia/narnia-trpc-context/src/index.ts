@@ -1,5 +1,5 @@
 import { createTRPCProxyClient, httpLink } from "@trpc/client";
-import { inferAsyncReturnType, TRPCError } from "@trpc/server";
+import { inferAsyncReturnType } from "@trpc/server";
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import cookie from 'cookie';
 import type { LunaRouter } from 'luna/src/router'
@@ -16,18 +16,7 @@ export const createContext = async (opts: CreateNextContextOptions) => {
   const access_token = opts.req.cookies['access_token'] ? opts.req.cookies['access_token'] : null;
 
   return {
-    fetchCurrentUser: async () => {
-      if (access_token) {
-        const user = await luna.auth.me.query({ access_token });
-
-        return user;
-      }
-
-      return null;
-    },
-    authenticateWithEmailAndPassword: async (email: string, password: string) => {
-      const { access_token } = await luna.auth.login.mutate({ email, password });
-
+    setAccessToken: async (access_token: string) => {
       const setCookie = cookie.serialize('access_token', access_token, {
         secure: false,
         httpOnly: true,
@@ -36,16 +25,15 @@ export const createContext = async (opts: CreateNextContextOptions) => {
       });
 
       opts.res.setHeader('Set-Cookie', setCookie);
-
+    },
+    fetchCurrentUser: async () => {
       if (access_token) {
-        const { user } = await luna.auth.me.query({ access_token });
+        const user = await luna.auth.me.query({ access_token });
 
-        return { user };
+        return user;
       }
 
-      throw new TRPCError({
-        code: 'UNAUTHORIZED'
-      });
+      return null;
     },
     fetchAuthenticator: async ({ authenticator }: { authenticator: string }) => {
       const res = await luna.authenticators.fetchAuthenticator.query({ token: '123', authenticator });

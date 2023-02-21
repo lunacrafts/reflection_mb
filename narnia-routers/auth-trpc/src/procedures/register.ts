@@ -16,37 +16,31 @@ const luna = createTRPCProxyClient<LunaRouter>({
 const input = z.object({
   email: z.string().email(),
   password: z.string(),
-});
+  repeatPassword: z.string(),
+})
 
 const output = z.object({
   user: Luna.User
 });
 
-export const login = t.router({
-  login: t.procedure.input(input).output(output)
+export const register = t.router({
+  register: t.procedure.input(input).output(output)
     .meta({
       openapi: {
         method: 'POST',
-        path: '/auth/login',
+        path: '/auth/register',
         protect: true,
-        description: 'Authenticate with email and password',
+        description: 'Register with email and password',
         tags: ['auth']
       }
     })
     .mutation(async ({ ctx, input }) => {
-      const { email, password } = input;
-      const { access_token } = await luna.auth.login.mutate({ email, password });
+      const { email, password, repeatPassword } = input;
 
-      ctx.setAccessToken(access_token);
+      const { user } = await luna.auth.register.mutate({
+        email, password, repeatPassword,
+      })
 
-      if (access_token) {
-        const { user } = await luna.auth.me.query({ access_token });
-
-        return { user };
-      }
-
-      throw new TRPCError({
-        code: 'UNAUTHORIZED'
-      });
+      return { user }
     })
 });

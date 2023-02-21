@@ -233,7 +233,9 @@ importers:
 
   narnia-routers/auth-trpc:
     specifiers:
+      '@trpc/client': ^10.7.0
       '@trpc/server': ^10.7.0
+      luna: workspace:*
       luna-sdk: workspace:*
       narnia-trpc-context: workspace:*
       trpc-openapi: ^1.1.2
@@ -241,7 +243,9 @@ importers:
       typescript: ^4.6.3
       zod: ^3.20.2
     dependencies:
+      '@trpc/client': 10.7.0_@trpc+server@10.7.0
       '@trpc/server': 10.7.0
+      luna: link:../../luna/luna
       luna-sdk: link:../../luna/luna-sdk
       narnia-trpc-context: link:../../narnia/narnia-trpc-context
       trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm
