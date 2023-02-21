@@ -4,11 +4,13 @@ import { narnia } from "../../narnia";
 
 export const ShellComponent = () => {
   React.useEffect(() => {
-    console.log('shell!');
+    narnia.auth.login.mutate({
+      email: 'lunacrafts@protonmail.com',
+      password: 'crafts'
+    });
 
-    narnia.openai.social.generateMarketingPersonas.query({
-      count: 1,
-    }).then((res) => {
+    narnia.mirrorboards.mirrorboards.findAll.query().then((res) => {
+      console.log('res');
       console.log(res);
     })
   }, []);
