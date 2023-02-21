@@ -1,4 +1,5 @@
 import { useParams } from "@tanstack/react-router"
+import { narnia } from "narnia-react";
 import { mirrorboardRoute } from "./mirrorboard.route";
 
 export const MirrorboardComponent = () => {
@@ -6,5 +7,9 @@ export const MirrorboardComponent = () => {
     from: mirrorboardRoute.id,
   });
 
-  return <div>Mirrorboard {mirrorboardId}</div>
+  const { data } = narnia.mirrorboards.mirrorboards.findOne.useQuery({
+    id: mirrorboardId
+  });
+
+  return <div>Mirrorboard {mirrorboardId}{JSON.stringify(data?.mirrorboard)}</div>
 }
