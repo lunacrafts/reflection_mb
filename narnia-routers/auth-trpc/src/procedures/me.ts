@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
-import { lunaClient } from 'luna/src/lunaClient';
 
 const input = z.object({
   email: z.string().email(),
@@ -10,7 +9,7 @@ const input = z.object({
 })
 
 const output = z.object({
-  user: Luna.User
+  user: z.null().or(Luna.User)
 });
 
 export const register = t.router({
@@ -18,18 +17,14 @@ export const register = t.router({
     .meta({
       openapi: {
         method: 'POST',
-        path: '/auth/register',
+        path: '/auth/me',
         protect: true,
-        description: 'Register with email and password',
+        description: 'Fetch current user',
         tags: ['auth']
       }
     })
     .mutation(async ({ ctx, input }) => {
-      const { email, password, repeatPassword } = input;
-
-      const { user } = await lunaClient.auth.register.mutate({
-        email, password, repeatPassword,
-      })
+      const { user } = await ctx.fetchCurrentUser();
 
       return { user }
     })

@@ -1,16 +1,7 @@
-import { createTRPCProxyClient, httpLink } from "@trpc/client";
-import { inferAsyncReturnType } from "@trpc/server";
+import { inferAsyncReturnType, TRPCError } from "@trpc/server";
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import cookie from 'cookie';
-import type { LunaRouter } from 'luna/src/router'
-
-const luna = createTRPCProxyClient<LunaRouter>({
-  links: [
-    httpLink({
-      url: 'http://localhost:4000/api/trpc',
-    }),
-  ],
-});
+import { lunaClient } from 'luna/src/lunaClient';
 
 export const createContext = async (opts: CreateNextContextOptions) => {
   const access_token = opts.req.cookies['access_token'] ? opts.req.cookies['access_token'] : null;
@@ -28,20 +19,23 @@ export const createContext = async (opts: CreateNextContextOptions) => {
     },
     fetchCurrentUser: async () => {
       if (access_token) {
-        const user = await luna.auth.me.query({ access_token });
-
-        return user;
+        try {
+          const { user } = await lunaClient.auth.me.query({ access_token });
+          return { user }
+        } catch (e) {
+          return { user: null }
+        }
       }
 
-      return null;
+      return { user: null }
     },
     fetchAuthenticator: async ({ authenticator }: { authenticator: string }) => {
-      const res = await luna.authenticators.fetchAuthenticator.query({ token: '123', authenticator });
+      const res = await lunaClient.authenticators.fetchAuthenticator.query({ token: '123', authenticator });
 
       return res;
     },
     fetchAuthenticators: async ({ authenticators }: { authenticators: string[] }) => {
-      return await luna.authenticators.fetchAuthenticators.query({ token: '123', authenticators });
+      return await lunaClient.authenticators.fetchAuthenticators.query({ token: '123', authenticators });
     }
   }
 }

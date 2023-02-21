@@ -1,17 +1,8 @@
-import { createTRPCProxyClient, httpLink } from "@trpc/client";
-import type { LunaRouter } from 'luna/src/router'
+import { lunaClient } from 'luna/src/lunaClient';
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
 import { TRPCError } from "@trpc/server";
-
-const luna = createTRPCProxyClient<LunaRouter>({
-  links: [
-    httpLink({
-      url: 'http://localhost:4000/api/trpc',
-    }),
-  ],
-});
 
 const input = z.object({
   email: z.string().email(),
@@ -35,12 +26,12 @@ export const login = t.router({
     })
     .mutation(async ({ ctx, input }) => {
       const { email, password } = input;
-      const { access_token } = await luna.auth.login.mutate({ email, password });
+      const { access_token } = await lunaClient.auth.login.mutate({ email, password });
 
       ctx.setAccessToken(access_token);
 
       if (access_token) {
-        const { user } = await luna.auth.me.query({ access_token });
+        const { user } = await lunaClient.auth.me.query({ access_token });
 
         return { user };
       }
