@@ -12,18 +12,6 @@ const output = z.object({
 
 export const generateMarketingPersonas = t.router({
   generateMarketingPersonas: t.procedure.input(input).output(output).query(async ({ ctx }) => {
-
-    const authenticator = await ctx.fetchAuthenticator({
-      authenticator: 'authenticator-id-1',
-    })
-
-    const authenticators = await ctx.fetchAuthenticators({
-      authenticators: ['authenticator-id-1', 'authenticator-id-2']
-    });
-
-    console.log(authenticator);
-    console.log(authenticators);
-
     return {
       items: [
         {
