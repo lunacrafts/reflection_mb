@@ -11,16 +11,17 @@
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "dependencies": {
+    "@reflection/extension": "workspace:*",
     "@tanstack/react-query": "^4.20.9",
+    "@tanstack/react-router": "0.0.1-beta.83",
     "@tauri-apps/api": "^1.2.0",
+    "hypeboards-core": "workspace:*",
+    "mirrorboards-core": "workspace:*",
     "mirrorboards-shell": "workspace:*",
     "narnia-react": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "zod": "^3.20.2",
-    "@reflection/extension": "workspace:*",
-    "mirrorboards-core": "workspace:*",
-    "hypeboards-core": "workspace:*"
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.2.2",
