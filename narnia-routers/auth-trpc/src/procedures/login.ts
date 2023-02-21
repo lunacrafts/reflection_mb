@@ -1,4 +1,4 @@
-import { lunaClient } from 'luna/src/lunaClient';
+import { lunaClient } from 'luna-trpc-client';
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';

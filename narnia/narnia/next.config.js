@@ -1,6 +1,6 @@
 const withTM = require("next-transpile-modules")(
   [
-    "luna",
+    "luna-trpc-client",
     "luna-sdk",
     "narnia-trpc",
     "narnia-trpc-context",

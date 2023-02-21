@@ -1,11 +1,10 @@
 import { createTRPCProxyClient, httpLink } from "@trpc/client";
-import { envs } from "./envs";
-import { LunaRouter } from "./router";
+import type { LunaRouter } from 'luna/src/router';
 
 export const lunaClient = createTRPCProxyClient<LunaRouter>({
   links: [
     httpLink({
-      url: envs.LUNA_TRPC
+      url: 'http://localhost:4000/api/trpc'
     }),
   ],
 });

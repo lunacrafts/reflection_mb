@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
-import { lunaClient } from 'luna/src/lunaClient';
+import { lunaClient } from 'luna-trpc-client';
 
 const input = z.object({
   email: z.string().email(),

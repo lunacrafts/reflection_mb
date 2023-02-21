@@ -1,7 +1,7 @@
 import { inferAsyncReturnType, TRPCError } from "@trpc/server";
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import cookie from 'cookie';
-import { lunaClient } from 'luna/src/lunaClient';
+import { lunaClient } from 'luna-trpc-client';
 
 export const createContext = async (opts: CreateNextContextOptions) => {
   const access_token = opts.req.cookies['access_token'] ? opts.req.cookies['access_token'] : null;
