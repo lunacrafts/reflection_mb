@@ -5,7 +5,7 @@ import { Mirrorboards } from 'mirrorboards-sdk'
 const input = z.void();
 
 const output = z.object({
-  account: Mirrorboards.Account
+  user: Mirrorboards.User
 });
 
 export const login = t.router({
@@ -31,7 +31,7 @@ export const login = t.router({
       }
 
       return {
-        account: {
+        user: {
           id: 'luna_id',
           email: 'lunacrafts@protonmail.com'
         }
