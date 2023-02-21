@@ -24,17 +24,8 @@ export const login = t.router({
       }
     })
     .mutation(async ({ ctx, input }) => {
-      console.log('login procedure!!!!!!');
+      const { user } = await ctx.authenticateWithEmailAndPassword(input.email, input.password);
 
-      const authenticate = await ctx.authenticateWithEmailAndPassword(input.email, input.password);
-      const user = await ctx.fetchCurrentUser();
-
-      if (!user) {
-        throw new TRPCError({
-          code: 'UNAUTHORIZED'
-        });
-      }
-
-      return user;
+      return { user };
     })
 });

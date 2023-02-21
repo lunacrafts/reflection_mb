@@ -2,10 +2,10 @@ import { Outlet } from "@tanstack/react-router"
 import React from "react"
 import { narnia } from "../../narnia";
 
-// narnia.auth.login.mutate({
-//   email: 'lunacrafts@protonmail.com',
-//   password: 'crafts'
-// });
+narnia.auth.login.mutate({
+  email: 'lunacrafts@protonmail.com',
+  password: 'crafts'
+});
 
 narnia.mirrorboards.mirrorboards.findAll.query().then((res) => {
   console.log('res');
