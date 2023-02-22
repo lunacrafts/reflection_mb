@@ -6,7 +6,7 @@ export type WithMirrorboards = {
   mirrorboards?: Mirrorboards
 }
 
-export const withMirrorboards = t.procedure.use(async ({ next, ctx }) => {
+export const withMirrorboards = t.middleware(async ({ next, ctx }) => {
   const mirrorboards = container.resolve<Mirrorboards>(Mirrorboards);
   await mirrorboards._initialize();
 

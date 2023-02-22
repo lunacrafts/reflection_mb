@@ -1,18 +1,18 @@
 import t from "../../../trpc";
 import { z } from 'zod';
 import { Mirrorboards } from 'mirrorboards-sdk'
-import { withCurrentUserProtected } from "narnia-trpc-context";
 import { MirrorboardsServiceDTO } from "../../services/mirrorboards.service.dto";
 import { withMirrorboards } from "../../withMirrorboards.procedure";
+import { withCurrentUserProtected } from "../../withCurrentUserProtected.procedure";
 
-const input = MirrorboardsServiceDTO.create.Mirrorboard;
+const input = MirrorboardsServiceDTO.create.Mirrorboard
 
 const output = z.object({
   mirrorboard: Mirrorboards.Mirrorboard
 });
 
 export const create = t.router({
-  create: withMirrorboards.input(input).output(output)
+  create: withCurrentUserProtected.use(withMirrorboards).input(input).output(output)
     .meta({
       openapi: {
         method: 'POST',
@@ -22,14 +22,12 @@ export const create = t.router({
         tags: ['mirrorboards']
       }
     })
-    .mutation(async ({ ctx: { mirrorboards, currentUser }, input }) => {
-      if (currentUser) {
-        const mirrorboard = await mirrorboards.services.mirrorboards.create(input, currentUser);
-      }
+    .mutation(async ({ ctx: { currentUser, mirrorboards }, input }) => {
+      const mirrorboard = await mirrorboards.services.mirrorboards.create(input, currentUser);
 
       return {
         mirrorboard: {
-          id: input.id + 'optional',
+          id: 'optional-id',
           title: 'Mirrorboard!',
           isPublic: true
         }
