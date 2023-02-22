@@ -1,20 +1,17 @@
 import t from "../../trpc";
 import { z } from 'zod';
 import { Mirrorboards } from 'mirrorboards-sdk'
-import { withCurrentUser } from "narnia-trpc-context";
-import { Luna } from 'luna-sdk';
 
 const input = z.object({
   id: z.string(),
 });
 
 const output = z.object({
-  mirrorboard: Mirrorboards.Mirrorboard,
-  user: Luna.User.nullish()
+  mirrorboard: Mirrorboards.Mirrorboard
 });
 
 export const findOne = t.router({
-  findOne: withCurrentUser.input(input).output(output)
+  findOne: t.procedure.input(input).output(output)
     .meta({
       openapi: {
         method: 'GET',
@@ -25,12 +22,13 @@ export const findOne = t.router({
       }
     })
     .query(async ({ ctx, input }) => {
+      const { user } = await ctx.fetchCurrentUser();
+
       return {
         mirrorboard: {
           id: input.id,
-          title: 'Mirrorboard?'
-        },
-        user: ctx.user
+          title: 'Mirrorboard!'
+        }
       }
     })
 });

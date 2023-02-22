@@ -293,6 +293,7 @@ importers:
   narnia-routers/mirrorboards-trpc:
     specifiers:
       '@trpc/server': ^10.7.0
+      luna-sdk: workspace:*
       mirrorboards-sdk: workspace:*
       narnia-trpc-context: workspace:*
       trpc-openapi: ^1.1.2
@@ -301,6 +302,7 @@ importers:
       zod: ^3.20.2
     dependencies:
       '@trpc/server': 10.7.0
+      luna-sdk: link:../../luna/luna-sdk
       mirrorboards-sdk: link:../mirrorboards-sdk
       narnia-trpc-context: link:../../narnia/narnia-trpc-context
       trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm
@@ -461,6 +463,7 @@ importers:
       '@types/cookie': ^0.5.1
       cookie: ^0.5.0
       luna: workspace:*
+      luna-sdk: workspace:*
       luna-trpc-client: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.3
@@ -468,6 +471,7 @@ importers:
       '@trpc/client': 10.7.0_@trpc+server@10.7.0
       '@trpc/server': 10.7.0
       cookie: 0.5.0
+      luna-sdk: link:../../luna/luna-sdk
       luna-trpc-client: link:../../luna/luna-trpc-client
     devDependencies:
       '@types/cookie': 0.5.1
