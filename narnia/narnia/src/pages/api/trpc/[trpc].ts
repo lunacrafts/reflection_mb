@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import { NextApiRequest, NextApiResponse } from "next";
 import * as trpcNext from "@trpc/server/adapters/next";
 import NextCors from "nextjs-cors";
