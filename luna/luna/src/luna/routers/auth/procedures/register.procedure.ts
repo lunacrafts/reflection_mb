@@ -39,10 +39,9 @@ export const register = t.router({
       }
 
       const user = await luna.services.users.create(input.email, input.password);
-
       if (user) {
         return {
-          user: user,
+          user,
         }
       }
 

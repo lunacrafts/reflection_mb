@@ -1,7 +1,8 @@
+import { ObjectId } from 'mongodb';
 import { z } from 'zod';
 
 export const Authenticator = z.object({
-  id: z.string(),
+  _id: z.instanceof(ObjectId).or(z.string().transform(val => new ObjectId(val))),
   provider: z.enum(['openAI', 'facebook', 'twitter']),
   token: z.string()
 });

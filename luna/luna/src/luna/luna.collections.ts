@@ -1,16 +1,16 @@
 import { Collection } from "mongodb";
 import { inject, injectable } from "tsyringe";
 import { LunaDatabase } from "./luna.database";
-import { User } from "./models/User";
+import { UserModel } from "./models/User.model";
 
 @injectable()
 export class LunaCollections {
-  users: Collection<User>
+  users: Collection<UserModel>
 
   constructor(
     @inject(LunaDatabase) private readonly database: LunaDatabase,
   ) {
-    this.users = this.database.db.collection<User>('users');
+    this.users = this.database.db.collection<UserModel>('users');
     this.users.createIndex({ email: 1 }, { unique: true });
   }
 }

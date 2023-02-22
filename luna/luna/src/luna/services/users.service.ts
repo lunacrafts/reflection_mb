@@ -1,8 +1,7 @@
 import { ObjectId, WithId } from "mongodb";
 import { inject, injectable } from "tsyringe";
 import { LunaCollections } from "../luna.collections";
-import { LunaServices } from "../luna.services";
-import { User } from "../models/User";
+import { UserModel } from "../models/User.model";
 import { CryptoService } from "./crypto.service";
 
 @injectable()
@@ -13,18 +12,12 @@ export class UsersService {
   ) { }
 
   async findOneById(_id: ObjectId) {
-    const doc = await this.collections.users.findOne({
-      _id
-    });
-
+    const doc = await this.collections.users.findOne({ _id });
     return doc;
   }
 
   async findOneByEmail(email: string) {
-    const doc = await this.collections.users.findOne({
-      email: email,
-    });
-
+    const doc = await this.collections.users.findOne({ email });
     return doc;
   }
 
@@ -32,7 +25,6 @@ export class UsersService {
     const encryptedPassword = await this.crypto.encryptPassword(password);
 
     const { insertedId, acknowledged } = await this.collections.users.insertOne({
-      _id: new ObjectId(),
       email: email,
       encryptedPassword: encryptedPassword,
     });
@@ -42,9 +34,9 @@ export class UsersService {
     }
   }
 
-  async extractTokenPayload(user: WithId<User>) {
+  async extractTokenPayload(user: WithId<UserModel>) {
     return {
-      id: user._id.toString(),
+      _id: user._id.toString(),
       email: user.email,
     }
   }

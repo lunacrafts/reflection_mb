@@ -4,7 +4,7 @@ import { envs } from "../../envs";
 import { z } from "zod";
 
 export const JwtPayload = z.object({
-  id: z.string(),
+  _id: z.string(),
   email: z.string().email(),
 });
 

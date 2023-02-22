@@ -265,6 +265,7 @@ importers:
       luna: workspace:*
       luna-sdk: workspace:*
       luna-trpc-client: workspace:*
+      mongodb: ^5.0.1
       narnia-trpc-context: workspace:*
       superjson: ^1.12.2
       trpc-openapi: ^1.1.2
@@ -277,6 +278,7 @@ importers:
       luna: link:../../luna/luna
       luna-sdk: link:../../luna/luna-sdk
       luna-trpc-client: link:../../luna/luna-trpc-client
+      mongodb: 5.0.1
       narnia-trpc-context: link:../../narnia/narnia-trpc-context
       superjson: 1.12.2
       trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm

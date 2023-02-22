@@ -1,8 +1,7 @@
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
-import { lunaClient } from 'luna-trpc-client';
-import { TRPCError } from '@trpc/server';
+import { lunaClient } from '../lunaClient';
 
 const input = z.object({
   email: z.string().email(),
@@ -31,7 +30,7 @@ export const register = t.router({
       try {
         const { user } = await lunaClient.auth.register.mutate({
           email, password, repeatPassword,
-        })
+        });
 
         return { user }
       } catch (error) {

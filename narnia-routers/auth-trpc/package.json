@@ -16,6 +16,7 @@
     "luna": "workspace:*",
     "luna-sdk": "workspace:*",
     "luna-trpc-client": "workspace:*",
+    "mongodb": "^5.0.1",
     "narnia-trpc-context": "workspace:*",
     "superjson": "^1.12.2",
     "trpc-openapi": "^1.1.2",

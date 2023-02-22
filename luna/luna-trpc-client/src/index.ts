@@ -10,3 +10,15 @@ export const lunaClient = createTRPCProxyClient<LunaRouter>({
     }),
   ],
 });
+
+
+export const getLunaClient = () => {
+  return createTRPCProxyClient<LunaRouter>({
+    transformer: superjson,
+    links: [
+      httpLink({
+        url: 'http://localhost:4000/api/trpc'
+      }),
+    ],
+  });
+}
