@@ -16,9 +16,9 @@ export const findOne = t.router({
     .meta({
       openapi: {
         method: 'GET',
-        path: '/mirrorboards/mirrorboards/findOne',
+        path: '/mirrorboards/mirrorboards/create',
         protect: true,
-        description: 'Fetch mirrorboard details',
+        description: 'Create mirrorboard',
         tags: ['mirrorboards']
       }
     })

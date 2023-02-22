@@ -3,11 +3,7 @@ import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
 import { withCurrentUserProtected } from 'narnia-trpc-context';
 
-const input = z.object({
-  email: z.string().email(),
-  password: z.string(),
-  repeatPassword: z.string(),
-})
+const input = z.void();
 
 const output = z.object({
   currentUser: Luna.User
@@ -17,7 +13,7 @@ export const me = t.router({
   me: withCurrentUserProtected.input(input).output(output)
     .meta({
       openapi: {
-        method: 'POST',
+        method: 'GET',
         path: '/auth/me',
         protect: true,
         description: 'Fetch current user',
