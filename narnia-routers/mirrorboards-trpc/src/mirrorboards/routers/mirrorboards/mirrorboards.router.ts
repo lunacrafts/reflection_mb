@@ -1,4 +1,4 @@
-import t from "../../trpc";
+import t from "../../../trpc";
 import { create } from "./create.procedure";
 import { findAll } from "./findAll";
 import { findOne } from "./findOne";

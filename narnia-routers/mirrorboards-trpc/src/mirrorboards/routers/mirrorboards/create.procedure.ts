@@ -1,4 +1,4 @@
-import t from "../../trpc";
+import t from "../../../trpc";
 import { z } from 'zod';
 import { Mirrorboards } from 'mirrorboards-sdk'
 import { withCurrentUserProtected } from "narnia-trpc-context";

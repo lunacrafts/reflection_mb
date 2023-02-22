@@ -295,17 +295,21 @@ importers:
       '@trpc/server': ^10.7.0
       luna-sdk: workspace:*
       mirrorboards-sdk: workspace:*
+      mongodb: ^5.0.1
       narnia-trpc-context: workspace:*
       trpc-openapi: ^1.1.2
       tsconfig: workspace:*
+      tsyringe: ^4.7.0
       typescript: ^4.6.3
       zod: ^3.20.2
     dependencies:
       '@trpc/server': 10.7.0
       luna-sdk: link:../../luna/luna-sdk
       mirrorboards-sdk: link:../mirrorboards-sdk
+      mongodb: 5.0.1
       narnia-trpc-context: link:../../narnia/narnia-trpc-context
       trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm
+      tsyringe: 4.7.0
       zod: 3.20.2
     devDependencies:
       tsconfig: link:../../packages/tsconfig
