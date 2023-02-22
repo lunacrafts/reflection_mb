@@ -1,8 +1,5 @@
-import { ObjectId, WithId } from "mongodb";
-import { inject, injectable } from "tsyringe";
+import { injectable } from "tsyringe";
 import bcrypt from 'bcrypt';
-import { LunaCollections } from "../luna.collections";
-import { User } from "../models/user";
 
 @injectable()
 export class CryptoService {

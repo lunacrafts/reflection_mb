@@ -15,7 +15,8 @@
     "@trpc/server": "^10.7.0",
     "cookie": "^0.5.0",
     "luna-sdk": "workspace:*",
-    "luna-trpc-client": "workspace:*"
+    "luna-trpc-client": "workspace:*",
+    "superjson": "^1.12.2"
   },
   "devDependencies": {
     "@types/cookie": "^0.5.1",

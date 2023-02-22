@@ -1,7 +1,7 @@
 import { Collection } from "mongodb";
 import { inject, injectable } from "tsyringe";
 import { LunaDatabase } from "./luna.database";
-import { User } from "./models/user";
+import { User } from "./models/User";
 
 @injectable()
 export class LunaCollections {

@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { Mirrorboards } from 'mirrorboards-sdk'
 import { withCurrentUser } from "narnia-trpc-context";
 import { Luna } from 'luna-sdk';
+import { ObjectId } from "mongodb";
 
 const input = z.object({
   id: z.string(),
@@ -26,10 +27,11 @@ export const findOne = t.router({
     .query(async ({ ctx: { currentUser }, input }) => {
       return {
         mirrorboard: {
-          id: input.id,
+          _id: new ObjectId(),
           title: 'Mirrorboard?',
           isPublic: true,
           createdBy: {
+            _id: new ObjectId(),
             email: 'foo@bar.pl',
           }
         },

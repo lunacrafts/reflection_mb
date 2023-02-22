@@ -23,8 +23,9 @@ export class MirrorboardsService {
   ) {
     try {
       const { acknowledged, insertedId } = await this.collections.mirrorboards.insertOne({
+        _id: new ObjectId(),
         ...mirrorboard,
-        createdBy
+        createdBy: createdBy,
       });
 
       if (acknowledged) {
