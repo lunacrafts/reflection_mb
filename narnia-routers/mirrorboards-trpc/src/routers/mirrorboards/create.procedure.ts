@@ -4,28 +4,30 @@ import { Mirrorboards } from 'mirrorboards-sdk'
 import { withCurrentUserProtected } from "narnia-trpc-context";
 
 const input = z.object({
-  id: z.string(),
+  id: z.string().nullish(),
+  title: z.string().min(3),
+  isPublic: z.boolean().nullish().default(false),
 });
 
 const output = z.object({
   mirrorboard: Mirrorboards.Mirrorboard
 });
 
-export const findOne = t.router({
-  findOne: withCurrentUserProtected.input(input).output(output)
+export const create = t.router({
+  create: withCurrentUserProtected.input(input).output(output)
     .meta({
       openapi: {
-        method: 'GET',
+        method: 'POST',
         path: '/mirrorboards/mirrorboards/create',
         protect: true,
         description: 'Create mirrorboard',
         tags: ['mirrorboards']
       }
     })
-    .query(async ({ ctx, input }) => {
+    .mutation(async ({ ctx, input }) => {
       return {
         mirrorboard: {
-          id: input.id,
+          id: input.id + 'optional',
           title: 'Mirrorboard!'
         }
       }
