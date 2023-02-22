@@ -14,8 +14,10 @@
     "@trpc/server": "^10.7.0",
     "luna-sdk": "workspace:*",
     "mirrorboards-sdk": "workspace:*",
+    "mongodb": "^5.0.1",
     "narnia-trpc-context": "workspace:*",
     "trpc-openapi": "^1.1.2",
+    "tsyringe": "^4.7.0",
     "zod": "^3.20.2"
   },
   "devDependencies": {
