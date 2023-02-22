@@ -3,7 +3,6 @@ import { Luna } from "luna-sdk";
 import { z } from "zod";
 import { t } from "../../../../trpc";
 import { withLuna } from "../../../procedures/withLuna.procedure";
-import { serialize } from "../../../utils/serialize";
 
 const input = z.object({
   email: z.string().email(),
@@ -45,7 +44,7 @@ export const login = t.router({
 
       return {
         access_token: access_token,
-        user: serialize(user),
+        user: user,
       }
     })
 })

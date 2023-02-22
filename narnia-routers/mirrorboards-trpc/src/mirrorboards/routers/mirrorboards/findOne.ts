@@ -9,8 +9,7 @@ const input = z.object({
 });
 
 const output = z.object({
-  mirrorboard: Mirrorboards.Mirrorboard,
-  currentUser: Luna.User.nullish()
+  mirrorboard: Mirrorboards.Mirrorboard
 });
 
 export const findOne = t.router({
@@ -28,9 +27,12 @@ export const findOne = t.router({
       return {
         mirrorboard: {
           id: input.id,
-          title: 'Mirrorboard?'
+          title: 'Mirrorboard?',
+          isPublic: true,
+          createdBy: {
+            email: 'foo@bar.pl',
+          }
         },
-        currentUser: currentUser
       }
     })
 });
