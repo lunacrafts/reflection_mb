@@ -12,6 +12,6 @@ import { MirrorboardsService } from "./services/mirrorboards.service";
 @singleton()
 export class LunaServices {
   constructor(
-    @inject(MirrorboardsService) public readonly users: MirrorboardsService,
+    @inject(MirrorboardsService) public readonly mirrorboards: MirrorboardsService,
   ) { }
 }
