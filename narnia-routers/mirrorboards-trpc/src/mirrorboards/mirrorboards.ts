@@ -9,7 +9,7 @@ import { LunaServices } from "./mirrorboards.services";
     {
       token: MirrorboardsDatabase,
       useFactory: () => {
-        return new MirrorboardsDatabase(envs.MONGODB_URI, envs.MONGODB_DB_NAME);
+        return new MirrorboardsDatabase(envs.MIRRORBOARDS_MONGODB_URI, envs.MIRRORBOARDS_MONGODB_DB_NAME);
       }
     },
     {

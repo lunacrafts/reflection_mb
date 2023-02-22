@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { openApiDocument } from '../../server/openapi';
