@@ -1,7 +1,8 @@
+import { ObjectId } from 'mongodb';
 import { z } from 'zod';
 
 export const User = z.object({
-  id: z.string(),
+  _id: z.instanceof(ObjectId),
   email: z.string().email(),
 });
 

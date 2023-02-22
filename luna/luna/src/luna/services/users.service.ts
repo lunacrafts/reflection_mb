@@ -2,7 +2,7 @@ import { ObjectId, WithId } from "mongodb";
 import { inject, injectable } from "tsyringe";
 import { LunaCollections } from "../luna.collections";
 import { LunaServices } from "../luna.services";
-import { User } from "../models/user";
+import { User } from "../models/User";
 import { CryptoService } from "./crypto.service";
 
 @injectable()
@@ -32,6 +32,7 @@ export class UsersService {
     const encryptedPassword = await this.crypto.encryptPassword(password);
 
     const { insertedId, acknowledged } = await this.collections.users.insertOne({
+      _id: new ObjectId(),
       email: email,
       encryptedPassword: encryptedPassword,
     });

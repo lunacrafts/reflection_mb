@@ -11,8 +11,9 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
-    "zod": "^3.20.2",
-    "luna-sdk": "workspace:*"
+    "luna-sdk": "workspace:*",
+    "mongodb": "^5.0.1",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "tsconfig": "workspace:*",

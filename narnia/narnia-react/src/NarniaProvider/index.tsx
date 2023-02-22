@@ -1,5 +1,6 @@
 import { createTRPCReact, httpLink } from "@trpc/react-query";
 import type { NarniaRouter } from "narnia-trpc";
+import superjson from 'superjson';
 import React, { PropsWithChildren } from "react";
 import { QueryClient } from "@tanstack/react-query";
 
@@ -13,6 +14,7 @@ interface NarniaProviderProps {
 export const NarniaProvider: React.FC<PropsWithChildren<NarniaProviderProps>> = (props) => {
   const [trpcClient] = React.useState(() => {
     return narnia.createClient({
+      transformer: superjson,
       links: [
         httpLink({
           url: props.url,

@@ -18,9 +18,10 @@
     "@trpc/client": "^10.7.0",
     "@trpc/react-query": "^10.7.0",
     "@trpc/server": "^10.7.0",
+    "narnia-trpc": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "narnia-trpc": "workspace:*"
+    "superjson": "^1.12.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

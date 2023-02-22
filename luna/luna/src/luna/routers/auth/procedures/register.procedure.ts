@@ -3,7 +3,6 @@ import { Luna } from "luna-sdk";
 import { z } from "zod";
 import { t } from "../../../../trpc";
 import { withLuna } from "../../../procedures/withLuna.procedure";
-import { serialize } from "../../../utils/serialize";
 
 const input = z.object({
   email: z.string().email(),
@@ -43,7 +42,7 @@ export const register = t.router({
 
       if (user) {
         return {
-          user: serialize(user),
+          user: user,
         }
       }
 

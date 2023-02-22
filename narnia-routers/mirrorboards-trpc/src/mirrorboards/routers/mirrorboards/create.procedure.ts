@@ -4,6 +4,7 @@ import { Mirrorboards } from 'mirrorboards-sdk'
 import { MirrorboardsServiceDTO } from "../../services/mirrorboards.service.dto";
 import { withMirrorboards } from "../../withMirrorboards.procedure";
 import { withCurrentUserProtected } from "../../withCurrentUserProtected.procedure";
+import { ObjectId } from "mongodb";
 
 const input = MirrorboardsServiceDTO.create.Mirrorboard
 
@@ -27,9 +28,13 @@ export const create = t.router({
 
       return {
         mirrorboard: {
-          id: 'optional-id',
+          _id: new ObjectId(),
           title: 'Mirrorboard!',
-          isPublic: true
+          isPublic: true,
+          createdBy: {
+            email: 'foo@bar.pl',
+            _id: new ObjectId()
+          }
         }
       }
     })

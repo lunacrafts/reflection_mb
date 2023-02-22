@@ -1,6 +1,5 @@
 import { TRPCError } from '@trpc/server';
 import { Luna } from 'luna-sdk';
-import { serialize } from '../utils/serialize';
 import { withLuna } from './withLuna.procedure';
 
 export type WithSession = {
@@ -23,7 +22,7 @@ export const withSession = withLuna.use(async ({ next, ctx: { luna, getAuthoriza
     if (currentUser) {
       return next({
         ctx: {
-          currentUser: serialize(currentUser)
+          currentUser: currentUser
         }
       });
     }

@@ -17,6 +17,7 @@
     "luna-sdk": "workspace:*",
     "luna-trpc-client": "workspace:*",
     "narnia-trpc-context": "workspace:*",
+    "superjson": "^1.12.2",
     "trpc-openapi": "^1.1.2",
     "zod": "^3.20.2"
   },

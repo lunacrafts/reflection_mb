@@ -3,8 +3,6 @@ import { Luna } from "luna-sdk";
 import { z } from "zod";
 import { t } from "../../../../trpc";
 import { withLuna } from "../../../procedures/withLuna.procedure";
-import { withSession } from "../../../procedures/withSession.procedure";
-import { serialize } from "../../../utils/serialize";
 
 const input = z.object({
   access_token: z.string(),
@@ -32,7 +30,7 @@ export const me = t.router({
 
         if (currentUser) {
           return {
-            currentUser: serialize(currentUser),
+            currentUser: currentUser,
           }
         }
       } catch (cause) { }
