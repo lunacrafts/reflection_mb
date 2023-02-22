@@ -29,7 +29,11 @@ export const create = t.router({
         mirrorboard: {
           id: 'optional-id',
           title: 'Mirrorboard!',
-          isPublic: true
+          isPublic: true,
+          createdBy: {
+            email: 'foo@bar.pl',
+            id: '123'
+          }
         }
       }
     })

@@ -1,5 +1,6 @@
 import { Luna } from "luna-sdk";
 import { Mirrorboards } from "mirrorboards-sdk";
+import { ObjectId } from "mongodb";
 import { inject, injectable } from "tsyringe";
 import { z } from "zod";
 import { MirrorboardsCollections } from "../mirrorboards.collections";
@@ -11,13 +12,27 @@ export class MirrorboardsService {
     @inject(MirrorboardsCollections) private readonly collections: MirrorboardsCollections,
   ) { }
 
+  async findOne(_id: ObjectId) {
+    const doc = await this.collections.mirrorboards.findOne({ _id });
+    return doc;
+  }
+
   async create(
     mirrorboard: z.infer<typeof MirrorboardsServiceDTO.create.Mirrorboard>,
     createdBy: Luna.User,
   ) {
-    console.log(mirrorboard);
-    console.log(createdBy);
+    try {
+      const { acknowledged, insertedId } = await this.collections.mirrorboards.insertOne({
+        ...mirrorboard,
+        createdBy
+      });
 
-    // this.collections.mirrorboards.insertOne({ title, isPublic });
+      if (acknowledged) {
+        const doc = await this.findOne(insertedId);
+        return doc;
+      }
+    } catch (e) {
+      console.log(e);
+    }
   }
 }

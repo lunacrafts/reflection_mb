@@ -5,7 +5,7 @@ export const MirrorboardsServiceDTO = {
     Mirrorboard: z.object({
       id: z.string().nullish(),
       title: z.string().min(3),
-      isPublic: z.boolean().nullish().default(false),
+      isPublic: z.boolean().default(false),
     })
   }
 }
