@@ -20,14 +20,14 @@ export const createContext = async (opts: CreateNextContextOptions) => {
     fetchCurrentUser: async () => {
       if (access_token) {
         try {
-          const { user } = await lunaClient.auth.me.query({ access_token });
-          return { user }
+          const { currentUser } = await lunaClient.auth.me.query({ access_token });
+          return { currentUser }
         } catch (e) {
-          return { user: null }
+          return { currentUser: null }
         }
       }
 
-      return { user: null }
+      return { currentUser: null }
     },
     fetchAuthenticator: async ({ authenticator }: { authenticator: string }) => {
       const res = await lunaClient.authenticators.fetchAuthenticator.query({ token: '123', authenticator });

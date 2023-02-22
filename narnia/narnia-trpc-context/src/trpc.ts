@@ -3,7 +3,7 @@ import { Luna } from "luna-sdk"
 import { createContext } from "./createContext";
 
 export type WithCurrentUser = {
-  user?: Luna.User
+  currentUser?: Luna.User
 }
 
 export type NarniaContext = inferAsyncReturnType<typeof createContext> & WithCurrentUser;

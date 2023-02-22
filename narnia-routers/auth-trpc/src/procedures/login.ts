@@ -10,7 +10,7 @@ const input = z.object({
 });
 
 const output = z.object({
-  user: Luna.User
+  currentUser: Luna.User
 });
 
 export const login = t.router({
@@ -31,9 +31,9 @@ export const login = t.router({
       ctx.setAccessToken(access_token);
 
       if (access_token) {
-        const { user } = await lunaClient.auth.me.query({ access_token });
+        const { currentUser } = await lunaClient.auth.me.query({ access_token });
 
-        return { user };
+        return { currentUser };
       }
 
       throw new TRPCError({

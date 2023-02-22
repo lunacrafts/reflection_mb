@@ -22,7 +22,7 @@ export const findAll = t.router({
       }
     })
     .query(async ({ ctx }) => {
-      const user = await ctx.fetchCurrentUser();
+      const { currentUser } = await ctx.fetchCurrentUser();
 
       return {
         mirrorboards: [{

@@ -2,12 +2,12 @@ import { TRPCError } from "@trpc/server"
 import { t } from "./trpc";
 
 export const withCurrentUserProtected = t.procedure.use(async ({ next, ctx }) => {
-  const { user } = await ctx.fetchCurrentUser();
+  const { currentUser } = await ctx.fetchCurrentUser();
 
-  if (user) {
+  if (currentUser) {
     return next({
       ctx: {
-        user: user
+        currentUser: currentUser
       }
     });
   }

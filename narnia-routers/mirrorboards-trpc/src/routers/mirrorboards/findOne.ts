@@ -10,7 +10,7 @@ const input = z.object({
 
 const output = z.object({
   mirrorboard: Mirrorboards.Mirrorboard,
-  user: Luna.User.nullish()
+  currentUser: Luna.User.nullish()
 });
 
 export const findOne = t.router({
@@ -24,13 +24,13 @@ export const findOne = t.router({
         tags: ['mirrorboards']
       }
     })
-    .query(async ({ ctx, input }) => {
+    .query(async ({ ctx: { currentUser }, input }) => {
       return {
         mirrorboard: {
           id: input.id,
           title: 'Mirrorboard?'
         },
-        user: ctx.user
+        currentUser: currentUser
       }
     })
 });

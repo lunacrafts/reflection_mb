@@ -4,7 +4,7 @@ import { serialize } from '../utils/serialize';
 import { withLuna } from './withLuna.procedure';
 
 export type WithSession = {
-  user?: Luna.User
+  currentUser?: Luna.User
 }
 
 export const withSession = withLuna.use(async ({ next, ctx: { luna, getAuthorizationToken }, }) => {
@@ -18,12 +18,12 @@ export const withSession = withLuna.use(async ({ next, ctx: { luna, getAuthoriza
 
   try {
     const decoded = await luna.services.auth.decodeJWTToken(token);
-    const user = await luna.services.users.findOneByEmail(decoded.email);
+    const currentUser = await luna.services.users.findOneByEmail(decoded.email);
 
-    if (user) {
+    if (currentUser) {
       return next({
         ctx: {
-          user: serialize(user)
+          currentUser: serialize(currentUser)
         }
       });
     }

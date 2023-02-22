@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
+import { withCurrentUserProtected } from 'narnia-trpc-context';
 
 const input = z.object({
   email: z.string().email(),
@@ -9,11 +10,11 @@ const input = z.object({
 })
 
 const output = z.object({
-  user: z.null().or(Luna.User)
+  currentUser: Luna.User
 });
 
-export const register = t.router({
-  register: t.procedure.input(input).output(output)
+export const me = t.router({
+  me: withCurrentUserProtected.input(input).output(output)
     .meta({
       openapi: {
         method: 'POST',
@@ -23,9 +24,7 @@ export const register = t.router({
         tags: ['auth']
       }
     })
-    .mutation(async ({ ctx, input }) => {
-      const { user } = await ctx.fetchCurrentUser();
-
-      return { user }
+    .mutation(async ({ ctx: { currentUser }, input }) => {
+      return { currentUser }
     })
 });

@@ -1,6 +1,7 @@
 import t from "../../trpc";
 import { z } from 'zod';
 import { Mirrorboards } from 'mirrorboards-sdk'
+import { withCurrentUserProtected } from "narnia-trpc-context";
 
 const input = z.object({
   id: z.string(),
@@ -11,7 +12,7 @@ const output = z.object({
 });
 
 export const findOne = t.router({
-  findOne: t.procedure.input(input).output(output)
+  findOne: withCurrentUserProtected.input(input).output(output)
     .meta({
       openapi: {
         method: 'GET',
@@ -22,8 +23,6 @@ export const findOne = t.router({
       }
     })
     .query(async ({ ctx, input }) => {
-      const { user } = await ctx.fetchCurrentUser();
-
       return {
         mirrorboard: {
           id: input.id,

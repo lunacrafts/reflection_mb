@@ -11,7 +11,7 @@ const input = z.object({
 })
 
 const output = z.object({
-  user: Luna.User
+  currentUser: Luna.User
 });
 
 export const me = t.router({
@@ -28,11 +28,11 @@ export const me = t.router({
 
       try {
         const decoded = await luna.services.auth.decodeJWTToken(access_token);
-        const user = await luna.services.users.findOneByEmail(decoded.email);
+        const currentUser = await luna.services.users.findOneByEmail(decoded.email);
 
-        if (user) {
+        if (currentUser) {
           return {
-            user: serialize(user),
+            currentUser: serialize(currentUser),
           }
         }
       } catch (cause) { }
