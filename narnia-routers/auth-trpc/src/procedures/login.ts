@@ -26,15 +26,15 @@ export const login = t.router({
     })
     .mutation(async ({ ctx, input }) => {
       const { email, password } = input;
-      const { access_token } = await lunaClient.auth.login.mutate({ email, password });
+      // const { access_token } = await lunaClient.auth.login.mutate({ email, password });
 
-      ctx.setAccessToken(access_token);
+      // ctx.setAccessToken(access_token);
 
-      if (access_token) {
-        const { currentUser } = await lunaClient.auth.me.query({ access_token });
+      // if (access_token) {
+      // const { currentUser } = await lunaClient.auth.me.query({ access_token });
 
-        return { currentUser };
-      }
+      // return { currentUser };
+      // }
 
       throw new TRPCError({
         code: 'UNAUTHORIZED'
