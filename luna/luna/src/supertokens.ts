@@ -32,6 +32,8 @@ supertokens.init({
         }),
       ]
     }),
-    Session.init(),
+    Session.init({
+      getTokenTransferMethod: () => 'header'
+    }),
   ]
 });

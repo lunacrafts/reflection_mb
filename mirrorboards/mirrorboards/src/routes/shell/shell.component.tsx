@@ -1,17 +1,10 @@
 import { Outlet } from "@tanstack/react-router"
 import { narnia } from "narnia-react"
-import React from "react"
-// import { narnia } from "../../narnia";
+import { narniaTrpc } from "../../narnia"
 
-// narnia.auth.login.mutate({
-//   email: 'lunacrafts@protonmail.com',
-//   password: 'crafts'
-// });
-
-// narnia.mirrorboards.mirrorboards.findAll.query().then((res) => {
-//   console.log('res');
-//   console.log(res);
-// })
+narniaTrpc.auth.me.query().then((res) => {
+  console.log(res);
+});
 
 export const ShellComponent = () => {
   const { data } = narnia.mirrorboards.mirrorboards.findAll.useQuery();

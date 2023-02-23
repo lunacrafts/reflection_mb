@@ -6,8 +6,15 @@ export type WithSession = {
   currentUser?: Luna.User
 }
 
-export const withSession = withLuna.use(async ({ next, ctx: { luna, getAuthorizationToken }, }) => {
+export const withSession = withLuna.use(async ({ next, ctx }) => {
+  console.log('WithSession');
+
+  const session = await ctx.getSession();
+
+  console.log(session);
+
   return next();
+
 
   // const token = getAuthorizationToken();
 

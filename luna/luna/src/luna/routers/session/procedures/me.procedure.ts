@@ -3,6 +3,7 @@ import { Luna } from "luna-sdk";
 import { z } from "zod";
 import { t } from "../../../../trpc";
 import { withLuna } from "../../../procedures/withLuna.procedure";
+import { withSession } from "../../../procedures/withSession.procedure";
 
 const input = z.object({
   access_token: z.string(),
@@ -13,7 +14,7 @@ const output = z.object({
 });
 
 export const me = t.router({
-  me: withLuna.input(input).output(output)
+  me: withSession.input(input).output(output)
     .meta({
       openapi: {
         method: 'GET',
@@ -21,5 +22,7 @@ export const me = t.router({
         description: 'Fetch current account',
         tags: ['auth']
       }
-    }).query(async ({ ctx: { luna }, input }) => { })
+    }).query(async ({ ctx: { luna }, input }) => {
+      return {}
+    })
 })

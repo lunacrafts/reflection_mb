@@ -1,9 +1,15 @@
 import { inferAsyncReturnType, TRPCError } from "@trpc/server";
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import cookie from 'cookie';
-import { lunaClient } from 'luna-trpc-client';
+import { getLunaTrpc } from "./lunaTrpc";
 
 export const createContext = async (opts: CreateNextContextOptions) => {
+  const lunaTrpc = getLunaTrpc({
+    headers: {
+      'Authorization': 'Bearer ' + opts.req.cookies['sAccessToken'],
+    }
+  });
+
   const access_token = opts.req.cookies['access_token'] ? opts.req.cookies['access_token'] : null;
 
   return {
@@ -26,6 +32,12 @@ export const createContext = async (opts: CreateNextContextOptions) => {
       //     return { currentUser: null }
       //   }
       // }
+
+      lunaTrpc.session.me.query({
+        access_token: 'foo'
+      }).then((res) => {
+        console.log('lunaTrpc session me res');
+      });
 
       return { currentUser: null }
     },

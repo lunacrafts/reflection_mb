@@ -4,12 +4,9 @@ importers:
 
   .:
     specifiers:
-      dotenv: ^16.0.3
       eslint-config-custom: workspace:*
       prettier: latest
       turbo: latest
-    dependencies:
-      dotenv: 16.0.3
     devDependencies:
       eslint-config-custom: link:packages/eslint-config-custom
       prettier: 2.8.4
@@ -200,6 +197,7 @@ importers:
       '@tanstack/react-router': 0.0.1-beta.83
       '@tauri-apps/api': ^1.2.0
       '@tauri-apps/cli': ^1.2.2
+      '@trpc/react-query': ^10.7.0
       '@types/node': ^18.7.10
       '@types/react': ^18.0.15
       '@types/react-dom': ^18.0.6
@@ -208,8 +206,10 @@ importers:
       mirrorboards-core: workspace:*
       mirrorboards-shell: workspace:*
       narnia-react: workspace:*
+      narnia-trpc: workspace:*
       react: ^18.2.0
       react-dom: ^18.2.0
+      superjson: ^1.12.2
       supertokens-auth-react: ^0.31.1
       supertokens-web-js: ^0.5.0
       typescript: ^4.6.4
@@ -220,12 +220,15 @@ importers:
       '@tanstack/react-query': 4.20.9_biqbaboplfbrettd7655fr4n2y
       '@tanstack/react-router': 0.0.1-beta.83_biqbaboplfbrettd7655fr4n2y
       '@tauri-apps/api': 1.2.0
+      '@trpc/react-query': 10.7.0_hin5uqs2feg5fwcu6eooischsu
       hypeboards-core: link:../../mirrorboards-extensions/hypeboards-core
       mirrorboards-core: link:../../mirrorboards-extensions/mirrorboards-core
       mirrorboards-shell: link:../mirrorboards-shell
       narnia-react: link:../../narnia/narnia-react
+      narnia-trpc: link:../../narnia/narnia-trpc
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      superjson: 1.12.2
       supertokens-auth-react: 0.31.1_zh4rdguscatxykxktv3lwuw3je
       supertokens-web-js: 0.5.0
       zod: 3.20.2
@@ -1994,6 +1997,20 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-ssr-prepass: 1.5.0_react@18.2.0
+    dev: false
+
+  /@trpc/react-query/10.7.0_hin5uqs2feg5fwcu6eooischsu:
+    resolution: {integrity: sha512-dSSmYid6NWocU32QMsH6qWEqnW4mbp7hX01hxsBfAA2mGYD8b4Kgc9ripw4MpPNbsJElJFyWDHfb/UHnhywWbA==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.3.8
+      '@trpc/client': 10.7.0
+      '@trpc/server': 10.7.0
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@tanstack/react-query': 4.20.9_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@trpc/react-query/10.7.0_voi52uzzn4btzulk52fuvwecw4:

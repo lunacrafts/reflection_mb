@@ -20,7 +20,7 @@ export const me = t.router({
         tags: ['auth']
       }
     })
-    .mutation(async ({ ctx: { currentUser }, input }) => {
+    .query(async ({ ctx: { currentUser }, input }) => {
       return { currentUser }
     })
 });
