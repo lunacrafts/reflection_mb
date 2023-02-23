@@ -35,3 +35,5 @@ yarn-error.log*
 # local
 /auth/auth/.env
 vite.config.ts.timestamp-*
+
+.env
