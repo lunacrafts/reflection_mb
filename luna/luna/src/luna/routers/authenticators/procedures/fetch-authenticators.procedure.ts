@@ -9,13 +9,9 @@ const input = z.object({
 });
 
 const output = z.object({
-  authenticators: z.array(Luna.Authenticator),
+  // authenticators: z.array(Luna.Authenticator),
 });
 
 export const fetchAuthenticators = t.router({
-  fetchAuthenticators: t.procedure.input(input).output(output).query(async ({ input }) => {
-    throw new TRPCError({
-      code: 'UNAUTHORIZED'
-    })
-  })
+  fetchAuthenticators: t.procedure.input(input).output(output).query(async ({ input }) => { })
 });

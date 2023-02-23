@@ -3,18 +3,19 @@ import Dashboard from "supertokens-node/recipe/dashboard";
 import Session from "supertokens-node/recipe/session";
 import ThirdPartyEmailPassword from "supertokens-node/recipe/thirdpartyemailpassword";
 import UserMetadata from "supertokens-node/recipe/usermetadata";
+import { envs } from './envs';
 
 const { Github } = ThirdPartyEmailPassword;
 
 supertokens.init({
   framework: 'express',
   supertokens: {
-    connectionURI: 'http://localhost:3567'
+    connectionURI: envs.SUPERTOKENS_API_URL
   },
   appInfo: {
     appName: 'mirrorboards',
-    apiDomain: 'http://localhost:4000',
-    websiteDomain: 'http://localhost:3000',
+    apiDomain: envs.LUNA_API_URL,
+    websiteDomain: envs.LUNA_WEBSITE_URL,
     apiBasePath: '/api/auth',
     websiteBasePath: '/auth'
   },
@@ -26,9 +27,8 @@ supertokens.init({
     ThirdPartyEmailPassword.init({
       providers: [
         Github({
-          clientId: 'c31deb67851c32a3aec7',
-          clientSecret: 'd710223fc1953d1a9682682a305c6a7725a0c627',
-          scope: ['user']
+          clientId: envs.OAUTH_GITHUB_CLIENT_ID,
+          clientSecret: envs.OAUTH_GITHUB_CLIENT_SECRET
         }),
       ]
     }),

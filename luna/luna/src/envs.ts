@@ -1,13 +1,31 @@
 import { z } from 'zod';
 
+const notEmptyString = z.string().trim().min(1);
+
+const {
+  LUNA_API_URL,
+  LUNA_WEBSITE_URL,
+  MONGODB_URI,
+  MONGODB_DB_NAME,
+  SUPERTOKENS_API_URL,
+  OAUTH_GITHUB_CLIENT_ID,
+  OAUTH_GITHUB_CLIENT_SECRET,
+} = process.env;
+
 export const envs = z.object({
-  MONGODB_URI: z.string().trim().min(1),
-  MONGODB_DB_NAME: z.string().trim().min(1),
-  JWT_SECRET_KEY: z.string(),
-  JWT_EXPIRES_IN: z.string().or(z.number())
+  LUNA_API_URL: notEmptyString,
+  LUNA_WEBSITE_URL: notEmptyString,
+  MONGODB_URI: notEmptyString,
+  MONGODB_DB_NAME: notEmptyString,
+  SUPERTOKENS_API_URL: notEmptyString,
+  OAUTH_GITHUB_CLIENT_ID: notEmptyString,
+  OAUTH_GITHUB_CLIENT_SECRET: notEmptyString,
 }).parse({
-  MONGODB_URI: process.env.MONGODB_URI,
-  MONGODB_DB_NAME: process.env.MONGODB_DB_NAME,
-  JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
-  JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN
+  LUNA_API_URL,
+  LUNA_WEBSITE_URL,
+  MONGODB_URI,
+  MONGODB_DB_NAME,
+  SUPERTOKENS_API_URL,
+  OAUTH_GITHUB_CLIENT_ID,
+  OAUTH_GITHUB_CLIENT_SECRET,
 });

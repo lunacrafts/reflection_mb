@@ -7,28 +7,31 @@ export type WithSession = {
 }
 
 export const withSession = withLuna.use(async ({ next, ctx: { luna, getAuthorizationToken }, }) => {
-  const token = getAuthorizationToken();
+  return next();
 
-  if (!token) {
-    throw new TRPCError({
-      code: 'UNAUTHORIZED'
-    });
-  }
+  // const token = getAuthorizationToken();
 
-  try {
-    const decoded = await luna.services.auth.decodeJWTToken(token);
-    const currentUser = await luna.services.users.findOneByEmail(decoded.email);
+  // if (!token) {
+  //   throw new TRPCError({
+  //     code: 'UNAUTHORIZED'
+  //   });
+  // }
 
-    if (currentUser) {
-      return next({
-        ctx: {
-          currentUser: currentUser
-        }
-      });
-    }
-  } catch (cause) { }
+  // try {
+  //   const decoded = await luna.services.auth.decodeJWTToken(token);
+  //   const currentUser = await luna.services.users.findOneByEmail(decoded.email);
 
-  throw new TRPCError({
-    code: 'UNAUTHORIZED'
-  });
+  //   if (currentUser) {
+  //     return next({
+  //       ctx: {
+  //         currentUser: currentUser
+  //       }
+  //     });
+  //   }
+  // } catch (cause) { }
+
+  // throw new TRPCError({
+  //   code: 'UNAUTHORIZED'
+  // });
+
 });

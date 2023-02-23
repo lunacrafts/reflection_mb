@@ -10,7 +10,7 @@ const input = z.object({
 });
 
 const output = z.object({
-  authenticators: Luna.Authenticator,
+  // authenticators: Luna.Authenticator,
 });
 
 export const fetchAuthenticator = t.router({
@@ -21,17 +21,5 @@ export const fetchAuthenticator = t.router({
         path: '/authenticators/fetch-authenticator',
       }
     })
-    .query(async ({ }) => {
-      return {
-        authenticators: {
-          _id: new ObjectId(),
-          provider: 'facebook',
-          token: 'authenticator_issued_facebook_token'
-        }
-      }
-
-      // throw new TRPCError({
-      //   code: 'UNAUTHORIZED'
-      // })
-    })
+    .query(async ({ }) => { })
 });

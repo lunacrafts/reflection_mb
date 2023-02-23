@@ -9,7 +9,7 @@ const input = z.object({
 })
 
 const output = z.object({
-  currentUser: Luna.User
+  // currentUser: Luna.User
 });
 
 export const me = t.router({
@@ -21,22 +21,5 @@ export const me = t.router({
         description: 'Fetch current account',
         tags: ['auth']
       }
-    }).query(async ({ ctx: { luna }, input }) => {
-      const { access_token } = input;
-
-      try {
-        const decoded = await luna.services.auth.decodeJWTToken(access_token);
-        const currentUser = await luna.services.users.findOneByEmail(decoded.email);
-
-        if (currentUser) {
-          return {
-            currentUser: currentUser,
-          }
-        }
-      } catch (cause) { }
-
-      throw new TRPCError({
-        code: 'UNAUTHORIZED'
-      });
-    })
+    }).query(async ({ ctx: { luna }, input }) => { })
 })
