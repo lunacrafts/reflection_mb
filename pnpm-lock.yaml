@@ -505,22 +505,30 @@ importers:
       '@trpc/client': ^10.7.0
       '@trpc/server': ^10.7.0
       '@types/cookie': ^0.5.1
+      '@types/jsonwebtoken': ^9.0.1
       cookie: ^0.5.0
+      jsonwebtoken: ^9.0.0
+      jwks-rsa: ^3.0.1
       luna: workspace:*
       luna-sdk: workspace:*
       luna-trpc-client: workspace:*
       superjson: ^1.12.2
+      supertokens-node: ^13.1.0
       tsconfig: workspace:*
       typescript: ^4.6.3
     dependencies:
       '@trpc/client': 10.7.0_@trpc+server@10.7.0
       '@trpc/server': 10.7.0
       cookie: 0.5.0
+      jsonwebtoken: 9.0.0
+      jwks-rsa: 3.0.1
       luna-sdk: link:../../luna/luna-sdk
       luna-trpc-client: link:../../luna/luna-trpc-client
       superjson: 1.12.2
+      supertokens-node: 13.1.0
     devDependencies:
       '@types/cookie': 0.5.1
+      '@types/jsonwebtoken': 9.0.1
       luna: link:../../luna/luna
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4

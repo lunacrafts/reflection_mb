@@ -8,6 +8,8 @@ export type LunaContext = WithLuna & WithSession & inferAsyncReturnType<typeof c
 
 export const createContext = async ({ req, res }: trpcExpress.CreateExpressContextOptions) => {
   const getSession = async () => {
+    console.log('get session');
+    console.log(req.headers);
     const session = await Session.getSession(req, res, {
       sessionRequired: false,
     });
