@@ -26,6 +26,7 @@
     "jwks-rsa": "^3.0.1",
     "luna-sdk": "workspace:*",
     "mongodb": "^5.0.1",
+    "mongoose": "^6.10.0",
     "morgan": "^1.10.0",
     "reflect-metadata": "^0.1.13",
     "superjson": "^1.12.2",

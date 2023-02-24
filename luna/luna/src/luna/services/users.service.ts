@@ -1,19 +1,23 @@
 import { ObjectId, WithId } from "mongodb";
 import { inject, injectable } from "tsyringe";
-import { LunaCollections } from "../luna.collections";
-import { UserModel } from "../models/User.model";
+import { LunaModels } from "../luna.models";
 
 @injectable()
 export class UsersService {
   constructor(
-    @inject(LunaCollections) private readonly collections: LunaCollections,
+    @inject(LunaModels) private readonly models: LunaModels,
   ) { }
 
   async findOneById(_id: ObjectId) { }
 
   async findOneByEmail(email: string) { }
 
-  async create(email: string, password: string) { }
+  async create(id: string, email: string) {
+    const user = new this.models.User({ id, email });
+    const doc = await user.save();
 
-  async extractTokenPayload(user: WithId<UserModel>) { }
+    return doc;
+  }
+
+  async extractTokenPayload() { }
 }

@@ -3,7 +3,9 @@ import Dashboard from "supertokens-node/recipe/dashboard";
 import Session from "supertokens-node/recipe/session";
 import ThirdPartyEmailPassword from "supertokens-node/recipe/thirdpartyemailpassword";
 import UserMetadata from "supertokens-node/recipe/usermetadata";
+import { container } from 'tsyringe';
 import { envs } from './envs';
+import { Luna } from './luna/luna';
 
 const { Github } = ThirdPartyEmailPassword;
 
@@ -39,9 +41,13 @@ supertokens.init({
               const response = await originalImplementation.emailPasswordSignUp(input);
 
               if (response.status === 'OK') {
-                await UserMetadata.updateUserMetadata(response.user.id, {
-                  email: response.user.email,
-                });
+                const { id, email } = response.user;
+
+                await UserMetadata.updateUserMetadata(id, { email });
+
+                const luna = container.resolve<Luna>(Luna);
+                await luna._initialize();
+                await luna.services.users.create(id, email);
               }
 
               return response;
@@ -50,9 +56,13 @@ supertokens.init({
               const response = await originalImplementation.thirdPartySignInUp(input);
 
               if (response.status === 'OK' && response.createdNewUser) {
-                await UserMetadata.updateUserMetadata(response.user.id, {
-                  email: response.user.email,
-                });
+                const { id, email } = response.user;
+
+                await UserMetadata.updateUserMetadata(id, { email });
+
+                const luna = container.resolve<Luna>(Luna);
+                await luna._initialize();
+                await luna.services.users.create(id, email);
               }
 
               return response;
