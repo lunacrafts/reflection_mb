@@ -10,11 +10,19 @@ export const createContext = async (opts: CreateNextContextOptions) => {
 
       if (!access_token) {
         return new TRPCError({
-          code: 'UNAUTHORIZED'
+          code: 'UNAUTHORIZED',
+          message: 'No access token'
         });
       }
 
-      const payload = await decodeJWTToken(access_token);
+      try {
+        const payload = await decodeJWTToken(access_token);
+        console.log('narnia-trpc-context payload');
+        console.log(payload);
+      } catch (e) {
+        console.log('narnia-trpc-context payload ERROR');
+        console.log(e);
+      }
 
       return {
         _id: '123',

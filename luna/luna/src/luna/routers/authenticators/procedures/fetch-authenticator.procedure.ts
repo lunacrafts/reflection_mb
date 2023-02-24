@@ -1,8 +1,6 @@
 import { z } from 'zod';
 import { Luna } from "luna-sdk";
-import { TRPCError } from "@trpc/server";
 import { t } from '../../../../trpc';
-import { ObjectId } from 'mongodb';
 
 const input = z.object({
   token: z.string(),
@@ -24,7 +22,7 @@ export const fetchAuthenticator = t.router({
     .query(async ({ }) => {
       return {
         authenticators: {
-          _id: new ObjectId(),
+          _id: 'xD',
           provider: 'facebook',
           token: 'authenticator_issued_facebook_token'
         }
