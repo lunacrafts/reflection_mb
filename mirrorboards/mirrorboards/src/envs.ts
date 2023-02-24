@@ -6,7 +6,7 @@ const {
   VITE_NARNIA_TRPC,
   VITE_LUNA_API_URL,
   VITE_LUNA_WEBSITE_URL,
-} = process.env;
+} = import.meta.env;
 
 export const envs = z.object({
   VITE_NARNIA_TRPC: notEmptyString,
