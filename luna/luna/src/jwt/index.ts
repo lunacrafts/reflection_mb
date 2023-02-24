@@ -8,7 +8,7 @@ app.get('/refresh', verifySession(), async (req, res) => {
   // @ts-ignore
   const access_token = req.session.getAccessTokenPayload()["jwt"];
 
-  const setCookie = cookie.serialize('jwt_access_token', access_token, {
+  const setCookie = cookie.serialize('access_token', access_token, {
     secure: false,
     httpOnly: true,
     sameSite: 'lax',
@@ -20,7 +20,7 @@ app.get('/refresh', verifySession(), async (req, res) => {
 });
 
 app.get('/destroy', (req, res) => {
-  res.clearCookie('jwt_access_token').send(200);
+  res.clearCookie('access_token').send(200);
 });
 
 export default app;

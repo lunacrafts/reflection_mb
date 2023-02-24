@@ -1,10 +1,26 @@
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { lunaClient } from 'luna-trpc-client';
+import { decodeJWTToken } from './utils/decodeJWTToken';
+import { TRPCError } from '@trpc/server';
 
 export const createContext = async (opts: CreateNextContextOptions) => {
-  // const access_token = opts.req.cookies['access_token'] ? opts.req.cookies['access_token'] : null;
-
   return {
+    decodeJWTToken: async () => {
+      const access_token = opts.req.cookies['access_token'];
+
+      if (!access_token) {
+        return new TRPCError({
+          code: 'UNAUTHORIZED'
+        });
+      }
+
+      const payload = await decodeJWTToken(access_token);
+
+      return {
+        _id: '123',
+        email: 'decodeJWTToken@foo.pl'
+      }
+    },
     fetchCurrentUser: async () => {
       return { currentUser: null }
     },
