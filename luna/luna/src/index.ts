@@ -21,6 +21,7 @@ import { openApiDocument } from './openapi';
 import { createContext } from './context';
 import { router } from './router';
 import { envs } from './envs';
+import jwt from './jwt';
 
 const log = debug('auth');
 const app = express();
@@ -35,15 +36,16 @@ app.use(logger('dev'));
 
 app.use(supertokensMiddleware());
 
+app.use('/jwt', jwt);
 app.use('/api/trpc', trpcExpress.createExpressMiddleware({ router, createContext }));
 app.use('/api', createOpenApiExpressMiddleware({ router, createContext }));
 
 app.use('/docs/swagger', swaggerUi.serve);
 app.get('/docs/swagger', swaggerUi.setup(openApiDocument));
 
-// app.use('/', (req, res) => {
-//   res.redirect('/docs/swagger');
-// });
+app.use('/', (req, res) => {
+  res.redirect('/docs/swagger');
+});
 
 app.use(supertokensErrorHandler());
 

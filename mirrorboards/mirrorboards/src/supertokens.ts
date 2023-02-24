@@ -2,6 +2,7 @@ import SuperTokens from 'supertokens-auth-react';
 import ThirdPartyEmailPassword, { Apple, Facebook, Github, Google } from 'supertokens-auth-react/recipe/thirdpartyemailpassword';
 import Session from 'supertokens-auth-react/recipe/session';
 import { envs } from './envs';
+import { destroyJWTToken, refreshJWTToken } from './services/jwt.service';
 
 SuperTokens.init({
   appInfo: {
@@ -19,6 +20,25 @@ SuperTokens.init({
         ]
       }
     }),
-    Session.init(),
+    Session.init({
+      postAPIHook: async (context) => {
+        if (context.action === 'REFRESH_SESSION') {
+          await refreshJWTToken();
+        }
+
+        if (context.action === 'SIGN_OUT') {
+          await destroyJWTToken();
+        }
+      },
+      onHandleEvent: async (context) => {
+        if (context.action === 'SESSION_CREATED') {
+          await refreshJWTToken();
+        }
+
+        if (context.action === 'SIGN_OUT' || context.action === 'UNAUTHORISED') {
+          await destroyJWTToken();
+        }
+      }
+    }),
   ]
 });
