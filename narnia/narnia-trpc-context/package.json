@@ -13,13 +13,18 @@
   "dependencies": {
     "@trpc/client": "^10.7.0",
     "@trpc/server": "^10.7.0",
+    "axios": "^1.3.4",
     "cookie": "^0.5.0",
+    "jsonwebtoken": "^9.0.0",
+    "jwks-rsa": "^3.0.1",
     "luna-sdk": "workspace:*",
     "luna-trpc-client": "workspace:*",
-    "superjson": "^1.12.2"
+    "superjson": "^1.12.2",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/cookie": "^0.5.1",
+    "@types/jsonwebtoken": "^9.0.1",
     "luna": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.6.3"

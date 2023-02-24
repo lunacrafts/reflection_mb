@@ -1,7 +1,8 @@
 import { z } from 'zod';
 import { Luna } from 'luna-sdk'
 import { t } from '../trpc';
-import { withCurrentUserProtected } from 'narnia-trpc-context';
+import { withCurrentUser } from 'narnia-trpc-context';
+import { TRPCError } from '@trpc/server';
 
 const input = z.void();
 
@@ -10,7 +11,7 @@ const output = z.object({
 });
 
 export const me = t.router({
-  me: withCurrentUserProtected.input(input).output(output)
+  me: withCurrentUser.input(input).output(output)
     .meta({
       openapi: {
         method: 'GET',
@@ -20,7 +21,15 @@ export const me = t.router({
         tags: ['auth']
       }
     })
-    .mutation(async ({ ctx: { currentUser }, input }) => {
-      return { currentUser }
+    .query(async ({ ctx: { currentUser }, input }) => {
+      if (!currentUser) {
+        throw new TRPCError({
+          code: 'UNAUTHORIZED'
+        });
+      }
+
+      return {
+        currentUser: currentUser
+      }
     })
 });

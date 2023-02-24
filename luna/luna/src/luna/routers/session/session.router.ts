@@ -1,4 +1,4 @@
 import { t } from "../../../trpc";
-import { me } from "./procedures/me.procedure";
+import { findByJWTToken } from "./procedures/findByJWTToken.procedure";
 
-export const router = t.mergeRouters(me);
+export const router = t.mergeRouters(findByJWTToken);

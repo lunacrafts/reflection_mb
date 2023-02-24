@@ -1,7 +1,11 @@
 import { Outlet } from "@tanstack/react-router"
 import { narnia } from "narnia-react"
-import React from "react"
-// import { narnia } from "../../narnia";
+import { narniaTrpc } from "../../narniaTrpc";
+
+
+narniaTrpc.auth.me.query().then((res) => {
+  console.log(res);
+});
 
 // narnia.auth.login.mutate({
 //   email: 'lunacrafts@protonmail.com',
