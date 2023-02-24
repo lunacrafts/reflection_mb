@@ -5,6 +5,7 @@ const notEmptyString = z.string().trim().min(1);
 const {
   LUNA_API_URL,
   LUNA_WEBSITE_URL,
+  LUNA_JWKS_URL,
   MONGODB_URI,
   MONGODB_DB_NAME,
   SUPERTOKENS_API_URL,
@@ -15,6 +16,7 @@ const {
 export const envs = z.object({
   LUNA_API_URL: notEmptyString,
   LUNA_WEBSITE_URL: notEmptyString,
+  LUNA_JWKS_URL: notEmptyString,
   MONGODB_URI: notEmptyString,
   MONGODB_DB_NAME: notEmptyString,
   SUPERTOKENS_API_URL: notEmptyString,
@@ -23,6 +25,7 @@ export const envs = z.object({
 }).parse({
   LUNA_API_URL,
   LUNA_WEBSITE_URL,
+  LUNA_JWKS_URL,
   MONGODB_URI,
   MONGODB_DB_NAME,
   SUPERTOKENS_API_URL,

@@ -5,7 +5,7 @@ export const withCurrentUser = t.procedure.use(async ({ next, ctx }) => {
 
   return next({
     ctx: {
-      currentUser: currentUser
+      currentUser
     }
   });
 });

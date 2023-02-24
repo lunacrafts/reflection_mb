@@ -46,6 +46,7 @@ importers:
       dotenv: ^16.0.3
       express: ^4.18.2
       jsonwebtoken: ^9.0.0
+      jwks-rsa: ^3.0.1
       luna-sdk: workspace:*
       mongodb: ^5.0.1
       morgan: ^1.10.0
@@ -71,6 +72,7 @@ importers:
       dotenv: 16.0.3
       express: 4.18.2
       jsonwebtoken: 9.0.0
+      jwks-rsa: 3.0.1
       luna-sdk: link:../luna-sdk
       mongodb: 5.0.1
       morgan: 1.10.0
@@ -100,14 +102,20 @@ importers:
 
   luna/luna-sdk:
     specifiers:
+      '@types/jsonwebtoken': ^9.0.1
+      jsonwebtoken: ^9.0.0
+      jwks-rsa: ^3.0.1
       mongodb: ^5.0.1
       tsconfig: workspace:*
       typescript: ^4.6.3
       zod: ^3.20.2
     dependencies:
+      jsonwebtoken: 9.0.0
+      jwks-rsa: 3.0.1
       mongodb: 5.0.1
       zod: 3.20.2
     devDependencies:
+      '@types/jsonwebtoken': 9.0.1
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
@@ -510,6 +518,7 @@ importers:
       '@trpc/server': ^10.7.0
       '@types/cookie': ^0.5.1
       '@types/jsonwebtoken': ^9.0.1
+      axios: ^1.3.4
       cookie: ^0.5.0
       jsonwebtoken: ^9.0.0
       jwks-rsa: ^3.0.1
@@ -523,6 +532,7 @@ importers:
     dependencies:
       '@trpc/client': 10.7.0_@trpc+server@10.7.0
       '@trpc/server': 10.7.0
+      axios: 1.3.4
       cookie: 0.5.0
       jsonwebtoken: 9.0.0
       jwks-rsa: 3.0.1
@@ -2560,7 +2570,7 @@ packages:
   /axios/0.21.4_debug@4.3.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@4.3.4
     transitivePeerDependencies:
       - debug
     dev: false
@@ -2568,7 +2578,7 @@ packages:
   /axios/0.26.1_debug@4.3.4:
     resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
     dependencies:
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@4.3.4
     transitivePeerDependencies:
       - debug
     dev: false
@@ -3935,6 +3945,18 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: false
+
+  /follow-redirects/1.15.2_debug@4.3.4:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.4
     dev: false
 
   /form-data-encoder/1.7.2:

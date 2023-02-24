@@ -21,7 +21,7 @@ import { openApiDocument } from './openapi';
 import { createContext } from './context';
 import { router } from './router';
 import { envs } from './envs';
-import jwt from './jwt';
+import auth from './auth';
 
 const log = debug('auth');
 const app = express();
@@ -35,8 +35,8 @@ app.use(cors({
 app.use(logger('dev'));
 
 app.use(supertokensMiddleware());
+app.use('/auth', auth);
 
-app.use('/jwt', jwt);
 app.use('/api/trpc', trpcExpress.createExpressMiddleware({ router, createContext }));
 app.use('/api', createOpenApiExpressMiddleware({ router, createContext }));
 

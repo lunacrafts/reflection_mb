@@ -1,3 +1,4 @@
 import * as Luna from './schemas';
+import * as LunaJWT from './jwt';
 
-export { Luna }
+export { Luna, LunaJWT }

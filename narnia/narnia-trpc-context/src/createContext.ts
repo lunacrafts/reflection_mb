@@ -1,36 +1,24 @@
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { lunaClient } from 'luna-trpc-client';
-import { decodeJWTToken } from './utils/decodeJWTToken';
+import axios from 'axios';
 import { TRPCError } from '@trpc/server';
+import { envs } from './envs';
+import { LunaJWT } from 'luna-sdk';
 
 export const createContext = async (opts: CreateNextContextOptions) => {
   return {
-    decodeJWTToken: async () => {
+    fetchCurrentUser: async () => {
       const access_token = opts.req.cookies['access_token'];
 
       if (!access_token) {
-        return new TRPCError({
-          code: 'UNAUTHORIZED',
-          message: 'No access token'
-        });
+        return {
+          currentUser: null
+        }
       }
 
-      try {
-        const payload = await decodeJWTToken(access_token);
-        console.log('narnia-trpc-context payload');
-        console.log(payload);
-      } catch (e) {
-        console.log('narnia-trpc-context payload ERROR');
-        console.log(e);
-      }
+      const { currentUser } = await lunaClient.session.findByJWTToken.query({ access_token });
 
-      return {
-        _id: '123',
-        email: 'decodeJWTToken@foo.pl'
-      }
-    },
-    fetchCurrentUser: async () => {
-      return { currentUser: null }
+      return { currentUser }
     },
     fetchAuthenticator: async ({ authenticator }: { authenticator: string }) => {
       const res = await lunaClient.authenticators.fetchAuthenticator.query({ token: '123', authenticator });
