@@ -41,9 +41,9 @@ app.use('/api', createOpenApiExpressMiddleware({ router, createContext }));
 app.use('/docs/swagger', swaggerUi.serve);
 app.get('/docs/swagger', swaggerUi.setup(openApiDocument));
 
-app.use('/', (req, res) => {
-  res.redirect('/docs/swagger');
-});
+// app.use('/', (req, res) => {
+//   res.redirect('/docs/swagger');
+// });
 
 app.use(supertokensErrorHandler());
 

@@ -16,7 +16,7 @@ supertokens.init({
     appName: 'mirrorboards',
     apiDomain: envs.LUNA_API_URL,
     websiteDomain: envs.LUNA_WEBSITE_URL,
-    apiBasePath: '/api/auth',
+    apiBasePath: '/auth',
     websiteBasePath: '/auth'
   },
   recipeList: [
