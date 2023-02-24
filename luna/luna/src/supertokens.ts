@@ -30,7 +30,36 @@ supertokens.init({
           clientId: envs.OAUTH_GITHUB_CLIENT_ID,
           clientSecret: envs.OAUTH_GITHUB_CLIENT_SECRET
         }),
-      ]
+      ],
+      override: {
+        functions: (originalImplementation) => {
+          return {
+            ...originalImplementation,
+            emailPasswordSignUp: async (input) => {
+              const response = await originalImplementation.emailPasswordSignUp(input);
+
+              if (response.status === 'OK') {
+                await UserMetadata.updateUserMetadata(response.user.id, {
+                  email: response.user.email,
+                });
+              }
+
+              return response;
+            },
+            thirdPartySignInUp: async (input) => {
+              const response = await originalImplementation.thirdPartySignInUp(input);
+
+              if (response.status === 'OK' && response.createdNewUser) {
+                await UserMetadata.updateUserMetadata(response.user.id, {
+                  email: response.user.email,
+                });
+              }
+
+              return response;
+            },
+          }
+        }
+      }
     }),
     Session.init({
       jwt: {
