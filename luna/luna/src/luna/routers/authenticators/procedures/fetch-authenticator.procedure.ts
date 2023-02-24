@@ -22,7 +22,7 @@ export const fetchAuthenticator = t.router({
     .query(async ({ }) => {
       return {
         authenticators: {
-          _id: 'xD',
+          _id: 'authenticator_id',
           provider: 'facebook',
           token: 'authenticator_issued_facebook_token'
         }

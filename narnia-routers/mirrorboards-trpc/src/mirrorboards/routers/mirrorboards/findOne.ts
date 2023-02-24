@@ -27,11 +27,11 @@ export const findOne = t.router({
     .query(async ({ ctx: { currentUser }, input }) => {
       return {
         mirrorboard: {
-          _id: new ObjectId(),
+          id: 'mirrorboard_id',
           title: 'Mirrorboard?',
           isPublic: true,
           createdBy: {
-            _id: new ObjectId(),
+            id: 'created_by_id',
             email: 'foo@bar.pl',
           }
         },
