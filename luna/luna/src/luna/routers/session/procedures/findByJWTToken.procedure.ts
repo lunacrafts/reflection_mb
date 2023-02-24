@@ -27,13 +27,10 @@ export const findByJWTToken = t.router({
 
       const { metadata } = await UserMetadata.getUserMetadata(id);
 
-      console.log('metadata');
-      console.log(metadata);
-
       return {
         currentUser: {
           id,
-          email: 'findByJWTToken@crafts.pl'
+          email: metadata.email,
         }
       }
 

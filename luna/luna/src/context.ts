@@ -14,17 +14,6 @@ export const createContext = async ({ req, res }: trpcExpress.CreateExpressConte
     return token;
   }
 
-  const getSession = async () => {
-    let session = await superTokensNextWrapper(
-      async (next) => {
-        return await Session.getSession(req, res);
-      },
-      req,
-      res
-    )
-
-  }
-
   return {
     getAuthorizationToken
   }
