@@ -1,6 +1,6 @@
 import t from "../../../trpc";
 import { z } from 'zod';
-import { Mirrorboards } from 'mirrorboards-sdk'
+import { TRPCError } from "@trpc/server";
 
 const input = z.void();
 
@@ -22,12 +22,9 @@ export const findAll = t.router({
       }
     })
     .query(async ({ ctx }) => {
-      const { currentUser } = await ctx.fetchCurrentUser();
-
-      return {
-        mirrorboards: [{
-          id: '123'
-        }],
-      }
+      throw new TRPCError({
+        code: 'INTERNAL_SERVER_ERROR',
+        message: 'Not Implemented'
+      });
     })
 });

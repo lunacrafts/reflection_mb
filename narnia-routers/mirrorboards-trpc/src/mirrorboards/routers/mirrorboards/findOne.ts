@@ -2,8 +2,7 @@ import t from "../../../trpc";
 import { z } from 'zod';
 import { Mirrorboards } from 'mirrorboards-sdk'
 import { withCurrentUser } from "narnia-trpc-context";
-import { Luna } from 'luna-sdk';
-import { ObjectId } from "mongodb";
+import { TRPCError } from "@trpc/server";
 
 const input = z.object({
   id: z.string(),
@@ -25,16 +24,9 @@ export const findOne = t.router({
       }
     })
     .query(async ({ ctx: { currentUser }, input }) => {
-      return {
-        mirrorboard: {
-          id: 'mirrorboard_id',
-          title: 'Mirrorboard?',
-          isPublic: true,
-          createdBy: {
-            id: 'created_by_id',
-            email: 'foo@bar.pl',
-          }
-        },
-      }
+      throw new TRPCError({
+        code: 'INTERNAL_SERVER_ERROR',
+        message: 'Not Implemented'
+      });
     })
 });

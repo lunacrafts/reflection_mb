@@ -18,7 +18,7 @@ narniaTrpc.auth.me.query().then((res) => {
 // })
 
 export const ShellComponent = () => {
-  const { data } = narnia.mirrorboards.mirrorboards.findAll.useQuery();
+  const { data } = narnia.mirrorboards.findAll.useQuery();
 
   return <div>
     Mirrorboards Shell

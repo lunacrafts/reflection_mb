@@ -1,19 +1,19 @@
 import t from "../../../trpc";
 import { z } from 'zod';
 import { Mirrorboards } from 'mirrorboards-sdk'
-import { MirrorboardsServiceDTO } from "../../services/mirrorboards.service.dto";
-import { withMirrorboards } from "../../withMirrorboards.procedure";
-import { withCurrentUserProtected } from "../../withCurrentUserProtected.procedure";
-import { ObjectId } from "mongodb";
+import { withCurrentUser } from "narnia-trpc-context";
+import { TRPCError } from "@trpc/server";
 
-const input = MirrorboardsServiceDTO.create.Mirrorboard
+const input = z.object({
+  title: z.string(),
+});
 
 const output = z.object({
   mirrorboard: Mirrorboards.Mirrorboard
 });
 
 export const create = t.router({
-  create: withCurrentUserProtected.use(withMirrorboards).input(input).output(output)
+  create: withCurrentUser.input(input).output(output)
     .meta({
       openapi: {
         method: 'POST',
@@ -23,19 +23,10 @@ export const create = t.router({
         tags: ['mirrorboards']
       }
     })
-    .mutation(async ({ ctx: { currentUser, mirrorboards }, input }) => {
-      const mirrorboard = await mirrorboards.services.mirrorboards.create(input, currentUser);
-
-      return {
-        mirrorboard: {
-          id: 'mirrorboard-id',
-          title: 'Mirrorboard!',
-          isPublic: true,
-          createdBy: {
-            email: 'foo@bar.pl',
-            id: 'created by id'
-          }
-        }
-      }
+    .mutation(async ({ ctx: { currentUser }, input }) => {
+      throw new TRPCError({
+        code: 'INTERNAL_SERVER_ERROR',
+        message: 'Not Implemented'
+      });
     })
 });
