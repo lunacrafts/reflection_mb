@@ -207,6 +207,7 @@ importers:
       narnia-react: workspace:*
       react: ^18.2.0
       react-dom: ^18.2.0
+      supertokens-auth-react: ^0.31.1
       typescript: ^4.6.4
       vite: ^4.0.0
       zod: ^3.20.2
@@ -221,6 +222,7 @@ importers:
       narnia-react: link:../../narnia/narnia-react
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      supertokens-auth-react: 0.31.1_biqbaboplfbrettd7655fr4n2y
       zod: 3.20.2
     devDependencies:
       '@tauri-apps/cli': 1.2.2
@@ -4231,6 +4233,10 @@ packages:
       side-channel: 1.0.4
     dev: false
 
+  /intl-tel-input/17.0.19:
+    resolution: {integrity: sha512-GBNoUT4JVgm2e1N+yFMaBQ24g5EQfZhDznGneCM9IEZwfKsMUAUa1dS+v0wOiKpRAZ5IPNLJMIEEFGgqlCI22A==}
+    dev: false
+
   /invariant/2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
     dependencies:
@@ -5988,6 +5994,21 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       copy-anything: 3.0.3
+    dev: false
+
+  /supertokens-auth-react/0.31.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-SPY9IxpkebviHPBdkSBER6Bw7JyQMCy4Pqz4cK1eqKUYQdr5VltCafXCOSGEDp01MRGwkXAwuJ5QcaW2XA0LFw==}
+    engines: {node: '>=16.0.0', npm: ^8}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      supertokens-web-js: ^0.5.0
+    dependencies:
+      intl-tel-input: 17.0.19
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      supertokens-js-override: 0.0.4
     dev: false
 
   /supertokens-js-override/0.0.4:
