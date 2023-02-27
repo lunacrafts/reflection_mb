@@ -18,10 +18,10 @@ export const env = envsafe({
   }),
 
   LUNA_API_URL: url({
-    devDefault: 'http://localhost:3456',
+    devDefault: 'http://localhost:4100',
   }),
   LUNA_TRPC_URL: url({
-    devDefault: 'http://localhost:3456/api/trpc',
+    devDefault: 'http://localhost:4100/api/trpc',
   }),
   LUNA_MONGODB_URI: url({
     devDefault: 'mongodb://luna:crafts@localhost:27017/',
@@ -31,7 +31,7 @@ export const env = envsafe({
   }),
 
   NARNIA_TRPC_URL: url({
-    devDefault: 'http://localhost:3456/api/trpc',
+    devDefault: 'http://localhost:4200/api/trpc',
   }),
 
   MIRRORBOARDS_WEB_APP_URL: url({

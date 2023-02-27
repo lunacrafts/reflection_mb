@@ -29,6 +29,6 @@ app.use('/', (req, res) => {
   res.redirect('/docs/swagger');
 });
 
-app.listen(4000, () => {
-  log('Listening on 4000');
+app.listen(4100, () => {
+  log('Listening on 4100');
 });
