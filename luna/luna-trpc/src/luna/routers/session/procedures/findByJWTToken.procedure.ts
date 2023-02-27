@@ -1,9 +1,8 @@
-import { TRPCError } from "@trpc/server";
 import { Luna, LunaJWT } from "luna-sdk";
 import { z } from "zod";
 import { t } from "../../../../trpc";
 import { withLuna } from "../../../procedures/withLuna.procedure";
-import UserMetadata from "supertokens-node/recipe/usermetadata";
+// import UserMetadata from "supertokens-node/recipe/usermetadata";
 
 const input = z.object({
   access_token: z.string(),
@@ -25,7 +24,11 @@ export const findByJWTToken = t.router({
     }).query(async ({ ctx: { luna }, input }) => {
       const { sub: id } = await LunaJWT.decodeJWTToken(input.access_token);
 
-      const { metadata } = await UserMetadata.getUserMetadata(id);
+      // const { metadata } = await UserMetadata.getUserMetadata(id);
+
+      const metadata = {
+        email: 'foo@bar.pl'
+      }
 
       return {
         currentUser: {
@@ -33,6 +36,5 @@ export const findByJWTToken = t.router({
           email: metadata.email,
         }
       }
-
     })
 })
