@@ -1,9 +1,9 @@
 import { TRPCError } from "@trpc/server";
 import { Luna, LunaJWT } from "luna-sdk";
 import { z } from "zod";
-import { t } from "../../../../trpc";
-import { withLuna } from "../../../procedures/withLuna.procedure";
 import UserMetadata from "supertokens-node/recipe/usermetadata";
+import { withLuna } from 'luna-trpc'
+import { t } from "../../../trpc";
 
 const input = z.object({
   access_token: z.string(),

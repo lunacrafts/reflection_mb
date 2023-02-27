@@ -3,14 +3,38 @@ import { z } from 'zod';
 const notEmptyString = z.string().trim().min(1);
 
 const {
-  LUNA_JWKS_URL,
-  LUNA_API_URL,
+  MIRRORBOARDS_WEB_APP_URL,
+
+  AUTH_API_URL,
+  AUTH_MONGODB_URI,
+  AUTH_MONGODB_DB_NAME,
+
+  AUTH_SUPERTOKENS_API_URL,
+  AUTH_SUPERTOKENS_JWKS_URL,
+  AUTH_GITHUB_CLIENT_ID,
+  AUTH_GITHUB_CLIENT_SECRET,
 } = process.env;
 
 export const envs = z.object({
-  LUNA_JWKS_URL: notEmptyString,
-  LUNA_API_URL: notEmptyString,
+  MIRRORBOARDS_WEB_APP_URL: notEmptyString,
+
+  AUTH_API_URL: notEmptyString,
+  AUTH_MONGODB_URI: notEmptyString,
+  AUTH_MONGODB_DB_NAME: notEmptyString,
+
+  AUTH_SUPERTOKENS_API_URL: notEmptyString,
+  AUTH_SUPERTOKENS_JWKS_URL: notEmptyString,
+  AUTH_GITHUB_CLIENT_ID: notEmptyString,
+  AUTH_GITHUB_CLIENT_SECRET: notEmptyString,
 }).parse({
-  LUNA_JWKS_URL,
-  LUNA_API_URL,
+  MIRRORBOARDS_WEB_APP_URL,
+
+  AUTH_API_URL,
+  AUTH_MONGODB_URI,
+  AUTH_MONGODB_DB_NAME,
+
+  AUTH_SUPERTOKENS_API_URL,
+  AUTH_SUPERTOKENS_JWKS_URL,
+  AUTH_GITHUB_CLIENT_ID,
+  AUTH_GITHUB_CLIENT_SECRET,
 });

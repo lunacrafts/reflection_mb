@@ -1,6 +1,6 @@
 import { inferAsyncReturnType } from '@trpc/server';
 import * as trpcExpress from '@trpc/server/adapters/express';
-import { WithAuthContainer } from './luna/procedures/withAuthContainer.procedure';
+import { WithAuthContainer } from './auth/procedures/withAuthContainer.procedure';
 
 export type LunaContext = WithAuthContainer & inferAsyncReturnType<typeof createContext>;
 

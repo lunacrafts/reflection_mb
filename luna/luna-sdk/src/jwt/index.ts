@@ -11,7 +11,7 @@ const JWTPayload = z.object({
 });
 
 var client = jwksClient({
-  jwksUri: envs.LUNA_JWKS_URL,
+  jwksUri: envs.AUTH_SUPERTOKENS_JWKS_URL,
 });
 
 const getKey = (header: JwtHeader, callback: SigningKeyCallback) => {
