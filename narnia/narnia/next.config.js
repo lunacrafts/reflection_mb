@@ -5,9 +5,7 @@ const withTM = require("next-transpile-modules")(
     "narnia-trpc-context",
     "auth-trpc",
     "openai-sdk",
-    "openai-trpc",
-    "mirrorboards-sdk",
-    "mirrorboards-trpc"
+    "openai-trpc"
   ]
 );
 

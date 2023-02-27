@@ -13,7 +13,6 @@
   "dependencies": {
     "@trpc/server": "^10.7.0",
     "auth-trpc": "workspace:*",
-    "mirrorboards-trpc": "workspace:*",
     "narnia-trpc-context": "workspace:*",
     "openai-trpc": "workspace:*",
     "superjson": "^1.12.2",

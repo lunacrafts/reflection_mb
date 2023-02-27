@@ -1,6 +1,6 @@
 import { Outlet } from "@tanstack/react-router"
-import { narnia } from "narnia-react"
 import { narniaTrpc } from "../../narniaTrpc";
+import { narnia } from "../../trpc/narnia.trpc";
 
 
 narniaTrpc.auth.me.query().then((res) => {
@@ -18,7 +18,7 @@ narniaTrpc.auth.me.query().then((res) => {
 // })
 
 export const ShellComponent = () => {
-  const { data } = narnia.mirrorboards.mirrorboards.findAll.useQuery();
+  // const { data } = narnia.openai.social.generateMarketingPersonas
 
   return <div>
     Mirrorboards Shell

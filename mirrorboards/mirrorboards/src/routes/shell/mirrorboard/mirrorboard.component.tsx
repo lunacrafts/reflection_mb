@@ -1,5 +1,4 @@
 import { useParams } from "@tanstack/react-router"
-import { narnia } from "narnia-react";
 import { mirrorboardRoute } from "./mirrorboard.route";
 
 export const MirrorboardComponent = () => {

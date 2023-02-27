@@ -23,8 +23,6 @@
     "eslint": "8.31.0",
     "eslint-config-next": "13.0.0",
     "luna-sdk": "workspace:*",
-    "mirrorboards-sdk": "workspace:*",
-    "mirrorboards-trpc": "workspace:*",
     "mongodb": "^5.0.1",
     "narnia-trpc": "workspace:*",
     "narnia-trpc-context": "workspace:*",

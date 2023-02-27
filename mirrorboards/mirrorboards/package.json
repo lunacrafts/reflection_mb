@@ -21,16 +21,17 @@
     "hypeboards-core": "workspace:*",
     "mirrorboards-core": "workspace:*",
     "mirrorboards-shell": "workspace:*",
-    "narnia-react": "workspace:*",
     "narnia-trpc": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "superjson": "^1.12.2",
     "supertokens-auth-react": "^0.31.1",
     "supertokens-web-js": "^0.5.0",
-    "zod": "^3.20.2"
+    "zod": "^3.20.2",
+    "@trpc/react-query": "^10.7.0"
   },
   "devDependencies": {
+    "luna": "workspace:*",
     "@tauri-apps/cli": "^1.2.2",
     "@types/node": "^18.7.10",
     "@types/react": "^18.0.15",
