@@ -22,13 +22,15 @@ export const RootComponent: React.FC = () => {
 
   return (
     <SuperTokensWrapper>
-      <LunaProvider>
-        <NarniaProvider>
+      <NarniaProvider>
+
+        <LunaProvider>
           <QueryClientProvider client={queryClient}>
             <Outlet />
           </QueryClientProvider>
-        </NarniaProvider>
-      </LunaProvider>
+        </LunaProvider>
+      </NarniaProvider>
+
     </SuperTokensWrapper>
   );
 }
