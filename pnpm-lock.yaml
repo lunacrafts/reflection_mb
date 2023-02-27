@@ -408,6 +408,8 @@ importers:
     specifiers:
       '@trpc/client': ^10.7.0
       '@trpc/server': ^10.7.0
+      auth: workspace:*
+      env: workspace:*
       luna: workspace:*
       luna-sdk: workspace:*
       luna-trpc-client: workspace:*
@@ -421,6 +423,7 @@ importers:
     dependencies:
       '@trpc/client': 10.7.0_@trpc+server@10.7.0
       '@trpc/server': 10.7.0
+      env: link:../../packages/env
       luna: link:../../luna/luna
       luna-sdk: link:../../luna/luna-sdk
       luna-trpc-client: link:../../luna/luna-trpc-client
@@ -430,6 +433,7 @@ importers:
       trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm
       zod: 3.20.2
     devDependencies:
+      auth: link:../../auth/auth
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
 
@@ -638,8 +642,10 @@ importers:
       '@trpc/server': ^10.7.0
       '@types/cookie': ^0.5.1
       '@types/jsonwebtoken': ^9.0.1
+      auth: workspace:*
       axios: ^1.3.4
       cookie: ^0.5.0
+      env: workspace:*
       jsonwebtoken: ^9.0.0
       jwks-rsa: ^3.0.1
       luna: workspace:*
@@ -654,6 +660,7 @@ importers:
       '@trpc/server': 10.7.0
       axios: 1.3.4
       cookie: 0.5.0
+      env: link:../../packages/env
       jsonwebtoken: 9.0.0
       jwks-rsa: 3.0.1
       luna-sdk: link:../../luna/luna-sdk
@@ -663,6 +670,7 @@ importers:
     devDependencies:
       '@types/cookie': 0.5.1
       '@types/jsonwebtoken': 9.0.1
+      auth: link:../../auth/auth
       luna: link:../../luna/luna
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4

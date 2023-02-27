@@ -1,5 +1,17 @@
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
-import { lunaClient } from 'luna-trpc-client';
+import { createTRPCProxyClient, httpLink } from "@trpc/client";
+import superjson from 'superjson';
+import { env } from 'env';
+import type { AuthRouter } from 'auth/src/router';
+
+export const authClient = createTRPCProxyClient<AuthRouter>({
+  transformer: superjson,
+  links: [
+    httpLink({
+      url: env.AUTH_TRPC_URL
+    }),
+  ],
+});
 
 export const createContext = async (opts: CreateNextContextOptions) => {
   return {
@@ -12,17 +24,13 @@ export const createContext = async (opts: CreateNextContextOptions) => {
         }
       }
 
-      const { currentUser } = await lunaClient.session.findByJWTToken.query({ access_token });
+      const { currentUser } = await authClient.session.findByJWTToken.query({ access_token });
 
       return { currentUser }
     },
     fetchAuthenticator: async ({ authenticator }: { authenticator: string }) => {
-      const res = await lunaClient.authenticators.fetchAuthenticator.query({ token: '123', authenticator });
-
-      return res;
     },
     fetchAuthenticators: async ({ authenticators }: { authenticators: string[] }) => {
-      return await lunaClient.authenticators.fetchAuthenticators.query({ token: '123', authenticators });
     }
   }
 }
