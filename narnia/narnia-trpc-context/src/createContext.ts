@@ -27,10 +27,6 @@ export const createContext = async (opts: CreateNextContextOptions) => {
       const { currentUser } = await authClient.session.findByJWTToken.query({ access_token });
 
       return { currentUser }
-    },
-    fetchAuthenticator: async ({ authenticator }: { authenticator: string }) => {
-    },
-    fetchAuthenticators: async ({ authenticators }: { authenticators: string[] }) => {
     }
   }
 }

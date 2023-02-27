@@ -11,7 +11,7 @@ import * as trpcExpress from '@trpc/server/adapters/express';
 import { createOpenApiExpressMiddleware } from 'trpc-openapi';
 
 import { openApiDocument } from './openapi';
-import { createContext } from './context';
+import { createContext } from 'luna-trpc';
 import { router } from './router';
 
 const log = debug('auth');

@@ -1,3 +1,0 @@
-{
-  "extends": "tsconfig/sdk-library/tsconfig.json"
-}

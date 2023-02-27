@@ -1,12 +1,11 @@
-import { Luna } from 'luna-sdk';
-import { ObjectId } from 'mongodb';
 import { z } from 'zod';
+import { User } from './User';
 
 export const Mirrorboard = z.object({
   id: z.string(),
   title: z.string(),
   isPublic: z.boolean(),
-  createdBy: Luna.User
+  createdBy: User
 });
 
 export type Mirrorboard = z.infer<typeof Mirrorboard>;

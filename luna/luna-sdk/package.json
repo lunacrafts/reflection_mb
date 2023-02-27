@@ -14,7 +14,6 @@
     "env": "workspace:*",
     "jsonwebtoken": "^9.0.0",
     "jwks-rsa": "^3.0.1",
-    "mongodb": "^5.0.1",
     "zod": "^3.20.2"
   },
   "devDependencies": {
