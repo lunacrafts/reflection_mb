@@ -11,6 +11,7 @@
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "dependencies": {
+    "env": "workspace:*",
     "@reflection/extension": "workspace:*",
     "@tanstack/react-query": "^4.20.9",
     "@tanstack/react-router": "0.0.1-beta.83",

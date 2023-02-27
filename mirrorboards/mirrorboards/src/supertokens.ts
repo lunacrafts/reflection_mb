@@ -1,14 +1,14 @@
 import SuperTokens from 'supertokens-auth-react';
 import ThirdPartyEmailPassword, { Apple, Facebook, Github, Google } from 'supertokens-auth-react/recipe/thirdpartyemailpassword';
 import Session from 'supertokens-auth-react/recipe/session';
-import { envs } from './envs';
+import { env } from 'env';
 import { destroyJWTToken, refreshJWTToken } from './services/jwt.service';
 
 SuperTokens.init({
   appInfo: {
     appName: 'mirrorboards',
-    apiDomain: envs.VITE_LUNA_API_URL,
-    websiteDomain: envs.VITE_LUNA_WEBSITE_URL,
+    apiDomain: env.AUTH_API_URL,
+    websiteDomain: env.MIRRORBOARDS_WEB_APP_URL,
     apiBasePath: '/auth',
     websiteBasePath: '/auth',
   },

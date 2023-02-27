@@ -11,6 +11,7 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
+    "env": "workspace:*",
     "@trpc/server": "^10.7.0",
     "luna-sdk": "workspace:*",
     "mirrorboards-sdk": "workspace:*",

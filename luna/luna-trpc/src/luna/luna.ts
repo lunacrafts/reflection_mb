@@ -1,5 +1,5 @@
 import { container, inject, registry, singleton } from "tsyringe";
-import { envs } from "../envs";
+import { env } from 'env';
 import { LunaCollections } from "./luna.collections";
 import { LunaDatabase } from "./luna.database";
 import { LunaServices } from "./luna.services";
@@ -9,7 +9,7 @@ import { LunaServices } from "./luna.services";
     {
       token: LunaDatabase,
       useFactory: () => {
-        return new LunaDatabase(envs.LUNA_MONGODB_URI, envs.LUNA_MONGODB_DB_NAME);
+        return new LunaDatabase(env.LUNA_MONGODB_URI, env.LUNA_MONGODB_DB_NAME);
       }
     },
     {

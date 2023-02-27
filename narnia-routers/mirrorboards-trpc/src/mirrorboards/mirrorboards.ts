@@ -1,5 +1,5 @@
 import { container, inject, registry, singleton } from "tsyringe";
-import { envs } from "../envs";
+import { env } from "env";
 import { MirrorboardsCollections } from "./mirrorboards.collections";
 import { MirrorboardsDatabase } from "./mirrorboards.database";
 import { LunaServices } from "./mirrorboards.services";
@@ -9,7 +9,7 @@ import { LunaServices } from "./mirrorboards.services";
     {
       token: MirrorboardsDatabase,
       useFactory: () => {
-        return new MirrorboardsDatabase(envs.MIRRORBOARDS_MONGODB_URI, envs.MIRRORBOARDS_MONGODB_DB_NAME);
+        return new MirrorboardsDatabase(env.LUNA_MONGODB_URI, env.LUNA_MONGODB_DB_NAME);
       }
     },
     {

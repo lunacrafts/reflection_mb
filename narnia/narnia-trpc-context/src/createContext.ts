@@ -1,9 +1,5 @@
 import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { lunaClient } from 'luna-trpc-client';
-import axios from 'axios';
-import { TRPCError } from '@trpc/server';
-import { envs } from './envs';
-import { LunaJWT } from 'luna-sdk';
 
 export const createContext = async (opts: CreateNextContextOptions) => {
   return {

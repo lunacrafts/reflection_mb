@@ -1,15 +1,15 @@
 import { container, inject, registry, singleton } from "tsyringe";
-import { envs } from "../envs";
 import { AuthModels } from "./auth.models";
 import { AuthDatabase } from "./auth.database";
 import { AuthServices } from "./auth.services";
+import { env } from "env";
 
 @registry(
   [
     {
       token: AuthDatabase,
       useFactory: () => {
-        return new AuthDatabase(envs.AUTH_MONGODB_URI, envs.AUTH_MONGODB_DB_NAME);
+        return new AuthDatabase(env.AUTH_MONGODB_URI, env.AUTH_MONGODB_DB_NAME);
       }
     },
     {

@@ -11,6 +11,7 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
+    "env": "workspace:*",
     "@trpc/client": "^10.7.0",
     "@trpc/server": "^10.7.0",
     "cookie": "^0.5.0",

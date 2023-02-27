@@ -20,14 +20,14 @@ import './supertokens';
 import { openApiDocument } from './openapi';
 import { createContext } from './context';
 import { router } from './router';
-import { envs } from './envs';
 import auth from './endpoints/auth';
+import { env } from 'env';
 
 const log = debug('auth');
 const app = express();
 
 app.use(cors({
-  origin: envs.MIRRORBOARDS_WEB_APP_URL,
+  origin: env.MIRRORBOARDS_WEB_APP_URL,
   allowedHeaders: ['content-type', ...supertokens.getAllCORSHeaders()],
   credentials: true,
 }));

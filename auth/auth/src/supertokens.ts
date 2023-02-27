@@ -4,20 +4,21 @@ import Session from "supertokens-node/recipe/session";
 import ThirdPartyEmailPassword from "supertokens-node/recipe/thirdpartyemailpassword";
 import UserMetadata from "supertokens-node/recipe/usermetadata";
 import { container } from 'tsyringe';
-import { envs } from './envs';
 import { AuthContainer } from './auth/auth.container'
+import { env } from 'env';
+import { secrets } from './secrets';
 
 const { Github } = ThirdPartyEmailPassword;
 
 supertokens.init({
   framework: 'express',
   supertokens: {
-    connectionURI: envs.AUTH_SUPERTOKENS_API_URL
+    connectionURI: env.AUTH_SUPERTOKENS_API_URL
   },
   appInfo: {
     appName: 'mirrorboards',
-    apiDomain: envs.AUTH_API_URL,
-    websiteDomain: envs.MIRRORBOARDS_WEB_APP_URL,
+    apiDomain: env.AUTH_API_URL,
+    websiteDomain: env.MIRRORBOARDS_WEB_APP_URL,
     apiBasePath: '/auth',
     websiteBasePath: '/auth'
   },
@@ -29,8 +30,8 @@ supertokens.init({
     ThirdPartyEmailPassword.init({
       providers: [
         Github({
-          clientId: envs.AUTH_GITHUB_CLIENT_ID,
-          clientSecret: envs.AUTH_GITHUB_CLIENT_SECRET
+          clientId: secrets.AUTH_GITHUB_CLIENT_ID,
+          clientSecret: secrets.AUTH_GITHUB_CLIENT_SECRET
         }),
       ],
       override: {

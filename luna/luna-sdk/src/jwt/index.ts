@@ -1,7 +1,7 @@
 import jwksClient from 'jwks-rsa';
 import JsonWebToken, { JwtHeader, SigningKeyCallback } from 'jsonwebtoken';
-import { envs } from '../envs';
 import { z } from 'zod';
+import { env } from 'env';
 
 const JWTPayload = z.object({
   sub: z.string(),
@@ -11,7 +11,7 @@ const JWTPayload = z.object({
 });
 
 var client = jwksClient({
-  jwksUri: envs.AUTH_SUPERTOKENS_JWKS_URL,
+  jwksUri: env.AUTH_SUPERTOKENS_JWKS_URL,
 });
 
 const getKey = (header: JwtHeader, callback: SigningKeyCallback) => {
