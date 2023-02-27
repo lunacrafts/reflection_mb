@@ -8,16 +8,23 @@ import logger from 'morgan';
 import debug from 'debug';
 import swaggerUi from 'swagger-ui-express';
 import * as trpcExpress from '@trpc/server/adapters/express';
+import { env } from 'env';
 import { createOpenApiExpressMiddleware } from 'trpc-openapi';
 
 import { openApiDocument } from './openapi';
 import { createContext } from 'luna-trpc';
 import { router } from './router';
+import cors from 'cors';
 
 const log = debug('auth');
 const app = express();
 
 app.use(logger('dev'));
+
+app.use(cors({
+  origin: env.MIRRORBOARDS_WEB_APP_URL,
+  credentials: true,
+}));
 
 app.use('/api/trpc', trpcExpress.createExpressMiddleware({ router, createContext }));
 app.use('/api', createOpenApiExpressMiddleware({ router, createContext }));

@@ -5,7 +5,7 @@ import { t } from '../../../trpc';
 
 const input = z.object({
   token: z.string().nullable(),
-  authenticators: z.array(z.string())
+  authenticators: z.enum(['openAI', 'facebook', 'twitter'])
 });
 
 const output = z.object({

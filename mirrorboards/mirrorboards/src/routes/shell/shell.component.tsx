@@ -1,27 +1,36 @@
 import { Outlet } from "@tanstack/react-router"
-import { narniaTrpc } from "../../narniaTrpc";
-import { narnia } from "../../trpc/narnia.trpc";
+import { narnia, narniaClient } from "../../trpc/narnia.trpc";
+import { luna, lunaClient } from "../../trpc/luna.trpc";
 
+// narniaClient.auth.me.query().then((res) => {
+//   console.log(res);
+// });
 
-narniaTrpc.auth.me.query().then((res) => {
-  console.log(res);
-});
+// lunaClient.authenticators.fetchAuthenticators.query({
+//   authenticators: 'facebook',
+//   token: '123'
+// })
 
 // narnia.auth.login.mutate({
 //   email: 'lunacrafts@protonmail.com',
 //   password: 'crafts'
 // });
 
-// narnia.mirrorboards.mirrorboards.findAll.query().then((res) => {
-//   console.log('res');
+// narniaClient.openai.social.generateMarketingPersonas.query({
+//   count: 1
+// }).then((res) => {
+//   console.log('narniaClient.openai.social.generateMarketingPersonas');
 //   console.log(res);
-// })
+// });
 
 export const ShellComponent = () => {
-  // const { data } = narnia.openai.social.generateMarketingPersonas
+  const { data } = luna.authenticators.fetchAuthenticators.useQuery({
+    authenticators: 'facebook',
+    token: '123'
+  });
 
   return <div>
-    Mirrorboards Shell
+    Mirrorboards Shell <div>{JSON.stringify(data)}</div>
     <div style={{ border: '1px solid black' }}>
       <Outlet />
     </div>
