@@ -9,7 +9,7 @@ import { LunaServices } from "./luna.services";
     {
       token: LunaDatabase,
       useFactory: () => {
-        return new LunaDatabase(envs.MONGODB_URI, envs.MONGODB_DB_NAME);
+        return new LunaDatabase(envs.LUNA_MONGODB_URI, envs.LUNA_MONGODB_DB_NAME);
       }
     },
     {

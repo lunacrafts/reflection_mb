@@ -3,8 +3,8 @@ import { router } from './router';
 
 export const openApiDocument = generateOpenApiDocument(router, {
   title: 'Luna',
-  description: 'Mirrorboards Authentication Services',
+  description: 'Luna Services',
   version: '1.0.0',
-  baseUrl: 'http://localhost:4000/api',
-  tags: ['auth', 'authenticators'],
+  baseUrl: 'http://localhost:3456/api',
+  tags: [],
 });
