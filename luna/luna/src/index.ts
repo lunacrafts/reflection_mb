@@ -12,8 +12,7 @@ import { env } from 'env';
 import { createOpenApiExpressMiddleware } from 'trpc-openapi';
 
 import { openApiDocument } from './openapi';
-import { createContext } from 'luna-trpc';
-import { router } from './router';
+import { router, createContext } from 'luna-trpc';
 import cors from 'cors';
 
 const log = debug('auth');
