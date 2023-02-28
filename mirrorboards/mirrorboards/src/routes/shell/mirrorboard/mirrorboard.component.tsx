@@ -14,6 +14,7 @@ export const MirrorboardComponent = () => {
   // const register = narnia.auth.register.useMutation();
 
   return <div>
+    mirrorboard
     {/* Mirrorboard {mirrorboardId}{JSON.stringify(data)}
 
     <div onClick={() => login.mutate({

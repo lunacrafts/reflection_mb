@@ -22,9 +22,6 @@
     "@mantine/hooks": "^5.10.0",
     "@reflection-layouts/board": "workspace:*",
     "@reflection-layouts/reflection": "workspace:*",
-    "@tanstack/react-location": "^3.7.4",
-    "@tanstack/react-location-devtools": "^3.4.4",
-    "@tanstack/react-router": "0.0.1-beta.83",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
