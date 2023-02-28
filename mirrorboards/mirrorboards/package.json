@@ -14,6 +14,7 @@
     "@reflection/extension": "workspace:*",
     "@reflection/icons": "workspace:*",
     "@reflection-layouts/reflection": "workspace:*",
+    "@reflection-layouts/mirrorboards": "workspace:*",
     "@tanstack/react-query": "^4.20.9",
     "@tanstack/react-router": "0.0.1-beta.83",
     "@tauri-apps/api": "^1.2.0",
