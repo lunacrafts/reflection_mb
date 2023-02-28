@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "luna": "workspace:*",
+    "luna-trpc": "workspace:*",
     "@tauri-apps/cli": "^1.2.2",
     "@types/node": "^18.7.10",
     "@types/react": "^18.0.15",

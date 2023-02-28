@@ -250,6 +250,7 @@ importers:
       axios: ^1.3.4
       env: workspace:*
       luna: workspace:*
+      luna-trpc: workspace:*
       mirrorboards-shell: workspace:*
       narnia-trpc: workspace:*
       react: ^18.2.0
@@ -287,6 +288,7 @@ importers:
       '@types/react-dom': 18.0.10
       '@vitejs/plugin-react': 3.1.0_vite@4.1.3
       luna: link:../../luna/luna
+      luna-trpc: link:../../luna/luna-trpc
       typescript: 4.9.4
       vite: 4.1.3_@types+node@18.11.18
 
