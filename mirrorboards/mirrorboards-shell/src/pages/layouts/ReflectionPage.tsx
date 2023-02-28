@@ -1,14 +1,14 @@
-import { CraftLayoutProvider } from "@reflection-layouts/craft";
+import { BoardLayoutProvider } from "@reflection-layouts/board";
 import { ReflectionLayout } from "@reflection-layouts/reflection";
-import { ReflectionPageCraftDashboard } from "./ReflectionPageCraftDashboard";
+import { ReflectionPageBoardDashboard } from "./ReflectionPageBoardDashboard";
 
 export const ReflectionPage = () => {
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <ReflectionLayout>
-        <CraftLayoutProvider>
-          <ReflectionPageCraftDashboard />
-        </CraftLayoutProvider>
+        <BoardLayoutProvider>
+          <ReflectionPageBoardDashboard />
+        </BoardLayoutProvider>
       </ReflectionLayout>
     </div>
   );
