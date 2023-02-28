@@ -10,7 +10,7 @@ importers:
     devDependencies:
       eslint-config-custom: link:packages/eslint-config-custom
       prettier: 2.8.4
-      turbo: 1.8.2
+      turbo: 1.8.3
 
   auth/auth:
     specifiers:
@@ -231,71 +231,11 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
 
-  mirrorboards-extensions/hypeboards-core:
-    specifiers:
-      '@mantine/core': ^5.10.0
-      '@mantine/hooks': ^5.10.0
-      '@reflection-layouts/reflection': workspace:*
-      '@reflection/extension': workspace:*
-      '@reflection/icons': workspace:*
-      '@types/lodash': ^4.14.191
-      '@types/react': ^18.0.26
-      '@types/react-dom': ^18.0.10
-      lodash: ^4.17.21
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      tsconfig: workspace:*
-      typescript: ^4.9.4
-    dependencies:
-      '@mantine/core': 5.10.0_czzj3t2fwkp7ncd7sfrc23w6gu
-      '@mantine/hooks': 5.10.0_react@18.2.0
-      lodash: 4.17.21
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    devDependencies:
-      '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
-      '@reflection/extension': link:../../reflection/extension
-      '@reflection/icons': link:../../reflection/icons
-      '@types/lodash': 4.14.191
-      '@types/react': 18.0.26
-      '@types/react-dom': 18.0.10
-      tsconfig: link:../../packages/tsconfig
-      typescript: 4.9.4
-
-  mirrorboards-extensions/mirrorboards-core:
-    specifiers:
-      '@mantine/core': ^5.10.0
-      '@mantine/hooks': ^5.10.0
-      '@reflection-layouts/reflection': workspace:*
-      '@reflection/extension': workspace:*
-      '@reflection/icons': workspace:*
-      '@types/lodash': ^4.14.191
-      '@types/react': ^18.0.26
-      '@types/react-dom': ^18.0.10
-      lodash: ^4.17.21
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      tsconfig: workspace:*
-      typescript: ^4.9.4
-    dependencies:
-      '@mantine/core': 5.10.0_czzj3t2fwkp7ncd7sfrc23w6gu
-      '@mantine/hooks': 5.10.0_react@18.2.0
-      lodash: 4.17.21
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    devDependencies:
-      '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
-      '@reflection/extension': link:../../reflection/extension
-      '@reflection/icons': link:../../reflection/icons
-      '@types/lodash': 4.14.191
-      '@types/react': 18.0.26
-      '@types/react-dom': 18.0.10
-      tsconfig: link:../../packages/tsconfig
-      typescript: 4.9.4
-
   mirrorboards/mirrorboards:
     specifiers:
+      '@reflection-layouts/reflection': workspace:*
       '@reflection/extension': workspace:*
+      '@reflection/icons': workspace:*
       '@tanstack/react-query': ^4.20.9
       '@tanstack/react-router': 0.0.1-beta.83
       '@tauri-apps/api': ^1.2.0
@@ -308,9 +248,7 @@ importers:
       '@vitejs/plugin-react': ^3.0.0
       axios: ^1.3.4
       env: workspace:*
-      hypeboards-core: workspace:*
       luna: workspace:*
-      mirrorboards-core: workspace:*
       mirrorboards-shell: workspace:*
       narnia-trpc: workspace:*
       react: ^18.2.0
@@ -322,7 +260,9 @@ importers:
       vite: ^4.0.0
       zod: ^3.20.2
     dependencies:
+      '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
       '@reflection/extension': link:../../reflection/extension
+      '@reflection/icons': link:../../reflection/icons
       '@tanstack/react-query': 4.20.9_biqbaboplfbrettd7655fr4n2y
       '@tanstack/react-router': 0.0.1-beta.83_biqbaboplfbrettd7655fr4n2y
       '@tauri-apps/api': 1.2.0
@@ -330,8 +270,6 @@ importers:
       '@trpc/react-query': 10.7.0_bjrlcoywzevqiss65ma3d34awa
       axios: 1.3.4
       env: link:../../packages/env
-      hypeboards-core: link:../../mirrorboards-extensions/hypeboards-core
-      mirrorboards-core: link:../../mirrorboards-extensions/mirrorboards-core
       mirrorboards-shell: link:../mirrorboards-shell
       narnia-trpc: link:../../narnia/narnia-trpc
       react: 18.2.0
@@ -355,11 +293,8 @@ importers:
       '@emotion/react': ^11.10.5
       '@mantine/core': ^5.10.0
       '@mantine/hooks': ^5.10.0
-      '@reflection-layouts/craft': workspace:*
+      '@reflection-layouts/board': workspace:*
       '@reflection-layouts/reflection': workspace:*
-      '@tanstack/react-location': ^3.7.4
-      '@tanstack/react-location-devtools': ^3.4.4
-      '@tanstack/react-router': 0.0.1-beta.83
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.10
       react: ^18.2.0
@@ -370,11 +305,8 @@ importers:
       '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
       '@mantine/core': 5.10.0_lbfixegkxal6rwioqxubxet6s4
       '@mantine/hooks': 5.10.0_react@18.2.0
-      '@reflection-layouts/craft': link:../../reflection-layouts/craft
+      '@reflection-layouts/board': link:../../reflection-layouts/board
       '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
-      '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
-      '@tanstack/react-location-devtools': 3.4.4_cjlhpxbqypkcyqswf5hjvxhobu
-      '@tanstack/react-router': 0.0.1-beta.83_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -594,7 +526,7 @@ importers:
       eslint: 7.32.0
       eslint-config-next: 13.0.0_yfqovispp7u7jaktymfaqwl2py
       eslint-config-prettier: 8.6.0_eslint@7.32.0
-      eslint-config-turbo: 0.0.8_eslint@7.32.0
+      eslint-config-turbo: 0.0.9_eslint@7.32.0
       eslint-plugin-react: 7.31.8_eslint@7.32.0
     devDependencies:
       typescript: 4.9.4
@@ -602,7 +534,7 @@ importers:
   packages/tsconfig:
     specifiers: {}
 
-  reflection-layouts/craft:
+  reflection-layouts/board:
     specifiers:
       '@emotion/react': ^11.10.5
       '@mantine/core': ^5.10.0
@@ -633,7 +565,7 @@ importers:
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
       tsconfig: link:../../packages/tsconfig
-      typescript: 4.9.4
+      typescript: 4.9.5
 
   reflection-layouts/reflection:
     specifiers:
@@ -2269,26 +2201,6 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@mantine/core/5.10.0_czzj3t2fwkp7ncd7sfrc23w6gu:
-    resolution: {integrity: sha512-if272RiYPK0nQQdGNwcCSY7bCPJW9455qXlRhnYOr021xh89T8WFVPeDw4uwcxoXsXdKRV5GAi9irSnsUqsjJQ==}
-    peerDependencies:
-      '@mantine/hooks': 5.10.0
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-    dependencies:
-      '@floating-ui/react-dom-interactions': 0.10.3_ib3m5ricvtkl2cll7qpr2f6lvq
-      '@mantine/hooks': 5.10.0_react@18.2.0
-      '@mantine/styles': 5.10.0_biqbaboplfbrettd7655fr4n2y
-      '@mantine/utils': 5.10.0_react@18.2.0
-      '@radix-ui/react-scroll-area': 1.0.2_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      react-textarea-autosize: 8.3.4_kzbn2opkn2327fwg5yzwzya5o4
-    transitivePeerDependencies:
-      - '@emotion/react'
-      - '@types/react'
-    dev: false
-
   /@mantine/core/5.10.0_lbfixegkxal6rwioqxubxet6s4:
     resolution: {integrity: sha512-if272RiYPK0nQQdGNwcCSY7bCPJW9455qXlRhnYOr021xh89T8WFVPeDw4uwcxoXsXdKRV5GAi9irSnsUqsjJQ==}
     peerDependencies:
@@ -2315,19 +2227,6 @@ packages:
       react: '>=16.8.0'
     dependencies:
       react: 18.2.0
-    dev: false
-
-  /@mantine/styles/5.10.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-3JBM5LWJHb4Yk7jymPiSuaBJRoe2CgA7KoyYWgabwBP115GlHPb1rQCcavJsobHV4U+wFfZEEUnVBpaAaXqgmw==}
-    peerDependencies:
-      '@emotion/react': '>=11.9.0'
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-    dependencies:
-      clsx: 1.1.1
-      csstype: 3.0.9
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@mantine/styles/5.10.0_sogmqz4enknxtkxk3k5s6bqwnq:
@@ -2651,33 +2550,6 @@ packages:
 
   /@tanstack/query-core/4.20.9:
     resolution: {integrity: sha512-XTEEvOGy7wlABPTYfmg7U287WYcf2PV8lH15oKWD2I09okqMOHrB23WxyikEVRwJCjYNKcCW0BuYaAY4S2g/jg==}
-    dev: false
-
-  /@tanstack/react-location-devtools/3.4.4_cjlhpxbqypkcyqswf5hjvxhobu:
-    resolution: {integrity: sha512-EyPdaPXlIgGoZl8S34RPcQ/OD2WqwZSNg89lpTfFf3yUWOOMJHmK6MUH3jubOjtAONnIs+UreePWbW+NY7gBAQ==}
-    engines: {node: '>=12'}
-    peerDependencies:
-      '@tanstack/react-location': 3.4.4
-      react: '>=16'
-      react-dom: '>=16'
-    dependencies:
-      '@babel/runtime': 7.20.7
-      '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /@tanstack/react-location/3.7.4_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-6rH2vNHGr0uyeUz5ZHvWMYjeYKGgIKFzvs5749QtnS9f+FU7t7fQE0hKZAzltBZk82LT7iYbcHBRyUg2lW13VA==}
-    engines: {node: '>=12'}
-    peerDependencies:
-      react: '>=16'
-      react-dom: '>=16'
-    dependencies:
-      '@babel/runtime': 7.20.7
-      history: 5.3.0
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@tanstack/react-query/4.20.9_biqbaboplfbrettd7655fr4n2y:
@@ -4206,13 +4078,13 @@ packages:
       eslint: 7.32.0
     dev: false
 
-  /eslint-config-turbo/0.0.8_eslint@7.32.0:
-    resolution: {integrity: sha512-ijj6uv0QX2kWahg3OYnTK1/q4MueXsqY2uE4MP9yeUA5CzVhL7GU+biKlv1BfMMqPltixHUcpZoW4yyNLCnMiw==}
+  /eslint-config-turbo/0.0.9_eslint@7.32.0:
+    resolution: {integrity: sha512-j1cTdx3tRmKo0csyfQKhpuT8dynK9oddbK5nmrShoMpXI2qMbxHLYH7MWAid4FmJN8rYympy3VKw5U63Yazycg==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 7.32.0
-      eslint-plugin-turbo: 0.0.8_eslint@7.32.0
+      eslint-plugin-turbo: 0.0.9_eslint@7.32.0
     dev: false
 
   /eslint-import-resolver-node/0.3.6:
@@ -4490,8 +4362,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: false
 
-  /eslint-plugin-turbo/0.0.8_eslint@7.32.0:
-    resolution: {integrity: sha512-pExSCmjWw/KFKb3/0PVqxiWb30FbcwDEf6kKv3alvNBSVEzDHalyAGHc9klbLSG+nFmbkfNE3Ky/UHDryCqt8g==}
+  /eslint-plugin-turbo/0.0.9_eslint@7.32.0:
+    resolution: {integrity: sha512-fEsuSnYU3GLtT+s66mUuzDL1LaSieIx5uk3tPO0ToGv7hI2XzOfP24aPkQItTBGl7kq2JaVkRzPwcnfz8hkp0w==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
@@ -5105,12 +4977,6 @@ packages:
 
   /highlight.js/10.7.3:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
-    dev: false
-
-  /history/5.3.0:
-    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
-    dependencies:
-      '@babel/runtime': 7.20.7
     dev: false
 
   /hoist-non-react-statics/3.3.2:
@@ -7447,65 +7313,65 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /turbo-darwin-64/1.8.2:
-    resolution: {integrity: sha512-j77U0uOeppENexFsIvvzExADSqMBEeCHnm+6LSNQfaajHSrbUVSTsuD6ZMYHamT6bslc+ZZm21jdecWkwZFBbw==}
+  /turbo-darwin-64/1.8.3:
+    resolution: {integrity: sha512-bLM084Wr17VAAY/EvCWj7+OwYHvI9s/NdsvlqGp8iT5HEYVimcornCHespgJS/yvZDfC+mX9EQkn3V2JmYgGGw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.8.2:
-    resolution: {integrity: sha512-1NoAvjlwt2wycsAFJouauy9epn9DptSMy6BoGqxJVc4jiibsLepp9qYc4f1/ln0zjd3FR1IvhGOiBfdpqMN7hg==}
+  /turbo-darwin-arm64/1.8.3:
+    resolution: {integrity: sha512-4oZjXtzakopMK110kue3z/hqu3WLv+eDLZOX1NGdo49gqca9BeD8GbH+sXpAp6tqyeuzpss+PIliVYuyt7LgbA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.8.2:
-    resolution: {integrity: sha512-TcT3CRYnBYA46kLGGbGC2jDyCEAvMgVpUdpIZGTmod48EKpZaEfVgTkpa4GJde8W68yRFogPZjPVL3yJHFpXSA==}
+  /turbo-linux-64/1.8.3:
+    resolution: {integrity: sha512-uvX2VKotf5PU14FCxJA5iHItPQno2JWzerMd+g3/h/Asay6dvxvtVjc39MQeGT0H5njSvzVKFkT+3/5q8lgOEg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.8.2:
-    resolution: {integrity: sha512-Mb9+KBy4YJzPMZ6WGoMzMVZ6EtueCSvOvgmNpVFgkwbtabfBuaBOvN+irtg4RRSWvJQTDTziLABieocEEXZImQ==}
+  /turbo-linux-arm64/1.8.3:
+    resolution: {integrity: sha512-E1p+oH3XKMaPS4rqWhYsL4j2Pzc0d/9P5KU7Kn1kqVLo2T3iRA7n2KVULEieUNE0nTH+aIJPXYXOpqCI5wFJaA==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.8.2:
-    resolution: {integrity: sha512-/+R5ikRrw2w2w38JtNPubGLIQHgUC70m783DI9aPgaM5c8P5D/Y0k6HgjuC/uXgiaz2h3R7p7YWlr+2/E0bqyA==}
+  /turbo-windows-64/1.8.3:
+    resolution: {integrity: sha512-cnzAytHtoLXd0J7aNzRpZFpL/GTjcBmkvAPlbOdf/Pl1iwS4qzGrudZQ+OM1lmLgLIfBPIavsGHBknTwTNib4A==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.8.2:
-    resolution: {integrity: sha512-s07viz5nXSx4kyiksuPM4FGLRkoaGMaw0BpwFjdRQsl1p+WclUN1IPdokVPKOmFpu5pNCVYlG/raP/mXAEzDCg==}
+  /turbo-windows-arm64/1.8.3:
+    resolution: {integrity: sha512-ulIiItNm2w/zYJdD5/oAzjzNns1IjbpweRzpsE8tLXaWwo6+fnXXkyloUug0IUhcd2k6fJXfoiDZfygqpOVuXg==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.8.2:
-    resolution: {integrity: sha512-G/uJx6bZK5RwTWHsRN/MP0MvXFznmCaL3MQXdSf+OG/q0o8GE7+yivyyWEplWI1Asc8AEN909A/wlIkoz2FKTg==}
+  /turbo/1.8.3:
+    resolution: {integrity: sha512-zGrkU1EuNFmkq6iky6LcMqD4h0OLE8XysVFxQWRIZbcTNnf0XAycbsbeEyiJpiWeqb7qtg2bVuY9EYcNoNhVuQ==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.8.2
-      turbo-darwin-arm64: 1.8.2
-      turbo-linux-64: 1.8.2
-      turbo-linux-arm64: 1.8.2
-      turbo-windows-64: 1.8.2
-      turbo-windows-arm64: 1.8.2
+      turbo-darwin-64: 1.8.3
+      turbo-darwin-arm64: 1.8.3
+      turbo-linux-64: 1.8.3
+      turbo-linux-arm64: 1.8.3
+      turbo-windows-64: 1.8.3
+      turbo-windows-arm64: 1.8.3
     dev: true
 
   /twilio/4.8.0_debug@4.3.4:

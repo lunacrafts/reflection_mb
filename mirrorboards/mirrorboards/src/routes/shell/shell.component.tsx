@@ -1,10 +1,10 @@
 import { Outlet } from "@tanstack/react-router"
+import { MirrorboardsShellMantineProvider } from "mirrorboards-shell"
 
 export const ShellComponent = () => {
-  return <div>
-    Mirrorboards Shell
-    <div style={{ border: '1px solid black' }}>
+  return <MirrorboardsShellMantineProvider>
+    <div style={{ padding: 15, backgroundColor: '#343434', height: '100%' }}>
       <Outlet />
     </div>
-  </div>
+  </MirrorboardsShellMantineProvider>
 }

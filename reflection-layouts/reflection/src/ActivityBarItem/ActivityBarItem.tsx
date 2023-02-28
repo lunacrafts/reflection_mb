@@ -2,7 +2,7 @@ import { Box, createStyles, DefaultProps, Selectors } from "@mantine/core";
 import { PropsWithChildren } from "react";
 import { Tooltip } from "@mantine/core";
 
-export interface ActivityBarItemStyleParams {}
+export interface ActivityBarItemStyleParams { }
 
 const useStyles = createStyles((theme) => {
   return {
@@ -15,7 +15,7 @@ const useStyles = createStyles((theme) => {
       transition: "all",
       transitionDuration: "300ms",
       cursor: "pointer",
-      opacity: 0.7,
+      opacity: 0.5,
       ":hover": {
         opacity: 1,
       },
