@@ -1,10 +1,11 @@
-import { FontAwesomeIcon } from "@reflection/icons";
 import { ActivityBarItem, useActivityBarItem } from "@reflection-layouts/reflection";
+import { FontAwesomeIcon } from "@reflection/icons";
+import { Outlet } from "@tanstack/react-router";
 
-export const DashboardActivityBar = () => {
+export const HypeboardsComponent = () => {
   useActivityBarItem(
     {
-      namespace: "dashboard",
+      namespace: "hypeboards.sources",
       render: () => (
         <ActivityBarItem tooltip={"Hypeboard"}>
           <FontAwesomeIcon icon={"square-h"} color={"white"} fontSize={20} />
@@ -12,10 +13,14 @@ export const DashboardActivityBar = () => {
       ),
       meta: {
         placement: "top",
+        order: 10,
       },
     },
     []
   );
 
-  return null;
-};
+  return <div style={{ height: '100%', backgroundColor: '#181818' }}>
+    Hypeboards Root!
+    <Outlet />
+  </div>
+}

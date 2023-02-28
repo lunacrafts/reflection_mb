@@ -7,7 +7,6 @@
     "luna/*",
     "docker-seed/*",
     "mirrorboards/*",
-    "mirrorboards-extensions/*",
     "narnia/*",
     "narnia-routers/*",
     "packages/*",

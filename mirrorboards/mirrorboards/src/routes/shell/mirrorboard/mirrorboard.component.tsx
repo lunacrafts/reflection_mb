@@ -1,5 +1,6 @@
 import { ActivityBarItem, ReflectionLayout, StatusBarItem, useActivityBarItem, useStatusBarItem } from "@reflection-layouts/reflection";
 import { FontAwesomeIcon } from "@reflection/icons";
+import { Outlet } from "@tanstack/react-router";
 
 export const MirrorboardComponent = () => {
   useActivityBarItem(
@@ -49,6 +50,22 @@ export const MirrorboardComponent = () => {
 
   useStatusBarItem(
     {
+      namespace: "mirrorboard.notifications",
+      render: () => (
+        <StatusBarItem tooltip="Notifications">
+          <FontAwesomeIcon icon={"bell"} color={"white"} />
+        </StatusBarItem>
+      ),
+      meta: {
+        placement: "right",
+        order: 1
+      },
+    },
+    []
+  );
+
+  useStatusBarItem(
+    {
       namespace: "fullscreen.toggle",
       render: () => (
         <StatusBarItem tooltip="Toggle Fullscreen">
@@ -64,7 +81,7 @@ export const MirrorboardComponent = () => {
 
   return <div style={{ height: '100%', backgroundColor: '#181818' }}>
     <ReflectionLayout>
-      Reflection layout
+      <Outlet />
     </ReflectionLayout>
   </div>
 }
