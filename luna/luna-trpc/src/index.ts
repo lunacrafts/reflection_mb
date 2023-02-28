@@ -1,2 +1,2 @@
-export * from './luna/procedures/withLuna.procedure';
+export * from './luna/luna.withLuna.procedure';
 export * from "./context";

@@ -1,6 +1,6 @@
 import { container } from 'tsyringe';
-import { t } from '../../trpc';
-import { Luna } from '../luna';
+import { t } from '../trpc';
+import { Luna } from './luna';
 
 export type WithLuna = {
   luna?: Luna
