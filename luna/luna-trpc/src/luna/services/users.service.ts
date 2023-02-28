@@ -1,9 +1,9 @@
 import { inject, injectable } from "tsyringe";
-import { LunaCollections } from "../luna.collections";
+import { LunaModels } from "../luna.models";
 
 @injectable()
 export class UsersService {
   constructor(
-    @inject(LunaCollections) private readonly collections: LunaCollections,
+    @inject(LunaModels) private readonly collections: LunaModels,
   ) { }
 }

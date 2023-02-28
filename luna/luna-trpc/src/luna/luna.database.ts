@@ -6,6 +6,8 @@ export class LunaDatabase {
   constructor(private readonly uri: string, private readonly dbName: string) { }
 
   async connect() {
+    mongoose.SchemaTypes.ObjectId.get(v => v.toString());
+
     mongoose.set('strictQuery', false);
 
     await mongoose.connect(this.uri, {

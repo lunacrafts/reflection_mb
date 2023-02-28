@@ -18,13 +18,9 @@ export const findAllPublic = t.router({
         tags: ['mirrorboards']
       }
     })
-    .query(async () => {
-      return {
-        mirrorboards: [{
-          id: 'mirrorboard-1',
-          isPublic: true,
-          title: 'Mirrorboard 1!'
-        }]
-      }
+    .query(async ({ ctx: { luna } }) => {
+      const mirrorboards = await luna.services.mirrorboards.findAllPublic();
+
+      return { mirrorboards }
     })
 });

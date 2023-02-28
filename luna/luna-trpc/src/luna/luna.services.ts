@@ -1,5 +1,6 @@
 import { inject, registry, singleton } from "tsyringe";
 import { AuthService } from "./services/auth.service";
+import { MirrorboardsService } from "./services/mirrorboards.service";
 import { UsersService } from "./services/users.service";
 
 @registry(
@@ -7,6 +8,10 @@ import { UsersService } from "./services/users.service";
     {
       token: AuthService,
       useClass: AuthService,
+    },
+    {
+      token: MirrorboardsService,
+      useClass: MirrorboardsService,
     },
     {
       token: UsersService,
@@ -18,6 +23,7 @@ import { UsersService } from "./services/users.service";
 export class LunaServices {
   constructor(
     @inject(AuthService) public readonly auth: AuthService,
-    @inject(UsersService) public readonly users: UsersService
+    @inject(MirrorboardsService) public readonly mirrorboards: MirrorboardsService,
+    @inject(UsersService) public readonly users: UsersService,
   ) { }
 }

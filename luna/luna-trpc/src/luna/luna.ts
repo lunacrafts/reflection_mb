@@ -1,6 +1,6 @@
 import { container, inject, registry, singleton } from "tsyringe";
 import { env } from 'env';
-import { LunaCollections } from "./luna.collections";
+import { LunaModels } from "./luna.models";
 import { LunaDatabase } from "./luna.database";
 import { LunaServices } from "./luna.services";
 
@@ -17,8 +17,8 @@ import { LunaServices } from "./luna.services";
       useClass: LunaServices,
     },
     {
-      token: LunaCollections,
-      useClass: LunaCollections,
+      token: LunaModels,
+      useClass: LunaModels,
     }
   ]
 )
@@ -27,7 +27,7 @@ export class Luna {
   constructor(
     @inject(LunaDatabase) public readonly db: LunaDatabase,
     @inject(LunaServices) public readonly services: LunaServices,
-    @inject(LunaCollections) public readonly collections: LunaCollections,
+    @inject(LunaModels) public readonly collections: LunaModels,
   ) { }
 
   async _initialize() {
