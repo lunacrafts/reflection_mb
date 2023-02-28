@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { Luna } from "luna-sdk";
 import { t } from '../../../trpc';
+import { withLuna } from '../../../luna/luna.withLuna.procedure';
 
 const input = z.void();
 
@@ -9,7 +10,7 @@ const output = z.object({
 });
 
 export const findAllPublic = t.router({
-  findAllPublic: t.procedure.input(input).output(output)
+  findAllPublic: withLuna.input(input).output(output)
     .meta({
       openapi: {
         method: 'GET',

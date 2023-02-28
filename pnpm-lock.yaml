@@ -210,6 +210,7 @@ importers:
       cookie: ^0.5.0
       env: workspace:*
       luna-sdk: workspace:*
+      mongoose: ^6.10.0
       superjson: ^1.12.2
       trpc-openapi: ^1.1.2
       tsconfig: workspace:*
@@ -222,6 +223,7 @@ importers:
       cookie: 0.5.0
       env: link:../../packages/env
       luna-sdk: link:../luna-sdk
+      mongoose: 6.10.0
       superjson: 1.12.2
       trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm
       tsyringe: 4.7.0
@@ -5784,7 +5786,6 @@ packages:
 
   /@types/node/18.14.2:
     resolution: {integrity: sha512-1uEQxww3DaghA0RxqHx0O0ppVlo43pJhepY51OxuQIKHpjbnYLA7vcdwioNPzIqmC2u3I/dmylcqjlh0e7AyUA==}
-    dev: true
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -5867,7 +5868,7 @@ packages:
   /@types/whatwg-url/8.2.2:
     resolution: {integrity: sha512-FtQu10RWgn3D9U4aazdwIE2yzphmTJREDqNdODHrbrZmmMqI0vMheC/6NE/J1Yveaj8H+ela+YwWTjq5PGmuhA==}
     dependencies:
-      '@types/node': 18.13.0
+      '@types/node': 18.14.2
       '@types/webidl-conversions': 7.0.0
     dev: false
 
