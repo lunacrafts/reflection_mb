@@ -1,31 +1,70 @@
-import { useParams } from "@tanstack/react-router"
-import { mirrorboardRoute } from "./mirrorboard.route";
+import { ActivityBarItem, ReflectionLayout, StatusBarItem, useActivityBarItem, useStatusBarItem } from "@reflection-layouts/reflection";
+import { FontAwesomeIcon } from "@reflection/icons";
 
 export const MirrorboardComponent = () => {
-  // const { mirrorboardId } = useParams({
-  //   from: mirrorboardRoute.id,
-  // });
+  useActivityBarItem(
+    {
+      namespace: "drawer.toggle",
+      render: () => (
+        <ActivityBarItem tooltip={"Toggle drawer"}>
+          <FontAwesomeIcon icon={"bars"} color={"white"} fontSize={17} />
+        </ActivityBarItem>
+      ),
+      meta: {
+        placement: "top",
+      },
+    },
+    []
+  );
 
-  // const { data } = narnia.mirrorboards.mirrorboards.findOne.useQuery({
-  //   id: mirrorboardId
-  // });
+  useActivityBarItem(
+    {
+      namespace: "settings",
+      render: () => (
+        <ActivityBarItem tooltip={"Settings"}>
+          <FontAwesomeIcon icon={"cog"} color={"white"} fontSize={17} />
+        </ActivityBarItem>
+      ),
+      meta: {
+        placement: "bottom",
+      },
+    },
+    []
+  );
 
-  // const login = narnia.auth.login.useMutation();
-  // const register = narnia.auth.register.useMutation();
+  useStatusBarItem(
+    {
+      namespace: "mirrorboard.name",
+      render: () => (
+        <StatusBarItem tooltip="Switch Mirroboard">
+          <div onClick={() => { }}>{'Mirrorboard!'}</div>
+        </StatusBarItem>
+      ),
+      meta: {
+        placement: "left",
+      },
+    },
+    []
+  );
 
-  return <div>
-    mirrorboard
-    {/* Mirrorboard {mirrorboardId}{JSON.stringify(data)}
+  useStatusBarItem(
+    {
+      namespace: "fullscreen.toggle",
+      render: () => (
+        <StatusBarItem tooltip="Toggle Fullscreen">
+          <FontAwesomeIcon icon={"expand"} color={"white"} />
+        </StatusBarItem>
+      ),
+      meta: {
+        placement: "right",
+      },
+    },
+    []
+  );
 
-    <div onClick={() => login.mutate({
-      email: 'lunacrafts@protonmail.com',
-      password: 'crafts'
-    })}>login as luna@protonmail.com</div>
-
-    <div onClick={() => register.mutate({
-      email: 'lunacrafts@protonmail.com',
-      password: 'crafts',
-      repeatPassword: 'crafts'
-    })}>register as luna@protonmail.com@crafts</div> */}
+  return <div style={{ height: '100%', backgroundColor: '#181818' }}>
+    <ReflectionLayout>
+      Reflection layout
+    </ReflectionLayout>
   </div>
 }

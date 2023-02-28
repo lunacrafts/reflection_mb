@@ -3,8 +3,7 @@ import { MirrorboardsShellMantineProvider } from "mirrorboards-shell"
 
 export const ShellComponent = () => {
   return <MirrorboardsShellMantineProvider>
-    Mirrorboards Shell
-    <div style={{ border: '1px solid black' }}>
+    <div style={{ padding: 15, backgroundColor: '#343434', height: '100%' }}>
       <Outlet />
     </div>
   </MirrorboardsShellMantineProvider>
