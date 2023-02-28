@@ -21,7 +21,9 @@ export const BoardsComponent = () => {
 
     <div>Create public:</div>
     <button onClick={() => create.mutate({
+      id: 'my-unique-mir3ard',
       isPublic: true,
+      title: '123321123 XD'
     })}>create</button>
   </div>
 }

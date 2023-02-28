@@ -1,7 +1,8 @@
-import mongoose from "mongoose";
+import { z } from "zod";
 import { inject, injectable } from "tsyringe";
 import { ulid } from 'ulid';
 import { LunaModels } from "../luna.models";
+import { MirrorboardsServiceDTO } from "./mirrorboards.service.dto";
 
 @injectable()
 export class MirrorboardsService {
@@ -19,14 +20,10 @@ export class MirrorboardsService {
     return docs;
   }
 
-  async create(isPublic: boolean) {
-    const mirrorboard = new this.models.Mirrorboard({
-      id: ulid(),
-      title: 'XD',
-      isPublic
-    });
-
+  async create(input: z.infer<typeof MirrorboardsServiceDTO.create.input>) {
+    const mirrorboard = new this.models.Mirrorboard(input);
     const doc = await mirrorboard.save();
+
     return doc;
   }
 }

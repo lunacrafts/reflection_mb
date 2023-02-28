@@ -10,6 +10,7 @@ const mirrorboardSchema = new mongoose.Schema<Mirrorboard>({
   id: {
     type: String,
     required: true,
+    unique: true,
   },
   title: {
     type: String,

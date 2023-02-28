@@ -2,10 +2,9 @@ import { z } from 'zod';
 import { Luna } from "luna-sdk";
 import { t } from '../../../trpc';
 import { withLuna } from '../../../luna/luna.withLuna.procedure';
+import { MirrorboardsServiceDTO } from '../../../luna/services/mirrorboards.service.dto';
 
-const input = z.object({
-  isPublic: z.boolean(),
-});
+const input = MirrorboardsServiceDTO.create.input;
 
 const output = z.object({
   mirrorboard: Luna.Mirrorboard,
@@ -21,7 +20,7 @@ export const create = t.router({
       }
     })
     .mutation(async ({ ctx: { luna }, input }) => {
-      const mirrorboard = await luna.services.mirrorboards.create(input.isPublic);
+      const mirrorboard = await luna.services.mirrorboards.create(input);
 
       return { mirrorboard }
     })
