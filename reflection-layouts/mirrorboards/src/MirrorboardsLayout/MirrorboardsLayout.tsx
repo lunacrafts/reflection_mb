@@ -2,7 +2,7 @@ import React from "react";
 import { PropsWithChildren } from "react";
 
 import { Box, createStyles, DefaultProps, MantineNumberSize, Selectors, useComponentDefaultProps } from "@mantine/core";
-import { useMirrorboardsLayout } from "../MirrorboardsLayoutProvider/MirrorboardsLayoutProvider";
+import { useMirrorboardsLayout } from "../useMirrorboardsLayout/useMirrorboardsLayout";
 
 export interface MirrorboardsLayoutParams {
   drawerWidth: MantineNumberSize;

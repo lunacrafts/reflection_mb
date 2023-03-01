@@ -1,13 +1,17 @@
+import { useMirrorboardsLayout } from "@reflection-layouts/mirrorboards";
 import { ActivityBarItem, ReflectionLayout, StatusBarItem, useActivityBarItem, useStatusBarItem } from "@reflection-layouts/reflection";
 import { FontAwesomeIcon } from "@reflection/icons";
 
 export const MirrorboardsExtension = () => {
+
+  const { drawer } = useMirrorboardsLayout();
+
   useActivityBarItem(
     {
       namespace: "drawer.toggle",
       render: () => (
         <ActivityBarItem tooltip={"Toggle drawer"}>
-          <FontAwesomeIcon icon={"bars"} color={"white"} fontSize={17} />
+          <FontAwesomeIcon onClick={() => drawer.actions.toggle()} icon={"bars"} color={"white"} fontSize={17} />
         </ActivityBarItem>
       ),
       meta: {

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import useHotkeys from "@reecelucas/react-use-hotkeys";
-import { useMirrorboardsLayout } from "../MirrorboardsLayoutProvider/MirrorboardsLayoutProvider";
+import { useMirrorboardsLayout } from "../useMirrorboardsLayout/useMirrorboardsLayout";
 
 interface MirrorboardsLayoutKeyboardSupportProps {
   onSelectedIndex?: (index: number) => void;

@@ -11,17 +11,10 @@ const createMirrorboardsLayout = () =>
 
 export const MirrorboardsLayoutContext = React.createContext<StoreApi<MirrorboardsLayoutStore>>(null!);
 
-interface MirrorboardsLayoutProviderProps {}
+interface MirrorboardsLayoutProviderProps { }
 
 export const MirrorboardsLayoutProvider: React.FC<PropsWithChildren<MirrorboardsLayoutProviderProps>> = (props) => {
   const store = React.useRef(createMirrorboardsLayout()).current;
 
   return <MirrorboardsLayoutContext.Provider value={store}>{props.children}</MirrorboardsLayoutContext.Provider>;
-};
-
-export const useMirrorboardsLayout = () => {
-  const store = React.useContext(MirrorboardsLayoutContext);
-  const drawer = useStore(store, (state) => state.drawer);
-
-  return { drawer };
 };

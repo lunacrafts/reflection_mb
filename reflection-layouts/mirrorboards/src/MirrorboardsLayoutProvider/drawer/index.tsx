@@ -19,7 +19,7 @@ export const createDrawerSlice: StateCreator<MirrorboardsLayoutStore, [], [], Dr
   return {
     drawer: {
       state: {
-        isExpanded: true,
+        isExpanded: false,
       },
       actions: {
         open: () => {
