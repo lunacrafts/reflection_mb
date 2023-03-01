@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-interface Mirrorboard {
+export interface Mirrorboard {
   id: string
   title: string
   isPublic: boolean
@@ -20,6 +20,8 @@ const mirrorboardSchema = new mongoose.Schema<Mirrorboard>({
     type: Boolean,
     required: true,
   }
+}, {
+  timestamps: true
 });
 
 export const Mirrorboard = mongoose.model<Mirrorboard>('Mirrorboard', mirrorboardSchema);

@@ -11,7 +11,7 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
-    "@trpc/server": "^10.7.0",
+    "@trpc/server": "^10.13.2",
     "narnia-trpc-context": "workspace:*",
     "openai-sdk": "workspace:*",
     "superjson": "^1.12.2",

@@ -15,8 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "env": "workspace:*",
-    "@trpc/client": "^10.7.0",
-    "@trpc/server": "^10.7.0",
+    "@trpc/client": "^10.13.2",
+    "@trpc/server": "^10.13.2",
     "bcrypt": "^5.1.0",
     "cookie": "^0.5.0",
     "cors": "^2.8.5",

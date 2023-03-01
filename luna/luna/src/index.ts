@@ -10,6 +10,7 @@ import swaggerUi from 'swagger-ui-express';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import { env } from 'env';
 import { createOpenApiExpressMiddleware } from 'trpc-openapi';
+import cookieParser from 'cookie-parser';
 
 import { openApiDocument } from './openapi';
 import { router, createContext } from 'luna-trpc';
@@ -19,6 +20,8 @@ const log = debug('auth');
 const app = express();
 
 app.use(logger('dev'));
+
+app.use(cookieParser());
 
 app.use(cors({
   origin: env.MIRRORBOARDS_WEB_APP_URL,

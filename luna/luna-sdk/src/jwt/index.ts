@@ -21,16 +21,18 @@ const getKey = (header: JwtHeader, callback: SigningKeyCallback) => {
   });
 }
 
-export const decodeJWTToken = (access_token: string) => new Promise<z.infer<typeof JWTPayload>>((resolve, reject) => {
-  JsonWebToken.verify(access_token, getKey, {}, function (err, payload) {
-    if (err) {
-      return reject(err);
-    }
+export const decodeJWTToken = async (access_token: string) => {
+  return new Promise<z.infer<typeof JWTPayload>>((resolve, reject) => {
+    JsonWebToken.verify(access_token, getKey, {}, function (err, payload) {
+      if (err) {
+        return reject(err);
+      }
 
-    if (payload) {
-      resolve(JWTPayload.parse(payload));
-    } else {
-      reject();
-    }
+      if (payload) {
+        resolve(JWTPayload.parse(payload));
+      } else {
+        reject();
+      }
+    });
   });
-});
+}

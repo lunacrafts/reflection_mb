@@ -11,8 +11,8 @@
   "author": "lunacrafts",
   "license": "ISC",
   "dependencies": {
-    "@trpc/client": "^10.7.0",
-    "@trpc/server": "^10.7.0",
+    "@trpc/client": "^10.13.2",
+    "@trpc/server": "^10.13.2",
     "cookie": "^0.5.0",
     "env": "workspace:*",
     "luna-sdk": "workspace:*",
@@ -24,6 +24,7 @@
     "zod": "^3.20.2"
   },
   "devDependencies": {
+    "auth": "workspace:*",
     "@types/cookie": "^0.5.1",
     "tsconfig": "workspace:*",
     "typescript": "^4.6.3"
