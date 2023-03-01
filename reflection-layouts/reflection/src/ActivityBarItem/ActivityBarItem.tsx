@@ -25,18 +25,20 @@ const useStyles = createStyles((theme) => {
 
 type ActivityBarItemStylesNames = Selectors<typeof useStyles>;
 
-export interface ActivityBarItemProps extends DefaultProps<ActivityBarItemStylesNames, ActivityBarItemStyleParams> {
+export interface ActivityBarItemProps extends DefaultProps<ActivityBarItemStylesNames, ActivityBarItemStyleParams>, React.ComponentPropsWithoutRef<'div'> {
   tooltip?: string;
 }
 
 export const ActivityBarItem: React.FC<PropsWithChildren<ActivityBarItemProps>> = (props) => {
-  const { classNames, styles, unstyled, className } = props;
+  const { classNames, styles, unstyled, className, ...others } = props;
 
   const { classes, cx } = useStyles(null, { name: "ActivityBarItem", classNames, styles, unstyled });
 
   return (
     <Tooltip label={props.tooltip} disabled={!props.tooltip} position={"right"}>
-      <Box className={cx(classes.root, className)}>{props.children}</Box>
+      <Box className={cx(classes.root, className)} {...others}>{props.children}</Box>
     </Tooltip>
   );
 };
+
+

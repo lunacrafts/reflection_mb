@@ -10,8 +10,8 @@ export const MirrorboardsExtension = () => {
     {
       namespace: "drawer.toggle",
       render: () => (
-        <ActivityBarItem tooltip={"Toggle drawer"}>
-          <FontAwesomeIcon onClick={() => drawer.actions.toggle()} icon={"bars"} color={"white"} fontSize={17} />
+        <ActivityBarItem tooltip={"Toggle drawer"} onClick={() => drawer.actions.toggle()}>
+          <FontAwesomeIcon icon={"bars"} color={"white"} fontSize={17} />
         </ActivityBarItem>
       ),
       meta: {
