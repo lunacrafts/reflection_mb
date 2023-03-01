@@ -19,9 +19,9 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "turbo run clean && rm -rf node_modules && rm -rf .pnpm-debug.log",
-    "docker:build": "export COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose build",
-    "docker:up": "export COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose up -d",
-    "docker:down": "export COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose down",
+    "docker:build": "cross-env COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose build",
+    "docker:up": "cross-env COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose up -d",
+    "docker:down": "cross-env COMPOSE_PROJECT_NAME=mirrorboards && cd docker && docker-compose down",
     "seed": "cd docker-seed/mongodb-seed && pnpm run seed",
     "graph": "npx turbo build --graph ./graph.png"
   },
@@ -33,6 +33,8 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  },
   "packageManager": "pnpm@7.11.0"
 }
