@@ -3,7 +3,7 @@ import { env } from "env";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createTRPCReact, httpLink } from "@trpc/react-query";
 import superjson from 'superjson';
-import type { LunaRouter } from "luna/src/router";
+import type { LunaRouter } from "luna-trpc";
 import { createTRPCProxyClient } from "@trpc/client";
 
 export const lunaClient = createTRPCProxyClient<LunaRouter>({

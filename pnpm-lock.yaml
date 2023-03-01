@@ -210,11 +210,13 @@ importers:
       cookie: ^0.5.0
       env: workspace:*
       luna-sdk: workspace:*
+      mongoose: ^6.10.0
       superjson: ^1.12.2
       trpc-openapi: ^1.1.2
       tsconfig: workspace:*
       tsyringe: ^4.7.0
       typescript: ^4.6.3
+      ulid: ^2.3.0
       zod: ^3.20.2
     dependencies:
       '@trpc/client': 10.7.0_@trpc+server@10.7.0
@@ -222,9 +224,11 @@ importers:
       cookie: 0.5.0
       env: link:../../packages/env
       luna-sdk: link:../luna-sdk
+      mongoose: 6.10.0
       superjson: 1.12.2
       trpc-openapi: 1.1.2_xfxv3otgv6nbap2imkii6swyfm
       tsyringe: 4.7.0
+      ulid: 2.3.0
       zod: 3.20.2
     devDependencies:
       '@types/cookie': 0.5.1
@@ -250,6 +254,7 @@ importers:
       axios: ^1.3.4
       env: workspace:*
       luna: workspace:*
+      luna-trpc: workspace:*
       mirrorboards-shell: workspace:*
       narnia-trpc: workspace:*
       react: ^18.2.0
@@ -287,6 +292,7 @@ importers:
       '@types/react-dom': 18.0.10
       '@vitejs/plugin-react': 3.1.0_vite@4.1.3
       luna: link:../../luna/luna
+      luna-trpc: link:../../luna/luna-trpc
       typescript: 4.9.4
       vite: 4.1.3_@types+node@18.11.18
 
@@ -5782,7 +5788,6 @@ packages:
 
   /@types/node/18.14.2:
     resolution: {integrity: sha512-1uEQxww3DaghA0RxqHx0O0ppVlo43pJhepY51OxuQIKHpjbnYLA7vcdwioNPzIqmC2u3I/dmylcqjlh0e7AyUA==}
-    dev: true
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -5865,7 +5870,7 @@ packages:
   /@types/whatwg-url/8.2.2:
     resolution: {integrity: sha512-FtQu10RWgn3D9U4aazdwIE2yzphmTJREDqNdODHrbrZmmMqI0vMheC/6NE/J1Yveaj8H+ela+YwWTjq5PGmuhA==}
     dependencies:
-      '@types/node': 18.13.0
+      '@types/node': 18.14.2
       '@types/webidl-conversions': 7.0.0
     dev: false
 
@@ -10605,6 +10610,11 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
+
+  /ulid/2.3.0:
+    resolution: {integrity: sha512-keqHubrlpvT6G2wH0OEfSW4mquYRcbe/J8NMmveoQOjUqmo+hXtO+ORCpWhdbZ7k72UtY61BL7haGxW6enBnjw==}
+    hasBin: true
+    dev: false
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

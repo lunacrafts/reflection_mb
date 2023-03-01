@@ -1,5 +1,5 @@
 import { generateOpenApiDocument } from 'trpc-openapi';
-import { router } from './router';
+import { router } from 'luna-trpc';
 
 export const openApiDocument = generateOpenApiDocument(router, {
   title: 'Luna',
