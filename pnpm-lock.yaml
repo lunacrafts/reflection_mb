@@ -306,6 +306,9 @@ importers:
   mirrorboards/mirrorboards-cypress:
     specifiers:
       cypress: ^12.7.0
+      env: workspace:*
+    dependencies:
+      env: link:../../packages/env
     devDependencies:
       cypress: 12.7.0
 
