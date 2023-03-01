@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts",
+    "dev": "ts-node-dev --poll --respawn --transpile-only --exit-child src/index.ts",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
