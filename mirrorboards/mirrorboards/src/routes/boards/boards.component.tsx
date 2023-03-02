@@ -10,6 +10,12 @@ export const BoardsComponent = () => {
     }
   });
 
+  const makePublic = luna.mirrorboards.promote.useMutation({
+    onSuccess: () => {
+      mirrorboards.refetch();
+    }
+  });
+
   if (mirrorboards.isLoading) {
     return <div>spinner</div>
   }
@@ -24,5 +30,18 @@ export const BoardsComponent = () => {
       isPublic: true,
       title: 'Second mirrorboard!'
     })}>create</button>
+
+    <hr />
+
+    <div>
+      <button onClick={() => {
+        makePublic.mutate({
+          id: '01GTERZ7VYAV9QBT6JGA890JS6',
+          isPromoted: true,
+        });
+      }}>
+        Promote
+      </button>
+    </div>
   </div>
 }
