@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:dev": "vitest",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
