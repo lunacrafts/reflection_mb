@@ -3,6 +3,9 @@ import { inject, injectable } from "tsyringe";
 import { ulid } from 'ulid';
 import { LunaModels } from "../luna.models";
 import { MirrorboardsServiceDTO } from "./mirrorboards.service.dto";
+import { User } from "../models/User.model";
+import { defineAbilityForMirrorboardAndUser } from "../abilities/MirrorboardUserAbilities";
+import { TRPCError } from "@trpc/server";
 
 @injectable()
 export class MirrorboardsService {
@@ -25,5 +28,51 @@ export class MirrorboardsService {
     const doc = await mirrorboard.save();
 
     return doc;
+  }
+
+  async update(id: string, isPromoted: boolean, user: User) {
+    const mirrorboard = await this.models.Mirrorboard.findOne({ id });
+
+    if (!mirrorboard) {
+      throw new TRPCError({
+        code: 'NOT_FOUND'
+      });
+    }
+
+    const ability = defineAbilityForMirrorboardAndUser(mirrorboard, user);
+
+    if (ability.can('update', 'Mirrorboard',)) {
+
+    }
+
+    // const doc = await this.models.Mirrorboard
+    //   .where({ id })
+    //   .accessibleBy(ability, 'update')
+    //   .update({ id }, {
+    //     $set: { isPromoted }
+    //   });
+
+    // return doc;
+
+    // console.log(`\n***\n`)
+    // console.log('update mirrorboard');
+    // console.log(id);
+    // console.log(isPromoted);
+    // console.log(user);
+    // console.log('has ability to update isPromoted:');
+    // console.log();
+    // console.log(`\n***\n`);
+
+    // if (!ability.can('update', 'Mirrorboard', 'isPromoted')) {
+    //   throw new TRPCError({
+    //     code: 'UNAUTHORIZED'
+    //   });
+    // }
+
+    // const doc = await this.models.Mirrorboard.findOneAndUpdate({ id }, {
+    //   $set: { isPromoted }
+    // });
+
+    // return doc;
   }
 }

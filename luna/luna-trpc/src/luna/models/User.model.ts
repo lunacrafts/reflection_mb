@@ -1,7 +1,10 @@
+import { AccessibleRecordModel, accessibleRecordsPlugin } from "@casl/mongoose";
 import mongoose from "mongoose"
 
 export interface User {
   id: string
+
+  isSuperAdmin: boolean
 }
 
 const userSchema = new mongoose.Schema<User>({
@@ -10,8 +13,13 @@ const userSchema = new mongoose.Schema<User>({
     required: true,
     unique: true,
   },
+  isSuperAdmin: Boolean,
 }, {
   timestamps: true,
 });
 
-export const User = mongoose.model<User>('User', userSchema);
+userSchema.plugin(accessibleRecordsPlugin);
+
+export const User = mongoose.model<
+  User, AccessibleRecordModel<User>
+>('User', userSchema);

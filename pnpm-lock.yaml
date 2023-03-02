@@ -209,6 +209,8 @@ importers:
 
   luna/luna-trpc:
     specifiers:
+      '@casl/ability': ^6.3.3
+      '@casl/mongoose': ^7.1.2
       '@trpc/client': ^10.13.2
       '@trpc/server': ^10.13.2
       '@types/cookie': ^0.5.1
@@ -225,6 +227,8 @@ importers:
       ulid: ^2.3.0
       zod: ^3.20.2
     dependencies:
+      '@casl/ability': 6.3.3
+      '@casl/mongoose': 7.1.2_ojvcg24m7vgcubpchwdtwh2ooi
       '@trpc/client': 10.13.2_@trpc+server@10.13.2
       '@trpc/server': 10.13.2
       cookie: 0.5.0
@@ -1869,6 +1873,22 @@ packages:
 
   /@braintree/sanitize-url/6.0.0:
     resolution: {integrity: sha512-mgmE7XBYY/21erpzhexk4Cj1cyTQ9LzvnTxtzM17BJ7ERMNE6W72mQRo0I1Ud8eFJ+RVVIcBNhLFZ3GX4XFz5w==}
+    dev: false
+
+  /@casl/ability/6.3.3:
+    resolution: {integrity: sha512-UzbqsE9etu6QzZrRmqIyVun2kztAzJ46Tz7lC/2P2buCE6B6Ll7Vptz7JTQtGwapLbeKo2jS7dL966TVOQ7x4g==}
+    dependencies:
+      '@ucast/mongo2js': 1.3.4
+    dev: false
+
+  /@casl/mongoose/7.1.2_ojvcg24m7vgcubpchwdtwh2ooi:
+    resolution: {integrity: sha512-YiY5gQlr5J0jsn0ZbjtDJEhqKviPyPj0ErZ2bnOh7li+ENvFMnfp5ZeF2wN7ZVcqK9mn4MCqWH56EzafRF3i+g==}
+    peerDependencies:
+      '@casl/ability': ^6.3.2
+      mongoose: ^6.0.13
+    dependencies:
+      '@casl/ability': 6.3.3
+      mongoose: 6.10.0
     dev: false
 
   /@colors/colors/1.5.0:
@@ -6036,6 +6056,30 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.48.0
       eslint-visitor-keys: 3.3.0
+    dev: false
+
+  /@ucast/core/1.10.2:
+    resolution: {integrity: sha512-ons5CwXZ/51wrUPfoduC+cO7AS1/wRb0ybpQJ9RrssossDxVy4t49QxWoWgfBDvVKsz9VXzBk9z0wqTdZ+Cq8g==}
+    dev: false
+
+  /@ucast/js/3.0.3:
+    resolution: {integrity: sha512-jBBqt57T5WagkAjqfCIIE5UYVdaXYgGkOFYv2+kjq2AVpZ2RIbwCo/TujJpDlwTVluUI+WpnRpoGU2tSGlEvFQ==}
+    dependencies:
+      '@ucast/core': 1.10.2
+    dev: false
+
+  /@ucast/mongo/2.4.3:
+    resolution: {integrity: sha512-XcI8LclrHWP83H+7H2anGCEeDq0n+12FU2mXCTz6/Tva9/9ddK/iacvvhCyW6cijAAOILmt0tWplRyRhVyZLsA==}
+    dependencies:
+      '@ucast/core': 1.10.2
+    dev: false
+
+  /@ucast/mongo2js/1.3.4:
+    resolution: {integrity: sha512-ahazOr1HtelA5AC1KZ9x0UwPMqqimvfmtSm/PRRSeKKeE5G2SCqTgwiNzO7i9jS8zA3dzXpKVPpXMkcYLnyItA==}
+    dependencies:
+      '@ucast/core': 1.10.2
+      '@ucast/js': 3.0.3
+      '@ucast/mongo': 2.4.3
     dev: false
 
   /@vitejs/plugin-react/3.1.0_vite@4.1.3:
