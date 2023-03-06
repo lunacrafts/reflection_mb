@@ -20,16 +20,9 @@ export const create = t.router({
         tags: ['mirrorboards']
       }
     })
-    .mutation(async ({ ctx: { luna, currentUser }, input }) => {
-      console.log(currentUser);
+    .mutation(async ({ ctx: { luna }, input }) => {
+      const mirrorboard = await luna.services.mirrorboards.create(input);
 
-      throw new TRPCError({
-        code: 'UNAUTHORIZED'
-      });
-
-      // const mirrorboard = await luna.services.mirrorboards.create(input);
-
-
-      // return { mirrorboard }
+      return { mirrorboard }
     })
 });

@@ -2,7 +2,11 @@ import { Outlet } from "@tanstack/react-router"
 import { luna } from "../../trpc/luna.trpc"
 
 export const BoardsComponent = () => {
-  const mirrorboards = luna.mirrorboards.findAllPublic.useQuery();
+  const mirrorboards = luna.mirrorboards.findAllPublic.useInfiniteQuery({
+    limit: 100,
+  }, {
+    getNextPageParam: (lastPage) => lastPage.nextCursor,
+  });
 
   const create = luna.mirrorboards.create.useMutation({
     onSuccess: () => {
@@ -22,8 +26,19 @@ export const BoardsComponent = () => {
 
   return <div>
     <div>Boards:</div>
-    {JSON.stringify(mirrorboards.data)}
+    <div>
+      {mirrorboards.data?.pages.map((page) => {
+        return page.mirrorboards.map((item) => {
+          return <div key={item.id}>{item.title}</div>
+        })
+      })}
+    </div>
+    {/* {JSON.stringify(mirrorboards.data)} */}
     <Outlet />
+
+    <div onClick={() => {
+      mirrorboards.fetchNextPage();
+    }}>Fetch next page</div>
 
     <div>Create public:</div>
     <button onClick={() => create.mutate({
