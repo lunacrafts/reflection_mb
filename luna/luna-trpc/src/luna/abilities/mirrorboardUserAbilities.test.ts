@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { mocks } from '../tests/mocks';
-import { defineAbilityForMirrorboardAndUser } from './MirrorboardUserAbilities';
+import { defineAbilityForMirrorboardAndUser } from './mirrorboardUserAbilities';
 
 describe('[Mirrorboard] Mirrorboard should be', () => {
   test('able to promote by SuperAdmin', () => {

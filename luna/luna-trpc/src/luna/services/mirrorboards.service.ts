@@ -4,8 +4,10 @@ import { ulid } from 'ulid';
 import { LunaModels } from "../luna.models";
 import { MirrorboardsServiceDTO } from "./mirrorboards.service.dto";
 import { User } from "../models/User.model";
-import { defineAbilityForMirrorboardAndUser } from "../abilities/MirrorboardUserAbilities";
 import { TRPCError } from "@trpc/server";
+import { Pagination } from "../utils/Pagination";
+import { defineAbilityForMirrorboardAndUser } from "../abilities/mirrorboardUserAbilities";
+import { Cursor } from "../utils/Cursor";
 
 @injectable()
 export class MirrorboardsService {
@@ -13,12 +15,12 @@ export class MirrorboardsService {
     @inject(LunaModels) private readonly models: LunaModels,
   ) { }
 
-  async findAllPublic() {
+  async findAllPublic(cursor: Cursor) {
     const { Mirrorboard } = this.models;
 
     const docs = await Mirrorboard.find({
       isPublic: true,
-    });
+    }, null, cursor);
 
     return docs;
   }

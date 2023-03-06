@@ -1,47 +1,19 @@
-import { Outlet } from "@tanstack/react-router"
 import { luna } from "../../trpc/luna.trpc"
 
 export const BoardsComponent = () => {
-  const mirrorboards = luna.mirrorboards.findAllPublic.useQuery();
-
-  const create = luna.mirrorboards.create.useMutation({
-    onSuccess: () => {
-      mirrorboards.refetch();
-    }
+  const mirrorboards = luna.mirrorboards.findAllPublic.useInfiniteQuery({
+    limit: 100,
+  }, {
+    getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  const makePublic = luna.mirrorboards.promote.useMutation({
-    onSuccess: () => {
-      mirrorboards.refetch();
+  return <div className="bg-black bg-gradient-to-r from-black via-slate-900/50 to-black h-full">
+    {
+      mirrorboards.data?.pages.map((page) => {
+        return page.mirrorboards.map((item) => {
+          return <div key={item.id}>{item.title}</div>
+        })
+      })
     }
-  });
-
-  if (mirrorboards.isLoading) {
-    return <div>spinner</div>
-  }
-
-  return <div>
-    <div>Boards:</div>
-    {JSON.stringify(mirrorboards.data)}
-    <Outlet />
-
-    <div>Create public:</div>
-    <button onClick={() => create.mutate({
-      isPublic: true,
-      title: 'Second mirrorboard!'
-    })}>create</button>
-
-    <hr />
-
-    <div>
-      <button onClick={() => {
-        makePublic.mutate({
-          id: '01GTERZ7VYAV9QBT6JGA890JS6',
-          isPromoted: true,
-        });
-      }}>
-        Promote
-      </button>
-    </div>
   </div>
 }
