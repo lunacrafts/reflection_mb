@@ -6,6 +6,7 @@ import { LunaProvider } from "../trpc/luna.trpc";
 import { NarniaProvider } from "../trpc/narnia.trpc";
 import { MirrorboardsShellMantineProvider } from "mirrorboards-shell";
 import { CommandPalette } from "../components/CommandPalette/CommandPalette";
+import { CommandsProvider } from '@reflection/commands'
 
 export const RootComponent: React.FC = () => {
   if (SuperTokens.canHandleRoute()) {
@@ -27,11 +28,13 @@ export const RootComponent: React.FC = () => {
       <NarniaProvider>
         <LunaProvider>
           <QueryClientProvider client={queryClient}>
-            <MirrorboardsShellMantineProvider>
-              <CommandPalette />
+            <CommandsProvider>
+              <MirrorboardsShellMantineProvider>
+                <CommandPalette />
 
-              <Outlet />
-            </MirrorboardsShellMantineProvider>
+                <Outlet />
+              </MirrorboardsShellMantineProvider>
+            </CommandsProvider>
           </QueryClientProvider>
         </LunaProvider>
       </NarniaProvider>
