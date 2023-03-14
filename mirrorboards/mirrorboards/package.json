@@ -13,8 +13,10 @@
   "dependencies": {
     "@mantine/core": "^5.10.0",
     "@mantine/hooks": "^5.10.0",
+    "@reecelucas/react-use-hotkeys": "^2.0.0",
     "@reflection-layouts/mirrorboards": "workspace:*",
     "@reflection-layouts/reflection": "workspace:*",
+    "@reflection/commands": "workspace:*",
     "@reflection/extension": "workspace:*",
     "@reflection/icons": "workspace:*",
     "@tanstack/react-query": "^4.20.9",
@@ -28,6 +30,7 @@
     "mirrorboards-shell": "workspace:*",
     "narnia-trpc": "workspace:*",
     "react": "^18.2.0",
+    "react-cmdk": "^1.3.8",
     "react-dom": "^18.2.0",
     "superjson": "^1.12.2",
     "supertokens-auth-react": "^0.31.1",

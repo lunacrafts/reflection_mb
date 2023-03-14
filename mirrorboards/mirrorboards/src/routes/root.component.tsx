@@ -5,6 +5,7 @@ import SuperTokens, { SuperTokensWrapper } from "supertokens-auth-react";
 import { LunaProvider } from "../trpc/luna.trpc";
 import { NarniaProvider } from "../trpc/narnia.trpc";
 import { MirrorboardsShellMantineProvider } from "mirrorboards-shell";
+import { CommandPalette } from "../components/CommandPalette/CommandPalette";
 
 export const RootComponent: React.FC = () => {
   if (SuperTokens.canHandleRoute()) {
@@ -27,6 +28,8 @@ export const RootComponent: React.FC = () => {
         <LunaProvider>
           <QueryClientProvider client={queryClient}>
             <MirrorboardsShellMantineProvider>
+              <CommandPalette />
+
               <Outlet />
             </MirrorboardsShellMantineProvider>
           </QueryClientProvider>
