@@ -7,10 +7,8 @@ export const boardsRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/boards',
   component: () => (
-    <MirrorboardsLayoutProvider>
-      <MirrorboardsLayoutKeyboardSupport>
-        <BoardsComponent />
-      </MirrorboardsLayoutKeyboardSupport>
-    </MirrorboardsLayoutProvider>
+    <>
+      <BoardsComponent />
+    </>
   )
 });

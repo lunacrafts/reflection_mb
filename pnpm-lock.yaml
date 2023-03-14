@@ -250,6 +250,8 @@ importers:
 
   mirrorboards/mirrorboards:
     specifiers:
+      '@mantine/core': ^5.10.0
+      '@mantine/hooks': ^5.10.0
       '@reflection-layouts/mirrorboards': workspace:*
       '@reflection-layouts/reflection': workspace:*
       '@reflection/extension': workspace:*
@@ -267,6 +269,7 @@ importers:
       autoprefixer: ^10.4.13
       axios: ^1.3.4
       env: workspace:*
+      framer-motion: ^7.2.1
       luna: workspace:*
       luna-trpc: workspace:*
       mirrorboards-shell: workspace:*
@@ -282,6 +285,8 @@ importers:
       vite: ^4.0.0
       zod: ^3.20.2
     dependencies:
+      '@mantine/core': 5.10.0_czzj3t2fwkp7ncd7sfrc23w6gu
+      '@mantine/hooks': 5.10.0_react@18.2.0
       '@reflection-layouts/mirrorboards': link:../../reflection-layouts/mirrorboards
       '@reflection-layouts/reflection': link:../../reflection-layouts/reflection
       '@reflection/extension': link:../../reflection/extension
@@ -293,6 +298,7 @@ importers:
       '@trpc/react-query': 10.7.0_ec7lznndbmtrvdrkbvdpcr7ov4
       axios: 1.3.4
       env: link:../../packages/env
+      framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
       mirrorboards-shell: link:../mirrorboards-shell
       narnia-trpc: link:../../narnia/narnia-trpc
       react: 18.2.0
@@ -606,8 +612,8 @@ importers:
   reflection-layouts/mirrorboards:
     specifiers:
       '@adobe/react-spectrum': ^3.21.1
-      '@mantine/core': ^5.6.0
-      '@mantine/hooks': ^5.6.0
+      '@mantine/core': ^5.10.0
+      '@mantine/hooks': ^5.10.0
       '@radix-ui/colors': ^0.1.8
       '@radix-ui/react-context-menu': ^1.0.0
       '@radix-ui/react-icons': ^1.1.1
@@ -2542,6 +2548,26 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@mantine/core/5.10.0_czzj3t2fwkp7ncd7sfrc23w6gu:
+    resolution: {integrity: sha512-if272RiYPK0nQQdGNwcCSY7bCPJW9455qXlRhnYOr021xh89T8WFVPeDw4uwcxoXsXdKRV5GAi9irSnsUqsjJQ==}
+    peerDependencies:
+      '@mantine/hooks': 5.10.0
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@floating-ui/react-dom-interactions': 0.10.3_ib3m5ricvtkl2cll7qpr2f6lvq
+      '@mantine/hooks': 5.10.0_react@18.2.0
+      '@mantine/styles': 5.10.0_biqbaboplfbrettd7655fr4n2y
+      '@mantine/utils': 5.10.0_react@18.2.0
+      '@radix-ui/react-scroll-area': 1.0.2_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-textarea-autosize: 8.3.4_kzbn2opkn2327fwg5yzwzya5o4
+    transitivePeerDependencies:
+      - '@emotion/react'
+      - '@types/react'
+    dev: false
+
   /@mantine/core/5.10.0_lbfixegkxal6rwioqxubxet6s4:
     resolution: {integrity: sha512-if272RiYPK0nQQdGNwcCSY7bCPJW9455qXlRhnYOr021xh89T8WFVPeDw4uwcxoXsXdKRV5GAi9irSnsUqsjJQ==}
     peerDependencies:
@@ -2603,6 +2629,19 @@ packages:
     dependencies:
       clsx: 1.1.1
       csstype: 3.0.9
+    dev: false
+
+  /@mantine/styles/5.10.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-3JBM5LWJHb4Yk7jymPiSuaBJRoe2CgA7KoyYWgabwBP115GlHPb1rQCcavJsobHV4U+wFfZEEUnVBpaAaXqgmw==}
+    peerDependencies:
+      '@emotion/react': '>=11.9.0'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      clsx: 1.1.1
+      csstype: 3.0.9
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@mantine/styles/5.10.0_sogmqz4enknxtkxk3k5s6bqwnq:
@@ -6478,7 +6517,7 @@ packages:
   /axios/0.21.4_debug@4.3.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2
     transitivePeerDependencies:
       - debug
     dev: false
@@ -6486,7 +6525,7 @@ packages:
   /axios/0.26.1_debug@4.3.4:
     resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2
     transitivePeerDependencies:
       - debug
     dev: false
@@ -8218,18 +8257,6 @@ packages:
         optional: true
     dev: false
 
-  /follow-redirects/1.15.2_debug@4.3.4:
-    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dependencies:
-      debug: 4.3.4
-    dev: false
-
   /forever-agent/0.6.1:
     resolution: {integrity: sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw==}
     dev: true
@@ -8286,6 +8313,21 @@ packages:
     dependencies:
       '@motionone/dom': 10.15.5
       hey-listen: 1.0.8
+      tslib: 2.4.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
+  /framer-motion/7.10.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-k2ccYeZNSpPg//HTaqrU+4pRq9f9ZpaaN7rr0+Rx5zA4wZLbk547wtDzge2db1sB+1mnJ6r59P4xb+aEIi/W+w==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@motionone/dom': 10.15.5
+      hey-listen: 1.0.8
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8

@@ -11,6 +11,8 @@
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "dependencies": {
+    "@mantine/core": "^5.10.0",
+    "@mantine/hooks": "^5.10.0",
     "@reflection-layouts/mirrorboards": "workspace:*",
     "@reflection-layouts/reflection": "workspace:*",
     "@reflection/extension": "workspace:*",
@@ -22,6 +24,7 @@
     "@trpc/react-query": "^10.7.0",
     "axios": "^1.3.4",
     "env": "workspace:*",
+    "framer-motion": "^7.2.1",
     "mirrorboards-shell": "workspace:*",
     "narnia-trpc": "workspace:*",
     "react": "^18.2.0",

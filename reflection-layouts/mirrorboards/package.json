@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@adobe/react-spectrum": "^3.21.1",
-    "@mantine/core": "^5.6.0",
-    "@mantine/hooks": "^5.6.0",
+    "@mantine/core": "^5.10.0",
+    "@mantine/hooks": "^5.10.0",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-context-menu": "^1.0.0",
     "@radix-ui/react-icons": "^1.1.1",
