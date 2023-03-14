@@ -280,6 +280,7 @@ importers:
       react: ^18.2.0
       react-cmdk: ^1.3.8
       react-dom: ^18.2.0
+      react-hook-form: ^7.43.5
       superjson: ^1.12.2
       supertokens-auth-react: ^0.31.1
       supertokens-web-js: ^0.5.0
@@ -309,6 +310,7 @@ importers:
       react: 18.2.0
       react-cmdk: 1.3.8_biqbaboplfbrettd7655fr4n2y
       react-dom: 18.2.0_react@18.2.0
+      react-hook-form: 7.43.5_react@18.2.0
       superjson: 1.12.2
       supertokens-auth-react: 0.31.1_zh4rdguscatxykxktv3lwuw3je
       supertokens-web-js: 0.5.0
@@ -10606,6 +10608,15 @@ packages:
       react-dom: 18.2.0_react@18.2.0
       react-draggable: 4.4.5_biqbaboplfbrettd7655fr4n2y
       react-resizable: 3.0.4_biqbaboplfbrettd7655fr4n2y
+    dev: false
+
+  /react-hook-form/7.43.5_react@18.2.0:
+    resolution: {integrity: sha512-YcaXhuFHoOPipu5pC7ckxrLrialiOcU91pKu8P+isAcXZyMgByUK9PkI9j5fENO4+6XU5PwWXRGMIFlk9u9UBQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-hotkeys-hook/4.0.0-5_lodash@4.17.21:

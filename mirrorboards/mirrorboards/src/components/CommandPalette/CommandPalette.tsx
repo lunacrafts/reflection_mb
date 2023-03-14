@@ -5,7 +5,7 @@ import useHotkeys from "@reecelucas/react-use-hotkeys";
 
 export const CommandPalette: React.FC = (props) => {
   const [page, setPage] = useState<string>("root");
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   const [search, setSearch] = useState("");
 
   useHotkeys(['Control+K', 'Meta+K'], () => {

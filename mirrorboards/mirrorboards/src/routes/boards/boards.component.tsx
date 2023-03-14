@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from "@reflection/icons";
 import { luna } from "../../trpc/luna.trpc"
 
 export const BoardsComponent = () => {
+
+  // const { create: createMirrorboard } = useCommand<MirrorboardCommands.CreateMirrorboard>();
+
   const mirrorboards = luna.mirrorboards.findAllPublic.useInfiniteQuery({
     limit: 100,
   }, {
@@ -42,7 +45,11 @@ export const BoardsComponent = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}>
 
-        <div className="cursor-pointer drop-shadow-sm bg-white/10 hover:bg-white/20 focus:bg-white/20 transition-all text-white rounded-md flex flex-row items-center">
+        <div
+          onClick={async () => {
+            // const mirrorboard = await createMirrorboard();
+          }}
+          className="cursor-pointer drop-shadow-sm bg-white/10 hover:bg-white/20 focus:bg-white/20 transition-all text-white rounded-md flex flex-row items-center">
           <FontAwesomeIcon className="opacity-25 p-4" icon="paw" color={"white"} fontSize={30} />
           <div className="text-sm subpixel-antialiased" style={{ color: "hsl(215deg 10% 83%)" }}>
             Create Mirrorboard

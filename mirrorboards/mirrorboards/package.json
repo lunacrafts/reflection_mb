@@ -32,6 +32,7 @@
     "react": "^18.2.0",
     "react-cmdk": "^1.3.8",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.5",
     "superjson": "^1.12.2",
     "supertokens-auth-react": "^0.31.1",
     "supertokens-web-js": "^0.5.0",
