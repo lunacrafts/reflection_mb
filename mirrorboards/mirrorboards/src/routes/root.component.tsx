@@ -7,6 +7,7 @@ import { NarniaProvider } from "../trpc/narnia.trpc";
 import { MirrorboardsShellMantineProvider } from "mirrorboards-shell";
 import { CommandPalette } from "../components/CommandPalette/CommandPalette";
 import { CommandsProvider } from '@reflection/commands'
+import { CommandsRenderer } from "@reflection/commands/src/CommandsRenderer/CommandsRenderer";
 
 export const RootComponent: React.FC = () => {
   if (SuperTokens.canHandleRoute()) {
@@ -31,6 +32,7 @@ export const RootComponent: React.FC = () => {
             <CommandsProvider>
               <MirrorboardsShellMantineProvider>
                 <CommandPalette />
+                <CommandsRenderer />
 
                 <Outlet />
               </MirrorboardsShellMantineProvider>
