@@ -2,7 +2,7 @@ import { Box, createStyles, DefaultProps, Selectors, useComponentDefaultProps } 
 import { PropsWithChildren } from "react";
 import { useStatusBarItems } from "../useStatusBarItems/useStatusBarItems";
 
-export interface StatusBarStyleParams {}
+export interface StatusBarStyleParams { }
 
 const useStyles = createStyles(() => {
   return {
@@ -21,7 +21,7 @@ const useStyles = createStyles(() => {
 
 type StatusBarStylesNames = Selectors<typeof useStyles>;
 
-export interface StatusBarProps extends DefaultProps<StatusBarStylesNames, StatusBarStyleParams> {}
+export interface StatusBarProps extends DefaultProps<StatusBarStylesNames, StatusBarStyleParams> { }
 
 export const StatusBar: React.FC<PropsWithChildren<StatusBarProps>> = (props) => {
   const left = useStatusBarItems((item) => item.meta.placement === "left");
@@ -29,7 +29,7 @@ export const StatusBar: React.FC<PropsWithChildren<StatusBarProps>> = (props) =>
 
   const { classNames, styles, unstyled, className } = props;
 
-  const { classes, cx } = useStyles(null, { name: "StatusBar", classNames, styles, unstyled });
+  const { classes, cx } = useStyles(undefined, { name: "StatusBar", classNames, styles, unstyled });
 
   return (
     <>

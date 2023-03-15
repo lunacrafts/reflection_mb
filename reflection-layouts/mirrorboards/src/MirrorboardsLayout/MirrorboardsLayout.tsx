@@ -78,8 +78,8 @@ export const MirrorboardsLayout: React.FC<PropsWithChildren<MirrorboardsLayoutPr
 
   const { classes, cx } = useStyles(
     {
-      drawerWidth: defaults.drawerWidth,
-      headerHeight: defaults.headerHeight,
+      drawerWidth: defaults.drawerWidth!,
+      headerHeight: defaults.headerHeight!,
       isExpanded: drawer.state.isExpanded,
     },
     {

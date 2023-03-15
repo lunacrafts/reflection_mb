@@ -53,7 +53,7 @@ export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>
   const { classNames, styles, unstyled, className } = props;
 
   const { spacing } = useComponentDefaultProps("ReflectionLayout", defaultProps, props);
-  const { classes, cx } = useStyles({ spacing }, { name: "ReflectionLayout", classNames, styles, unstyled });
+  const { classes, cx } = useStyles({ spacing: spacing! }, { name: "ReflectionLayout", classNames, styles, unstyled });
 
   return (
     <Box className={cx(classes.root, className)}>

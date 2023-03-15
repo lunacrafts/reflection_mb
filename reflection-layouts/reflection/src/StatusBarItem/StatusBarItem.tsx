@@ -2,7 +2,7 @@ import { Box, createStyles, DefaultProps, Selectors } from "@mantine/core";
 import { PropsWithChildren } from "react";
 import { Tooltip } from "@mantine/core";
 
-export interface StatusBarItemStyleParams {}
+export interface StatusBarItemStyleParams { }
 
 const useStyles = createStyles((theme) => {
   return {
@@ -30,7 +30,7 @@ export interface StatusBarItemProps extends DefaultProps<StatusBarItemStylesName
 export const StatusBarItem: React.FC<PropsWithChildren<StatusBarItemProps>> = (props) => {
   const { classNames, styles, unstyled, className } = props;
 
-  const { classes, cx } = useStyles(null, { name: "StatusBarItem", classNames, styles, unstyled });
+  const { classes, cx } = useStyles(undefined, { name: "StatusBarItem", classNames, styles, unstyled });
 
   return (
     <Tooltip label={props.tooltip} disabled={!props.tooltip} position="top">

@@ -32,7 +32,7 @@ export interface ActivityBarItemProps extends DefaultProps<ActivityBarItemStyles
 export const ActivityBarItem: React.FC<PropsWithChildren<ActivityBarItemProps>> = (props) => {
   const { classNames, styles, unstyled, className, ...others } = props;
 
-  const { classes, cx } = useStyles(null, { name: "ActivityBarItem", classNames, styles, unstyled });
+  const { classes, cx } = useStyles(undefined, { name: "ActivityBarItem", classNames, styles, unstyled });
 
   return (
     <Tooltip label={props.tooltip} disabled={!props.tooltip} position={"right"}>
