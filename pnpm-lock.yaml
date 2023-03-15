@@ -258,6 +258,7 @@ importers:
       '@reflection/commands': workspace:*
       '@reflection/extension': workspace:*
       '@reflection/icons': workspace:*
+      '@reflection/notifications': workspace:*
       '@tanstack/react-query': ^4.20.9
       '@tanstack/react-router': 0.0.1-beta.83
       '@tauri-apps/api': ^1.2.0
@@ -299,6 +300,7 @@ importers:
       '@reflection/commands': link:../../reflection/commands
       '@reflection/extension': link:../../reflection/extension
       '@reflection/icons': link:../../reflection/icons
+      '@reflection/notifications': link:../../reflection/notifications
       '@tanstack/react-query': 4.20.9_biqbaboplfbrettd7655fr4n2y
       '@tanstack/react-router': 0.0.1-beta.83_biqbaboplfbrettd7655fr4n2y
       '@tauri-apps/api': 1.2.0
@@ -779,6 +781,25 @@ importers:
       '@types/react-dom': 18.0.10
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
+
+  reflection/notifications:
+    specifiers:
+      '@types/react': ^18.0.26
+      '@types/react-dom': ^18.0.10
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      sonner: ^0.2.0
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      sonner: 0.2.0_biqbaboplfbrettd7655fr4n2y
+    devDependencies:
+      '@types/react': 18.0.26
+      '@types/react-dom': 18.0.10
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.5
 
 packages:
 

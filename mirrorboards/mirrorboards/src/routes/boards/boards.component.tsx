@@ -5,6 +5,7 @@ import { luna } from "../../trpc/luna.trpc"
 import { useCommand } from '@reflection/commands';
 import { createMirrorboardCommand } from '../../extensions/mirrorboards/commands/createMirrorboard.command';
 import { toast } from 'sonner';
+import { notification } from '@reflection/notifications';
 
 export const BoardsComponent = () => {
   const createMirrorboard = useCommand(createMirrorboardCommand());
@@ -53,11 +54,9 @@ export const BoardsComponent = () => {
           onClick={async () => {
             const mirrorboard = await createMirrorboard.exec();
 
-            console.log('done!');
-            console.log(mirrorboard);
-
-            toast('Mirrorboard has been created!', {
-              description: mirrorboard.title
+            notification.success(`${mirrorboard.title} mirrorboard`, {
+              description: 'has been created!',
+              icon: <FontAwesomeIcon icon="paw" />,
             });
           }}
           className="cursor-pointer drop-shadow-sm bg-white/10 hover:bg-white/20 focus:bg-white/20 transition-all text-white rounded-md flex flex-row items-center">
