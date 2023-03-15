@@ -273,6 +273,7 @@ importers:
       env: workspace:*
       framer-motion: ^7.2.1
       luna: workspace:*
+      luna-sdk: workspace:*
       luna-trpc: workspace:*
       mirrorboards-shell: workspace:*
       narnia-trpc: workspace:*
@@ -281,6 +282,7 @@ importers:
       react-cmdk: ^1.3.8
       react-dom: ^18.2.0
       react-hook-form: ^7.43.5
+      sonner: ^0.2.0
       superjson: ^1.12.2
       supertokens-auth-react: ^0.31.1
       supertokens-web-js: ^0.5.0
@@ -305,12 +307,14 @@ importers:
       axios: 1.3.4
       env: link:../../packages/env
       framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
+      luna-sdk: link:../../luna/luna-sdk
       mirrorboards-shell: link:../mirrorboards-shell
       narnia-trpc: link:../../narnia/narnia-trpc
       react: 18.2.0
       react-cmdk: 1.3.8_biqbaboplfbrettd7655fr4n2y
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.43.5_react@18.2.0
+      sonner: 0.2.0_biqbaboplfbrettd7655fr4n2y
       superjson: 1.12.2
       supertokens-auth-react: 0.31.1_zh4rdguscatxykxktv3lwuw3je
       supertokens-web-js: 0.5.0
@@ -11248,6 +11252,16 @@ packages:
     dependencies:
       ip: 2.0.0
       smart-buffer: 4.2.0
+    dev: false
+
+  /sonner/0.2.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-wxOkuIRoyF7nsXbz7JcpexGtSw58C9XZik6kVtKNxKpEEnfFsGyR08HQMabqEzAd0a8ARNuDH06UnEit4tvO+w==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /source-map-js/1.0.2:

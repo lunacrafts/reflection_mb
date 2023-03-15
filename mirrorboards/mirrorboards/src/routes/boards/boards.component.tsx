@@ -2,8 +2,12 @@ import { motion } from 'framer-motion';
 import { Link } from '@tanstack/react-router';
 import { FontAwesomeIcon } from "@reflection/icons";
 import { luna } from "../../trpc/luna.trpc"
+import { useCommand } from '@reflection/commands';
+import { createMirrorboardCommand } from '../../extensions/mirrorboards/commands/createMirrorboard.command';
+import { toast } from 'sonner';
 
 export const BoardsComponent = () => {
+  const createMirrorboard = useCommand(createMirrorboardCommand());
 
   // const { create: createMirrorboard } = useCommand<MirrorboardCommands.CreateMirrorboard>();
 
@@ -47,7 +51,14 @@ export const BoardsComponent = () => {
 
         <div
           onClick={async () => {
-            // const mirrorboard = await createMirrorboard();
+            const mirrorboard = await createMirrorboard.exec();
+
+            console.log('done!');
+            console.log(mirrorboard);
+
+            toast('Mirrorboard has been created!', {
+              description: mirrorboard.title
+            });
           }}
           className="cursor-pointer drop-shadow-sm bg-white/10 hover:bg-white/20 focus:bg-white/20 transition-all text-white rounded-md flex flex-row items-center">
           <FontAwesomeIcon className="opacity-25 p-4" icon="paw" color={"white"} fontSize={30} />
@@ -59,3 +70,4 @@ export const BoardsComponent = () => {
     </div>
   </div>
 }
+
