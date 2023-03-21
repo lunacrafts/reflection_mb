@@ -2,7 +2,7 @@ import { Box, createStyles, DefaultProps, Selectors, useComponentDefaultProps } 
 import { PropsWithChildren } from "react";
 import { useActivityBarItems } from "../useActivityBarItems/useActivityBarItems";
 
-export interface ActivityBarStyleParams {}
+export interface ActivityBarStyleParams { }
 
 const useStyles = createStyles(() => {
   return {
@@ -17,7 +17,7 @@ const useStyles = createStyles(() => {
 
 type ActivityBarStylesNames = Selectors<typeof useStyles>;
 
-export interface ActivityBarProps extends DefaultProps<ActivityBarStylesNames, ActivityBarStyleParams> {}
+export interface ActivityBarProps extends DefaultProps<ActivityBarStylesNames, ActivityBarStyleParams> { }
 
 export const ActivityBar: React.FC<PropsWithChildren<ActivityBarProps>> = (props) => {
   const top = useActivityBarItems((item) => item.meta.placement === "top");
@@ -25,7 +25,7 @@ export const ActivityBar: React.FC<PropsWithChildren<ActivityBarProps>> = (props
 
   const { classNames, styles, unstyled, className } = props;
 
-  const { classes, cx } = useStyles(null, { name: "ActivityBar", classNames, styles, unstyled });
+  const { classes, cx } = useStyles(undefined, { name: "ActivityBar", classNames, styles, unstyled });
 
   return (
     <>

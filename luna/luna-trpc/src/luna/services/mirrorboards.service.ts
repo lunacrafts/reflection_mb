@@ -47,6 +47,8 @@ export class MirrorboardsService {
 
     }
 
+    return mirrorboard;
+
     // const doc = await this.models.Mirrorboard
     //   .where({ id })
     //   .accessibleBy(ability, 'update')

@@ -19,7 +19,7 @@ export const MirrorboardsLayoutKeyboardSupport: React.FC<PropsWithChildren<Mirro
     (event) => {
       const isNumber = event.code.startsWith("Digit");
 
-      if (isNumber) {
+      if (isNumber && props.onSelectedIndex) {
         props.onSelectedIndex(parseInt(event.key, 10) - 1);
 
         event.stopPropagation();
