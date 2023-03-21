@@ -2,14 +2,13 @@ import { motion } from 'framer-motion';
 import { Link } from '@tanstack/react-router';
 import { FontAwesomeIcon } from "@reflection/icons";
 import { luna } from "../../trpc/luna.trpc"
-import { useCommand } from '@reflection/commands';
-import { createMirrorboardCommand } from '../../extensions/mirrorboards/commands/createMirrorboard.command';
 import { notification } from '@reflection/notifications';
+import { createMirrorboardCommand } from '../../extensions/mirrorboards/commands/createMirrorboard/createMirrorboard.command';
 
 export const BoardsComponent = () => {
-  const createMirrorboard = useCommand(createMirrorboardCommand());
-
   // const { create: createMirrorboard } = useCommand<MirrorboardCommands.CreateMirrorboard>();
+
+  const createMirrorboard = createMirrorboardCommand();
 
   const mirrorboards = luna.mirrorboards.findAllPublic.useInfiniteQuery({
     limit: 100,

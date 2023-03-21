@@ -2,8 +2,7 @@ import "react-cmdk/dist/cmdk.css";
 import React, { useState } from "react";
 import Palette, { filterItems, getItemIndex } from "react-cmdk";
 import useHotkeys from "@reecelucas/react-use-hotkeys";
-import { useCommand } from "@reflection/commands";
-import { createMirrorboardCommand } from "../../extensions/mirrorboards/commands/createMirrorboard.command";
+import { createMirrorboardCommand } from "../../extensions/mirrorboards/commands/createMirrorboard/createMirrorboard.command";
 
 export const CommandPalette: React.FC = (props) => {
   const [page, setPage] = useState<string>("root");
