@@ -7,10 +7,7 @@ export const CommandsRenderer: React.FC = (props) => {
   const store = useCommandsContext();
   const mounted = useStore(store, state => state.commands.mounted);
 
-  console.log(mounted);
-
   return <>
-    <div>renderer:</div>
     {
       Object.keys(mounted).map((id) => {
         return <React.Fragment key={id}>{mounted[id]}</React.Fragment>
