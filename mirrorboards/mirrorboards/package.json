@@ -15,6 +15,7 @@
     "@reflection-layouts/reflection": "workspace:*",
     "@reflection/extension": "workspace:*",
     "@reflection/icons": "workspace:*",
+    "@reflection/commands": "workspace:*",
     "@tanstack/react-query": "^4.20.9",
     "@tanstack/react-router": "0.0.1-beta.83",
     "@tauri-apps/api": "^1.2.0",
@@ -29,7 +30,8 @@
     "superjson": "^1.12.2",
     "supertokens-auth-react": "^0.31.1",
     "supertokens-web-js": "^0.5.0",
-    "zod": "^3.20.2"
+    "zod": "^3.20.2",
+    "framer-motion": "^7.2.1"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.2.2",

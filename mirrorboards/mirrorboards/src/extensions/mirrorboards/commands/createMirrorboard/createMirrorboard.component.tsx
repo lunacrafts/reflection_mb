@@ -1,5 +1,10 @@
 import React from "react";
 
-export const CreateMirrorboardComponent: React.FC = () => {
+type CreateMirrorboardComponentProps = {
+  onSuccess: () => void
+  onError: () => void
+}
+
+export const CreateMirrorboardComponent: React.FC<CreateMirrorboardComponentProps> = (props) => {
   return <div>create mirrorboard</div>
 }

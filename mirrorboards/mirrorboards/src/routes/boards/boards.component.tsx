@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from '@tanstack/react-router';
 import { FontAwesomeIcon } from "@reflection/icons";
 import { luna } from "../../trpc/luna.trpc"
+import { createMirrorboardCommand } from '../../extensions/mirrorboards/commands/createMirrorboard/createMirrorboard.command';
 
 export const BoardsComponent = () => {
   const mirrorboards = luna.mirrorboards.findAllPublic.useInfiniteQuery({
@@ -9,6 +10,8 @@ export const BoardsComponent = () => {
   }, {
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
+
+  const createMirrorboard = createMirrorboardCommand();
 
   return <div className="h-full w-full bg-black bg-gradient-to-r from-black via-slate-900/50 to-black">
     <div className="grid gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
@@ -36,6 +39,11 @@ export const BoardsComponent = () => {
           })
         })
       }
+      <div onClick={async () => {
+        const mirrorboard = await createMirrorboard.exec();
+
+        console.log(mirrorboard);
+      }}>create next one!</div>
     </div>
   </div>
 }
