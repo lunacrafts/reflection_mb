@@ -11,7 +11,8 @@
     "narnia-routers/*",
     "packages/*",
     "reflection/*",
-    "reflection-layouts/*"
+    "reflection-layouts/*",
+    "superprompt/*"
   ],
   "scripts": {
     "build": "turbo run build",

@@ -8,3 +8,4 @@ packages:
   - "packages/*"
   - "reflection/*"
   - "reflection-layouts/*"
+  - "superprompt/*"

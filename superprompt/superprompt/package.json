@@ -1,0 +1,37 @@
+{
+  "name": "superprompt",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log",
+    "test": "vitest run",
+    "test:dev": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "lunacrafts",
+  "license": "ISC",
+  "dependencies": {
+    "@casl/ability": "^6.3.3",
+    "@casl/mongoose": "^7.1.2",
+    "@trpc/client": "^10.13.2",
+    "@trpc/server": "^10.13.2",
+    "cookie": "^0.5.0",
+    "env": "workspace:*",
+    "luna-sdk": "workspace:*",
+    "mongoose": "^6.10.0",
+    "superjson": "^1.12.2",
+    "trpc-openapi": "^1.1.2",
+    "tsyringe": "^4.7.0",
+    "ulid": "^2.3.0",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.5.1",
+    "auth": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.6.3",
+    "vitest": "^0.29.2"
+  }
+}
