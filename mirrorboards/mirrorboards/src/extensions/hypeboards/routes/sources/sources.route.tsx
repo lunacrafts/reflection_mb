@@ -1,9 +1,14 @@
 import { Route } from "@tanstack/react-router";
 import { hypeboardsRoute } from "../hypeboards.route";
 import { HypeboardsSourcesComponent } from "./sources.component";
+import { BoardLayoutProvider } from '@reflection-layouts/board';
 
-export const sourcesRoute = new Route({
+export const hypeboardsSourcesRoute = new Route({
   getParentRoute: () => hypeboardsRoute,
   path: '/sources',
-  component: HypeboardsSourcesComponent
+  component: () => (
+    <BoardLayoutProvider>
+      <HypeboardsSourcesComponent />
+    </BoardLayoutProvider>
+  )
 })
