@@ -8,34 +8,38 @@ export interface ReflectionLayoutStyleParams {
 }
 
 const useStyles = createStyles((theme, { spacing }: ReflectionLayoutStyleParams) => {
+  const borderColor = theme.colors.gray[7];
+
   return {
     root: {
-      width: "100%",
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
+      height: '100%',
+      width: '100%',
+      border: '1px solid red',
+      display: 'flex',
+      flexDirection: 'column'
     },
     container: {
       flexGrow: 1,
-      flexDirection: "row",
-      display: "flex",
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'row',
     },
     content: {
       flexGrow: 1,
+      overflow: 'auto'
     },
     activityBar: {
       width: spacing * 2,
-      height: "100%",
       borderRightWidth: 1,
       borderRightStyle: "solid",
-      borderRightColor: theme.colors.gray[7],
+      borderRightColor: borderColor,
     },
     statusBar: {
       height: spacing,
       borderTopWidth: 1,
       borderTopStyle: "solid",
-      borderTopColor: theme.colors.gray[7],
-    },
+      borderTopColor: borderColor,
+    }
   };
 });
 
@@ -61,7 +65,9 @@ export const ReflectionLayout: React.FC<PropsWithChildren<ReflectionLayoutProps>
         <Box className={cx(classes.activityBar)}>
           <ActivityBar />
         </Box>
-        <Box className={cx(classes.content)}>{props.children}</Box>
+        <Box className={cx(classes.content)}>
+          {props.children}
+        </Box>
       </Box>
       <Box className={cx(classes.statusBar)}>
         <StatusBar />
