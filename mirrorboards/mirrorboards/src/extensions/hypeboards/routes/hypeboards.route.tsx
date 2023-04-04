@@ -2,6 +2,7 @@ import { Route } from "@tanstack/react-router";
 import { mirrorboardRoute } from "../../../routes/shell/mirrorboard/mirrorboard.route";
 import { HypeboardsComponent } from "./hypeboards.component";
 import { sourcesRoute } from "./sources/sources.route";
+import { indexRoute } from "./index/index.route";
 
 const hypeboardsRoute = new Route({
   getParentRoute: () => mirrorboardRoute,
@@ -9,6 +10,6 @@ const hypeboardsRoute = new Route({
   component: HypeboardsComponent,
 });
 
-hypeboardsRoute.addChildren([sourcesRoute]);
+hypeboardsRoute.addChildren([indexRoute, sourcesRoute]);
 
 export { hypeboardsRoute }

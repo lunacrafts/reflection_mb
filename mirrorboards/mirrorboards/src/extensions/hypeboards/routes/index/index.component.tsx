@@ -1,5 +1,5 @@
-export const HypeboardsSourcesComponent = () => {
+export const HypeboardsIndexComponent = () => {
   return <div style={{ height: '100%', backgroundColor: '#181818' }}>
-    HypeboardsSourcesComponent
+    HypeboardsIndexComponent
   </div>
 }
