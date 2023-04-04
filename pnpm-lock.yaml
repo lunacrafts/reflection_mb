@@ -552,6 +552,14 @@ importers:
       tsconfig: link:../tsconfig
       typescript: 4.9.5
 
+  packages/errors:
+    specifiers:
+      tsconfig: workspace:*
+      typescript: ^4.6.3
+    devDependencies:
+      tsconfig: link:../tsconfig
+      typescript: 4.9.5
+
   packages/eslint-config-custom:
     specifiers:
       eslint: ^7.23.0
@@ -674,6 +682,7 @@ importers:
       '@types/lodash': ^4.14.191
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.10
+      errors: workspace:*
       immer: ^9.0.17
       lodash: ^4.17.21
       react: ^18.2.0
@@ -696,6 +705,7 @@ importers:
       '@types/lodash': 4.14.191
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
+      errors: link:../../packages/errors
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
@@ -703,6 +713,7 @@ importers:
     specifiers:
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.10
+      errors: workspace:*
       react: ^18.2.0
       react-dom: ^18.2.0
       tsconfig: workspace:*
@@ -713,6 +724,7 @@ importers:
     devDependencies:
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
+      errors: link:../../packages/errors
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
