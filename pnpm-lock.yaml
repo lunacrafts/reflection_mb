@@ -268,6 +268,7 @@ importers:
       autoprefixer: ^10.4.13
       axios: ^1.3.4
       env: workspace:*
+      framer-motion: ^7.2.1
       luna: workspace:*
       luna-trpc: workspace:*
       mirrorboards-shell: workspace:*
@@ -295,6 +296,7 @@ importers:
       '@trpc/react-query': 10.7.0_ec7lznndbmtrvdrkbvdpcr7ov4
       axios: 1.3.4
       env: link:../../packages/env
+      framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
       mirrorboards-shell: link:../mirrorboards-shell
       narnia-trpc: link:../../narnia/narnia-trpc
       react: 18.2.0
@@ -8307,6 +8309,21 @@ packages:
     dependencies:
       '@motionone/dom': 10.15.5
       hey-listen: 1.0.8
+      tslib: 2.4.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
+  /framer-motion/7.10.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-k2ccYeZNSpPg//HTaqrU+4pRq9f9ZpaaN7rr0+Rx5zA4wZLbk547wtDzge2db1sB+1mnJ6r59P4xb+aEIi/W+w==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@motionone/dom': 10.15.5
+      hey-listen: 1.0.8
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
