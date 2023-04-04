@@ -23,6 +23,7 @@ import {
   faPuzzlePiece,
   faSquareH,
   faBell,
+  faS,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -48,6 +49,7 @@ library.add(
   faTerminal,
   faPuzzlePiece,
   faSquareH,
+  faS,
   faBell
 );
 

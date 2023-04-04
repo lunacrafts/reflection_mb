@@ -9,7 +9,7 @@ export const HypeboardsExtension = () => {
 
   useActivityBarItem(
     {
-      namespace: "hypeboards.sources",
+      namespace: "hypeboards.index",
       render: () => (
         <ActivityBarItem tooltip={"Hypeboard"} onClick={() => {
           navigate({
@@ -25,6 +25,29 @@ export const HypeboardsExtension = () => {
       meta: {
         placement: "top",
         order: 10,
+      },
+    },
+    []
+  );
+
+  useActivityBarItem(
+    {
+      namespace: "hypeboards.sources",
+      render: () => (
+        <ActivityBarItem tooltip={"Sources"} onClick={() => {
+          navigate({
+            to: '/shell/mirrorboard/$mirrorboardId/hypeboards/sources',
+            params: {
+              mirrorboardId: mirrorboardId!
+            }
+          });
+        }}>
+          <FontAwesomeIcon icon={"s"} color={"white"} fontSize={20} />
+        </ActivityBarItem>
+      ),
+      meta: {
+        placement: "top",
+        order: 11,
       },
     },
     []
