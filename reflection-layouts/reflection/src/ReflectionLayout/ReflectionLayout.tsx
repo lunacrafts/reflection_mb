@@ -35,6 +35,7 @@ const useStyles = createStyles((theme, { spacing }: ReflectionLayoutStyleParams)
     },
     statusBar: {
       height: spacing,
+      minHeight: spacing,
       borderTopWidth: 1,
       borderTopStyle: "solid",
       borderTopColor: borderColor,
