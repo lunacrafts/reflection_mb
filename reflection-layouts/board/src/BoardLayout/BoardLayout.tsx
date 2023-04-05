@@ -41,7 +41,7 @@ export const BoardLayout: React.FC<PropsWithChildren<BoardLayoutProps>> = ({
 
   return (
     <Box className={cx(classes.root, className)} {...others}>
-      BoardLayout!
+      <div>BoardLayout!</div>
     </Box>
   );
 };

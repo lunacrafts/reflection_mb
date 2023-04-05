@@ -14,7 +14,6 @@ const useStyles = createStyles((theme, { spacing }: ReflectionLayoutStyleParams)
     root: {
       height: '100%',
       width: '100%',
-      border: '1px solid red',
       display: 'flex',
       flexDirection: 'column'
     },
@@ -36,6 +35,7 @@ const useStyles = createStyles((theme, { spacing }: ReflectionLayoutStyleParams)
     },
     statusBar: {
       height: spacing,
+      minHeight: spacing,
       borderTopWidth: 1,
       borderTopStyle: "solid",
       borderTopColor: borderColor,
