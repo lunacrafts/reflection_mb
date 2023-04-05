@@ -11,7 +11,7 @@
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf .pnpm-debug.log"
   },
   "dependencies": {
-    "@reflection-layouts/mirrorboards": "workspace:*",
+    "@reflection-layouts/shell": "workspace:*",
     "@reflection-layouts/reflection": "workspace:*",
     "@reflection-layouts/board": "workspace:*",
     "@reflection/extension": "workspace:*",
