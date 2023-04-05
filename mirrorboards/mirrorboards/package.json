@@ -13,6 +13,7 @@
   "dependencies": {
     "@reflection-layouts/shell": "workspace:*",
     "@reflection-layouts/reflection": "workspace:*",
+    "@reflection-layouts/mirrorboards": "workspace:*",
     "@reflection-layouts/board": "workspace:*",
     "@reflection/extension": "workspace:*",
     "@reflection/icons": "workspace:*",
