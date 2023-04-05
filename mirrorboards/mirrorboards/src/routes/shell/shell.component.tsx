@@ -1,8 +1,8 @@
-import { MirrorboardsLayout } from "@reflection-layouts/mirrorboards"
+import { ShellLayout } from "@reflection-layouts/mirrorboards"
 import { Outlet } from "@tanstack/react-router"
 
 export const ShellComponent = () => {
-  return <MirrorboardsLayout>
+  return <ShellLayout>
     <Outlet />
-  </MirrorboardsLayout>
+  </ShellLayout>
 }

@@ -2,15 +2,15 @@ import React from "react";
 import { PropsWithChildren } from "react";
 
 import { Box, createStyles, DefaultProps, MantineNumberSize, Selectors, useComponentDefaultProps } from "@mantine/core";
-import { useMirrorboardsLayout } from "../useMirrorboardsLayout/useMirrorboardsLayout";
+import { useShellLayout } from "../useShellLayout/useShellLayout";
 
-export interface MirrorboardsLayoutParams {
+export interface ShellLayoutParams {
   drawerWidth: MantineNumberSize;
   headerHeight: MantineNumberSize;
   isExpanded: boolean;
 }
 
-const useStyles = createStyles((theme, { drawerWidth, headerHeight, isExpanded }: MirrorboardsLayoutParams) => ({
+const useStyles = createStyles((theme, { drawerWidth, headerHeight, isExpanded }: ShellLayoutParams) => ({
   root: {
     width: "100%",
     height: "100%",
@@ -47,20 +47,20 @@ const useStyles = createStyles((theme, { drawerWidth, headerHeight, isExpanded }
   },
 }));
 
-type MirrorboardsLayoutStylesNames = Selectors<typeof useStyles>;
+type ShellLayoutStylesNames = Selectors<typeof useStyles>;
 
-interface MirrorboardsLayoutProps extends DefaultProps<MirrorboardsLayoutStylesNames, MirrorboardsLayoutParams> {
+interface ShellLayoutProps extends DefaultProps<ShellLayoutStylesNames, ShellLayoutParams> {
   drawerWidth?: MantineNumberSize;
   headerHeight?: MantineNumberSize;
   drawer?: JSX.Element;
 }
 
-const defaultProps: Partial<MirrorboardsLayoutProps> = {
+const defaultProps: Partial<ShellLayoutProps> = {
   drawerWidth: 320,
   headerHeight: 50,
 };
 
-export const MirrorboardsLayout: React.FC<PropsWithChildren<MirrorboardsLayoutProps>> = ({
+export const ShellLayout: React.FC<PropsWithChildren<ShellLayoutProps>> = ({
   className,
   classNames,
   styles,
@@ -69,12 +69,12 @@ export const MirrorboardsLayout: React.FC<PropsWithChildren<MirrorboardsLayoutPr
 }) => {
   const { drawerWidth, headerHeight, ...others } = props;
 
-  const defaults = useComponentDefaultProps("MirrorboardsLayout", defaultProps, {
+  const defaults = useComponentDefaultProps("ShellLayout", defaultProps, {
     drawerWidth,
     headerHeight,
   });
 
-  const { drawer } = useMirrorboardsLayout();
+  const { drawer } = useShellLayout();
 
   const { classes, cx } = useStyles(
     {
@@ -83,7 +83,7 @@ export const MirrorboardsLayout: React.FC<PropsWithChildren<MirrorboardsLayoutPr
       isExpanded: drawer.state.isExpanded,
     },
     {
-      name: "MirrorboardsLayout",
+      name: "ShellLayout",
       classNames,
       styles,
       unstyled,

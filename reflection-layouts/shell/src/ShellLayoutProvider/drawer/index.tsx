@@ -1,6 +1,6 @@
 import produce from "immer";
 import { StateCreator } from "zustand";
-import { MirrorboardsLayoutStore } from "../MirrorboardsLayoutProvider";
+import { ShellLayoutStore } from "../ShellLayoutProvider";
 
 export interface DrawerSlice {
   drawer: {
@@ -15,7 +15,7 @@ export interface DrawerSlice {
   };
 }
 
-export const createDrawerSlice: StateCreator<MirrorboardsLayoutStore, [], [], DrawerSlice> = (set) => {
+export const createDrawerSlice: StateCreator<ShellLayoutStore, [], [], DrawerSlice> = (set) => {
   return {
     drawer: {
       state: {
@@ -24,21 +24,21 @@ export const createDrawerSlice: StateCreator<MirrorboardsLayoutStore, [], [], Dr
       actions: {
         open: () => {
           set(
-            produce<MirrorboardsLayoutStore>((state) => {
+            produce<ShellLayoutStore>((state) => {
               state.drawer.state.isExpanded = true;
             })
           );
         },
         close: () => {
           set(
-            produce<MirrorboardsLayoutStore>((state) => {
+            produce<ShellLayoutStore>((state) => {
               state.drawer.state.isExpanded = false;
             })
           );
         },
         toggle: () => {
           set(
-            produce<MirrorboardsLayoutStore>((state) => {
+            produce<ShellLayoutStore>((state) => {
               state.drawer.state.isExpanded = !state.drawer.state.isExpanded;
             })
           );

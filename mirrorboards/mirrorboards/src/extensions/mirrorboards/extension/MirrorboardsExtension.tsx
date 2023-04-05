@@ -1,10 +1,10 @@
-import { useMirrorboardsLayout } from "@reflection-layouts/mirrorboards";
+import { useShellLayout } from "@reflection-layouts/mirrorboards";
 import { ActivityBarItem, ReflectionLayout, StatusBarItem, useActivityBarItem, useStatusBarItem } from "@reflection-layouts/reflection";
 import { FontAwesomeIcon } from "@reflection/icons";
 
 export const MirrorboardsExtension = () => {
 
-  const { drawer } = useMirrorboardsLayout();
+  const { drawer } = useShellLayout();
 
   useActivityBarItem(
     {

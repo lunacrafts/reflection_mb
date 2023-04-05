@@ -3,9 +3,9 @@ import { PropsWithChildren } from "react";
 
 import { Box, createStyles, DefaultProps, Selectors, useComponentDefaultProps } from "@mantine/core";
 
-export interface MirrorboardsLayoutDrawerCardParams {}
+export interface ShellLayoutDrawerCardParams { }
 
-const useStyles = createStyles((theme, {}: MirrorboardsLayoutDrawerCardParams) => ({
+const useStyles = createStyles((theme, { }: ShellLayoutDrawerCardParams) => ({
   root: {
     backgroundColor: "rgb(0 0 0 / 0.4)",
     border: "1px solid black",
@@ -22,16 +22,16 @@ const useStyles = createStyles((theme, {}: MirrorboardsLayoutDrawerCardParams) =
   },
 }));
 
-type MirrorboardsLayoutDrawerCardStylesNames = Selectors<typeof useStyles>;
+type ShellLayoutDrawerCardStylesNames = Selectors<typeof useStyles>;
 
-interface MirrorboardsLayoutDrawerCardProps
-  extends DefaultProps<MirrorboardsLayoutDrawerCardStylesNames, MirrorboardsLayoutDrawerCardParams> {
+interface ShellLayoutDrawerCardProps
+  extends DefaultProps<ShellLayoutDrawerCardStylesNames, ShellLayoutDrawerCardParams> {
   onBottomScroll?: () => void;
 }
 
-const defaultProps: Partial<MirrorboardsLayoutDrawerCardProps> = {};
+const defaultProps: Partial<ShellLayoutDrawerCardProps> = {};
 
-export const MirrorboardsLayoutDrawerCard: React.FC<PropsWithChildren<MirrorboardsLayoutDrawerCardProps>> = ({
+export const ShellLayoutDrawerCard: React.FC<PropsWithChildren<ShellLayoutDrawerCardProps>> = ({
   className,
   classNames,
   styles,
@@ -40,12 +40,12 @@ export const MirrorboardsLayoutDrawerCard: React.FC<PropsWithChildren<Mirrorboar
 }) => {
   const { ...others } = props;
 
-  const defaults = useComponentDefaultProps("MirrorboardsLayoutDrawerCard", defaultProps, {});
+  const defaults = useComponentDefaultProps("ShellLayoutDrawerCard", defaultProps, {});
 
   const { classes, cx } = useStyles(
     {},
     {
-      name: "MirrorboardsLayoutDrawerCard",
+      name: "ShellLayoutDrawerCard",
       classNames,
       styles,
       unstyled,
