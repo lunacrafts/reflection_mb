@@ -1,14 +1,14 @@
 import { PropsWithChildren } from "react";
 import useHotkeys from "@reecelucas/react-use-hotkeys";
-import { useMirrorboardsLayout } from "../useMirrorboardsLayout/useMirrorboardsLayout";
+import { useShellLayout } from "../useShellLayout/useShellLayout";
 
-interface MirrorboardsLayoutKeyboardSupportProps {
+interface ShellLayoutKeyboardSupportProps {
   onSelectedIndex?: (index: number) => void;
 }
-export const MirrorboardsLayoutKeyboardSupport: React.FC<PropsWithChildren<MirrorboardsLayoutKeyboardSupportProps>> = (
+export const ShellLayoutKeyboardSupport: React.FC<PropsWithChildren<ShellLayoutKeyboardSupportProps>> = (
   props
 ) => {
-  const { drawer } = useMirrorboardsLayout();
+  const { drawer } = useShellLayout();
 
   useHotkeys(["Control+0", "Meta+0"], () => {
     drawer.actions.toggle();

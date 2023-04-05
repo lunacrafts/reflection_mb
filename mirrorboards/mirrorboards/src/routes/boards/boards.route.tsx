@@ -1,4 +1,4 @@
-import { MirrorboardsLayoutKeyboardSupport, MirrorboardsLayoutProvider } from "@reflection-layouts/mirrorboards";
+import { ShellLayoutKeyboardSupport, ShellLayoutProvider } from "@reflection-layouts/shell";
 import { Route } from "@tanstack/react-router";
 import { rootRoute } from "../root.route";
 import { BoardsComponent } from "./boards.component";
@@ -7,10 +7,10 @@ export const boardsRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/boards',
   component: () => (
-    <MirrorboardsLayoutProvider>
-      <MirrorboardsLayoutKeyboardSupport>
+    <ShellLayoutProvider>
+      <ShellLayoutKeyboardSupport>
         <BoardsComponent />
-      </MirrorboardsLayoutKeyboardSupport>
-    </MirrorboardsLayoutProvider>
+      </ShellLayoutKeyboardSupport>
+    </ShellLayoutProvider>
   )
 });
