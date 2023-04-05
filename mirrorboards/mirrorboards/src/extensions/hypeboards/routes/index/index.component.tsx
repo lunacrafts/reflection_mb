@@ -1,7 +1,19 @@
-import { BoardLayout } from "@reflection-layouts/board"
+import { BoardLayout, useSlot } from "@reflection-layouts/board"
+import { useDatasourceLayoutBrakpoints } from "../../components/useDatasourceLayoutBrakpoints/useDatasourceLayoutBrakpoints";
 
 export const HypeboardsIndexComponent = () => {
-  return <div style={{ height: '100%', backgroundColor: '#181818' }}>
-    <BoardLayout />
-  </div>
+  const breakpoints = useDatasourceLayoutBrakpoints();
+
+  const [Actions] = useSlot('actions', {
+    breakpoints: breakpoints.actions,
+  });
+
+  const [Content] = useSlot('content', {
+    breakpoints: breakpoints.content,
+  });
+
+  return <BoardLayout>
+    <Actions />
+    <Content />
+  </BoardLayout>
 }
