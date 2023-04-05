@@ -1,4 +1,4 @@
-import { useShellLayout } from "@reflection-layouts/mirrorboards";
+import { useShellLayout } from "@reflection-layouts/shell";
 import { ActivityBarItem, ReflectionLayout, StatusBarItem, useActivityBarItem, useStatusBarItem } from "@reflection-layouts/reflection";
 import { FontAwesomeIcon } from "@reflection/icons";
 

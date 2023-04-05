@@ -1,4 +1,4 @@
-import { ShellLayoutKeyboardSupport, ShellLayoutProvider } from "@reflection-layouts/mirrorboards";
+import { ShellLayoutKeyboardSupport, ShellLayoutProvider } from "@reflection-layouts/shell";
 import { Route } from "@tanstack/react-router";
 import { rootRoute } from "../root.route";
 import { ShellComponent } from "./shell.component";

@@ -1,4 +1,4 @@
-import { ShellLayout } from "@reflection-layouts/mirrorboards"
+import { ShellLayout } from "@reflection-layouts/shell"
 import { Outlet } from "@tanstack/react-router"
 
 export const ShellComponent = () => {
