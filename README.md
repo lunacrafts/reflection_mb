@@ -1,6 +1,8 @@
 # DEPRECATED
+# DEPRECATED
+# DEPRECATED
 
-[Mirrorboards](https://github.com/mirrorboards/hypeboards)
+Moved to [Mirrorboards](https://github.com/mirrorboards/hypeboards)
 
 
 # Overview
