@@ -2,7 +2,7 @@
 # DEPRECATED
 # DEPRECATED
 
-Moved to [Mirrorboards](https://github.com/mirrorboards/hypeboards)
+Moved to [Mirrorboards](https://github.com/mirrorboards/mirrorboards)
 
 
 # Overview
